@@ -12,3 +12,4 @@ C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Model\obj\Debug\net8.0\refint\Knjig
 C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Model\obj\Debug\net8.0\Knjigoteka.Model.pdb
 C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Model\obj\Debug\net8.0\Knjigoteka.Model.genruntimeconfig.cache
 C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Model\obj\Debug\net8.0\ref\Knjigoteka.Model.dll
+C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Model\obj\Debug\net8.0\Knjigoteka.Model.sourcelink.json

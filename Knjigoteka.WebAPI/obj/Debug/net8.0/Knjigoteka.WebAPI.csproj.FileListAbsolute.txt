@@ -176,3 +176,4 @@ C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.WebAPI\bin\Debug\net8.0\Microsoft.A
 C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.WebAPI\obj\Debug\net8.0\Knjigoteka.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.WebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.WebAPI\bin\Debug\net8.0\Microsoft.Identity.Abstractions.dll
+C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.WebAPI\obj\Debug\net8.0\Knjigoteka.WebAPI.sourcelink.json

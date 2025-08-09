@@ -11,7 +11,7 @@ namespace Knjigoteka.WebAPI.Controllers
 {
     [Route("api/branches/{branchId:int}/inventory")]
     [ApiController]
-    [Authorize(Roles = "Admin")] // optionally: "Admin,Employee"
+    [Authorize(Roles = "Admin")]
     public class BranchInventoryController : ControllerBase
     {
         private readonly IBranchInventoryService _service;

@@ -26,7 +26,11 @@ builder.Services.AddScoped<
     ICRUDService<BranchResponse, BranchSearchObject, BranchInsert, BranchUpdate>,
     BranchService>();
 builder.Services.AddScoped<IBranchInventoryService, BranchInventoryService>();
-
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<Knjigoteka.Services.Utilities.IUserContext,
+                           Knjigoteka.Services.Utilities.UserContext>();
+builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]!);
@@ -100,7 +104,7 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
-builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 

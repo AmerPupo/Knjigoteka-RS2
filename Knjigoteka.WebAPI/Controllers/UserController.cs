@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 
 [Route("api/[controller]")]
 [ApiController]
-public class AuthController : ControllerBase
+public class UserController : ControllerBase
 {
-    private readonly IAuthService _auth;
+    private readonly IUserService _auth;
 
-    public AuthController(IAuthService auth) => _auth = auth;
+    public UserController(IUserService auth) => _auth = auth;
 
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterRequest dto)

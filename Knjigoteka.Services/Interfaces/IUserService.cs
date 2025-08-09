@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Knjigoteka.Services.Interfaces
 {
-    public interface IAuthService
+    public interface IUserService
     {
         Task RegisterAsync(RegisterRequest dto);
         Task<LoginResponse> LoginAsync(LoginRequest dto);

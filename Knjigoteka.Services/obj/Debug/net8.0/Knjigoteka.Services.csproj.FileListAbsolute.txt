@@ -15,3 +15,4 @@ C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Services\obj\Debug\net8.0\refint\Kn
 C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Services\obj\Debug\net8.0\Knjigoteka.Services.pdb
 C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Services\obj\Debug\net8.0\Knjigoteka.Services.genruntimeconfig.cache
 C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Services\obj\Debug\net8.0\ref\Knjigoteka.Services.dll
+C:\Users\jasar\Desktop\Knjigoteka\Knjigoteka.Services\obj\Debug\net8.0\Knjigoteka.Services.sourcelink.json
