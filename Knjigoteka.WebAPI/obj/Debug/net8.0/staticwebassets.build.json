@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "KcuIz35Z4dLQ9W+Mbr4RWAXV5zIlwyErNaZKLZHYBqc=",
+  "Source": "Knjigoteka.WebAPI",
+  "BasePath": "_content/Knjigoteka.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
