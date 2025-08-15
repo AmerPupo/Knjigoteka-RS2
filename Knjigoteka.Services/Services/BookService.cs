@@ -10,9 +10,10 @@ using Microsoft.EntityFrameworkCore;
 namespace Knjigoteka.Services.Services
 {
     public class BookService
-        : BaseCRUDService<BookResponse, BookSearchObject, BookInsert, BookUpdate, Book>
+        : BaseCRUDService<BookResponse, BookSearchObject, BookInsert, BookUpdate, Book>, IBookService
     {
-        public BookService(DatabaseContext context) : base(context) { }
+        protected readonly DatabaseContext _context;
+        public BookService(DatabaseContext context) : base(context) { _context = context; }
 
         protected override IQueryable<Book> ApplyFilter(IQueryable<Book> query, BookSearchObject? search)
         {
@@ -20,10 +21,8 @@ namespace Knjigoteka.Services.Services
 
             if (!string.IsNullOrWhiteSpace(search.FTS))
             {
-                query = query.Where(b =>
-                    EF.Functions.Contains(b.Title, search.FTS) ||
-                    EF.Functions.Contains(b.Author, search.FTS) ||
-                    EF.Functions.Contains(b.ShortDescription, search.FTS));
+                query = query.Where(b => b.Title.Contains(search.FTS) ||
+                    b.Author.Contains(search.FTS));
             }
             if (search.GenreId.HasValue)
             {
@@ -37,23 +36,68 @@ namespace Knjigoteka.Services.Services
 
             return query;
         }
-        protected override BookResponse MapToDto(Book entity)
+        public override async Task<BookResponse> GetById(int id)
+        {
+            var entity = await _context.Books
+                .Include(b => b.Genre)
+                .Include(b => b.Language)
+                .FirstOrDefaultAsync(b => b.Id == id)
+                ?? throw new KeyNotFoundException("Book not found.");
+
+            return MapToDto(entity);
+        }
+        protected override IQueryable<Book> AddInclude(IQueryable<Book> query)
+        {
+            return query
+                .Include(b => b.Genre)
+                .Include(b => b.Language);
+        }
+        public override async Task<BookResponse> Update(int id, BookUpdate request)
+        {
+            var entity = await _context.Books
+                .Include(b => b.Genre)
+                .Include(b => b.Language)
+                .FirstOrDefaultAsync(b => b.Id == id)
+                ?? throw new Exception("Book not found.");
+
+            MapToEntity(request, entity);
+            await _context.SaveChangesAsync();
+            await _context.Entry(entity).Reference(b => b.Genre).LoadAsync();
+            await _context.Entry(entity).Reference(b => b.Language).LoadAsync();
+            return MapToDto(entity);
+        }
+        public override async Task<BookResponse> Insert(BookInsert request)
+        {
+            var entity = MapToEntity(request);
+            await _context.Set<Book>().AddAsync(entity);
+            await _context.SaveChangesAsync();
+
+            var reloaded = await _context.Books
+                .Include(b => b.Genre)
+                .Include(b => b.Language)
+                .FirstOrDefaultAsync(b => b.Id == entity.Id);
+
+            return MapToDto(reloaded!);
+        }
+
+        protected override BookResponse MapToDto(Book e)
         {
             return new BookResponse
             {
-                Id = entity.Id,
-                Title = entity.Title,
-                Author = entity.Author,
-                GenreId = entity.GenreId,
-                GenreName = entity.Genre.Name,
-                LanguageId = entity.LanguageId,
-                LanguageName = entity.Language.Name,
-                ISBN = entity.ISBN,
-                Year = entity.Year,
-                TotalQuantity = entity.TotalQuantity,
-                ShortDescription = entity.ShortDescription,
-                Price = entity.Price,
-                PhotoUrl = entity.PhotoUrl
+                Id = e.Id,
+                Title = e.Title,
+                Author = e.Author,
+                GenreId = e.GenreId,
+                GenreName = e.Genre.Name,
+                LanguageId = e.LanguageId,
+                LanguageName = e.Language.Name,
+                ISBN = e.ISBN,
+                Year = e.Year,
+                TotalQuantity = e.TotalQuantity,
+                ShortDescription = e.ShortDescription,
+                Price = e.Price,
+                HasImage = e.BookImage != null && e.BookImage.Length > 0,
+                PhotoEndpoint = $"/api/books/{e.Id}/photo"
             };
         }
 
@@ -70,10 +114,9 @@ namespace Knjigoteka.Services.Services
                 TotalQuantity = request.TotalQuantity,
                 ShortDescription = request.ShortDescription,
                 Price = request.Price,
-                PhotoUrl = request.PhotoUrl
+                BookImage = request.BookImage
             };
         }
-
         protected override void MapToEntity(BookUpdate request, Book entity)
         {
             entity.Title = request.Title;
@@ -85,7 +128,8 @@ namespace Knjigoteka.Services.Services
             entity.TotalQuantity = request.TotalQuantity;
             entity.ShortDescription = request.ShortDescription;
             entity.Price = request.Price;
-            entity.PhotoUrl = request.PhotoUrl;
+            if (request.BookImage != null && request.BookImage.Length > 0)
+                entity.BookImage = request.BookImage;
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Knjigoteka.Services.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
@@ -16,19 +17,14 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<
-    ICRUDService<BookResponse, BookSearchObject, BookInsert, BookUpdate>,
-    BookService>();
-builder.Services.AddScoped<
-    ICRUDService<GenreResponse, GenreSearchObject, GenreInsert, GenreUpdate>,
-    GenreService>();
-builder.Services.AddScoped<
-    ICRUDService<BranchResponse, BranchSearchObject, BranchInsert, BranchUpdate>,
-    BranchService>();
+builder.Services.AddScoped<IBookService,BookService>();
+builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<ILanguageService, LanguageService>();
+builder.Services.AddScoped<IBranchService, BranchService>();
 builder.Services.AddScoped<IBranchInventoryService, BranchInventoryService>();
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped<Knjigoteka.Services.Utilities.IUserContext,
-                           Knjigoteka.Services.Utilities.UserContext>();
+builder.Services.AddScoped<IUserContext,UserContext>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 

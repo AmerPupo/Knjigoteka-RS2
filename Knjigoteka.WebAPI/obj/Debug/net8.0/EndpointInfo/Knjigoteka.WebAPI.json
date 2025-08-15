@@ -5,6 +5,70 @@
     "version": "v1"
   },
   "paths": {
+    "/api/Books/{id}/photo": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Books": {
       "post": {
         "tags": [
@@ -59,20 +123,6 @@
         "parameters": [
           {
             "name": "FTS",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Title",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Author",
             "in": "query",
             "schema": {
               "type": "string"
@@ -313,7 +363,7 @@
         ],
         "parameters": [
           {
-            "name": "Name",
+            "name": "FTS",
             "in": "query",
             "schema": {
               "type": "string"
@@ -993,6 +1043,231 @@
         }
       }
     },
+    "/api/Languages": {
+      "post": {
+        "tags": [
+          "Languages"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LanguageInsert"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LanguageInsert"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LanguageInsert"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Languages"
+        ],
+        "parameters": [
+          {
+            "name": "Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "IncludeTotalCount",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponsePagedResult"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponsePagedResult"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponsePagedResult"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Languages/{id}": {
+      "put": {
+        "tags": [
+          "Languages"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LanguageUpdate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LanguageUpdate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LanguageUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Languages"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Languages"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LanguageResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Order/checkout": {
       "post": {
         "tags": [
@@ -1238,8 +1513,9 @@
             "type": "number",
             "format": "double"
           },
-          "photoUrl": {
+          "bookImage": {
             "type": "string",
+            "format": "byte",
             "nullable": true
           }
         },
@@ -1296,7 +1572,10 @@
             "type": "number",
             "format": "double"
           },
-          "photoUrl": {
+          "hasImage": {
+            "type": "boolean"
+          },
+          "photoEndpoint": {
             "type": "string",
             "nullable": true
           }
@@ -1359,8 +1638,9 @@
             "type": "number",
             "format": "double"
           },
-          "photoUrl": {
+          "bookImage": {
             "type": "string",
+            "format": "byte",
             "nullable": true
           }
         },
@@ -1373,6 +1653,10 @@
             "type": "string",
             "nullable": true
           },
+          "cityId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "address": {
             "type": "string",
             "nullable": true
@@ -1381,9 +1665,13 @@
             "type": "string",
             "nullable": true
           },
-          "workingHours": {
+          "openingTime": {
             "type": "string",
-            "nullable": true
+            "format": "time"
+          },
+          "closingTime": {
+            "type": "string",
+            "format": "time"
           }
         },
         "additionalProperties": false
@@ -1472,6 +1760,14 @@
             "type": "string",
             "nullable": true
           },
+          "cityId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cityName": {
+            "type": "string",
+            "nullable": true
+          },
           "address": {
             "type": "string",
             "nullable": true
@@ -1480,9 +1776,13 @@
             "type": "string",
             "nullable": true
           },
-          "workingHours": {
+          "openingTime": {
             "type": "string",
-            "nullable": true
+            "format": "time"
+          },
+          "closingTime": {
+            "type": "string",
+            "format": "time"
           }
         },
         "additionalProperties": false
@@ -1511,6 +1811,10 @@
             "type": "string",
             "nullable": true
           },
+          "cityId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "address": {
             "type": "string",
             "nullable": true
@@ -1519,9 +1823,13 @@
             "type": "string",
             "nullable": true
           },
-          "workingHours": {
+          "openingTime": {
             "type": "string",
-            "nullable": true
+            "format": "time"
+          },
+          "closingTime": {
+            "type": "string",
+            "format": "time"
           }
         },
         "additionalProperties": false
@@ -1554,8 +1862,9 @@
             "format": "double",
             "readOnly": true
           },
-          "photoUrl": {
+          "bookImage": {
             "type": "string",
+            "format": "byte",
             "nullable": true
           }
         },
@@ -1635,6 +1944,57 @@
         "additionalProperties": false
       },
       "GenreUpdate": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LanguageInsert": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LanguageResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LanguageResponsePagedResult": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LanguageResponse"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LanguageUpdate": {
         "type": "object",
         "properties": {
           "name": {

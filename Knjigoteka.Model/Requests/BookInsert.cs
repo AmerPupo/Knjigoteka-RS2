@@ -17,6 +17,6 @@ namespace Knjigoteka.Model.Requests
         public int TotalQuantity { get; set; }
         public string ShortDescription { get; set; } = null!;
         public decimal Price { get; set; }
-        public string PhotoUrl { get; set; } = null!;
+        public byte[] BookImage { get; set; } = null!;
     }
 }

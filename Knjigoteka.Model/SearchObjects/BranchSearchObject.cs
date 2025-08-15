@@ -8,6 +8,7 @@ namespace Knjigoteka.Model.SearchObjects
 {
     public class BranchSearchObject : BaseSearchObject
     {
-        public string? Name { get; set; }
+        public string? FTS { get; set; }
+
     }
 }

@@ -15,7 +15,8 @@ namespace Knjigoteka.WebAPI.Controllers
     {
         public BranchesController(
             ILogger<BaseController<BranchResponse, BranchSearchObject>> logger,
-            ICRUDService<BranchResponse, BranchSearchObject, BranchInsert, BranchUpdate> service)
+            IBranchService service)
             : base(logger, service) { }
+
     }
 }

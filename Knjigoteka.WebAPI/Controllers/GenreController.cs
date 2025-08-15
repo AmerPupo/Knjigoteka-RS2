@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Knjigoteka.WebAPI.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class GenresController
@@ -14,7 +15,7 @@ namespace Knjigoteka.WebAPI.Controllers
     {
         public GenresController(
             ILogger<BaseController<GenreResponse, GenreSearchObject>> logger,
-            ICRUDService<GenreResponse, GenreSearchObject, GenreInsert, GenreUpdate> service)
+            IGenreService service)
             : base(logger, service)
         { }
     }

@@ -12,6 +12,7 @@ namespace Knjigoteka.Services.Database
         public DbSet<Borrowing> Borrowings { get; set; } = null!;
         public DbSet<Branch> Branches { get; set; } = null!;
         public DbSet<CartItem> CartItems { get; set; } = null!;
+        public DbSet<City> Cities { get; set; } = null!;
         public DbSet<Employee> Employees { get; set; } = null!;
         public DbSet<Genre> Genres { get; set; } = null!;
         public DbSet<Language> Languages { get; set; } = null!;

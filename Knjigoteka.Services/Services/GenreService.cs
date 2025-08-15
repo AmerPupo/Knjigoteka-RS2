@@ -10,7 +10,7 @@ using System.Linq;
 namespace Knjigoteka.Services.Services
 {
     public class GenreService
-        : BaseCRUDService<GenreResponse, GenreSearchObject, GenreInsert, GenreUpdate, Genre>
+        : BaseCRUDService<GenreResponse, GenreSearchObject, GenreInsert, GenreUpdate, Genre>, IGenreService
     {
         public GenreService(DatabaseContext context) : base(context) { }
 

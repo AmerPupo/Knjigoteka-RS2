@@ -20,6 +20,7 @@ namespace Knjigoteka.Model.Responses
         public int TotalQuantity { get; set; }
         public string ShortDescription { get; set; } = null!;
         public decimal Price { get; set; }
-        public string PhotoUrl { get; set; } = null!;
+        public bool HasImage { get; set; }
+        public string PhotoEndpoint { get; set; } = null!;
     }
 }

@@ -21,8 +21,8 @@ namespace Knjigoteka.Services.Services
         public virtual async Task<PagedResult<T>> Get(TSearch? search = null)
         {
             var query = _context.Set<TEntity>().AsQueryable();
-
             query = ApplyFilter(query, search);
+            query = AddInclude(query);
 
             var totalCount = search?.IncludeTotalCount == true ? await query.CountAsync() : 0;
 
@@ -45,6 +45,9 @@ namespace Knjigoteka.Services.Services
         public virtual async Task<T> GetById(int id)
         {
             var entity = await _context.Set<TEntity>().FindAsync(id);
+            if (entity == null)
+                return null;
+
             return MapToDto(entity!);
         }
 
@@ -52,7 +55,10 @@ namespace Knjigoteka.Services.Services
         {
             return query;
         }
-
+        protected virtual IQueryable<TEntity> AddInclude(IQueryable<TEntity> query)
+        {
+            return query;
+        }
         protected virtual T MapToDto(TEntity entity)
         {
             throw new NotImplementedException("You must override MapToDto in your service.");

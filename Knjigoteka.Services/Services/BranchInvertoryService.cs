@@ -10,18 +10,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Knjigoteka.Services.Services
 {
-    public class BranchInventoryService : IBranchInventoryService
+    public class BranchInventoryService :IBranchInventoryService
     {
-        private readonly DatabaseContext _db;
+        private readonly DatabaseContext _context;
 
-        public BranchInventoryService(DatabaseContext db)
+        public BranchInventoryService(DatabaseContext context)
         {
-            _db = db;
+            _context = context;
         }
 
         public async Task<PagedResult<BranchInventoryResponse>> GetAsync(int branchId, BranchInventorySearchObject? search)
         {
-            var q = _db.BookBranches
+            var q = _context.BookBranches
                 .Where(bb => bb.BranchId == branchId)
                 .Include(bb => bb.Book).ThenInclude(b => b.Genre)
                 .Include(bb => bb.Book).ThenInclude(b => b.Language)
@@ -32,9 +32,8 @@ namespace Knjigoteka.Services.Services
                 if (!string.IsNullOrWhiteSpace(search.FTS))
                 {
                     q = q.Where(bb =>
-                        EF.Functions.Contains(bb.Book.Title, search.FTS!) ||
-                        EF.Functions.Contains(bb.Book.Author, search.FTS!) ||
-                        EF.Functions.Contains(bb.Book.ShortDescription, search.FTS!));
+                        bb.Book.Title.Contains(search.FTS) ||
+                        bb.Book.Author.Contains(search.FTS));
                 }
                 if (search.GenreId.HasValue)
                     q = q.Where(bb => bb.Book.GenreId == search.GenreId.Value);
@@ -78,7 +77,7 @@ namespace Knjigoteka.Services.Services
             if (request.QuantityForBorrow < 0 || request.QuantityForSale < 0)
                 throw new ArgumentException("Quantities must be >= 0.");
 
-            var bb = await _db.BookBranches
+            var bb = await _context.BookBranches
                 .Include(x => x.Book).ThenInclude(b => b.Genre)
                 .Include(x => x.Book).ThenInclude(b => b.Language)
                 .FirstOrDefaultAsync(x => x.BranchId == branchId && x.BookId == request.BookId);
@@ -92,38 +91,49 @@ namespace Knjigoteka.Services.Services
                     QuantityForBorrow = request.QuantityForBorrow,
                     QuantityForSale = request.QuantityForSale
                 };
-                _db.BookBranches.Add(bb);
+                _context.BookBranches.Add(bb);
+                await _context.SaveChangesAsync();
+
+                // Reload to include Book, Genre, Language
+                bb = await _context.BookBranches
+                    .Include(x => x.Book).ThenInclude(b => b.Genre)
+                    .Include(x => x.Book).ThenInclude(b => b.Language)
+                    .FirstOrDefaultAsync(x => x.BranchId == branchId && x.BookId == request.BookId);
             }
             else
             {
-                bb.QuantityForBorrow = request.QuantityForBorrow;
-                bb.QuantityForSale = request.QuantityForSale;
+                bb.QuantityForBorrow += request.QuantityForBorrow;
+                bb.QuantityForSale += request.QuantityForSale;
+                await _context.SaveChangesAsync();
             }
 
-            await _db.SaveChangesAsync();
+            return MapToDto(bb);
+        }
 
+
+        public async Task<bool> DeleteAsync(int branchId, int bookId)
+        {
+            var bb = await _context.BookBranches
+                .FirstOrDefaultAsync(x => x.BranchId == branchId && x.BookId == bookId);
+            if (bb == null) return false;
+
+            _context.BookBranches.Remove(bb);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        protected BranchInventoryResponse MapToDto(BookBranch bb)
+        {
             return new BranchInventoryResponse
             {
                 BookId = bb.BookId,
                 BranchId = bb.BranchId,
-                Title = bb.Book.Title,
-                Author = bb.Book.Author,
-                GenreName = bb.Book.Genre.Name,
-                LanguageName = bb.Book.Language.Name,
+                Title = bb.Book?.Title ?? "Nepoznat naslov",
+                Author = bb.Book?.Author ?? "Nepoznat autor",
+                GenreName = bb.Book?.Genre?.Name ?? "Nepoznat žanr",
+                LanguageName = bb.Book?.Language?.Name ?? "Nepoznat jezik",
                 QuantityForBorrow = bb.QuantityForBorrow,
                 QuantityForSale = bb.QuantityForSale
             };
-        }
-
-        public async Task<bool> DeleteAsync(int branchId, int bookId)
-        {
-            var bb = await _db.BookBranches
-                .FirstOrDefaultAsync(x => x.BranchId == branchId && x.BookId == bookId);
-            if (bb == null) return false;
-
-            _db.BookBranches.Remove(bb);
-            await _db.SaveChangesAsync();
-            return true;
         }
     }
 }
