@@ -3,6 +3,7 @@ using Knjigoteka.Model.Requests;
 using Knjigoteka.Model.Responses;
 using Knjigoteka.Services.Database;
 using Knjigoteka.Services.Interfaces;
+using Knjigoteka.Services.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,18 +14,20 @@ using System.Text;
 
 public class UserService : IUserService
 {
-    private readonly DatabaseContext _db;
+    private readonly DatabaseContext _context;
     private readonly IConfiguration _config;
+    private IPenaltyService _penaltyService;
 
-    public UserService(DatabaseContext db, IConfiguration config)
+    public UserService(DatabaseContext context, IConfiguration config, IPenaltyService ps)
     {
-        _db = db;
+        _context = context;
         _config = config;
+        _penaltyService = ps;
     }
 
     public async Task RegisterAsync(RegisterRequest dto)
     {
-        if (await _db.Users.AnyAsync(u => u.Email == dto.Email))
+        if (await _context.Users.AnyAsync(u => u.Email == dto.Email))
             throw new Exception("Email already in use.");
 
         var hasher = new PasswordHasher<User>();
@@ -37,13 +40,13 @@ public class UserService : IUserService
         };
         user.PasswordHash = hasher.HashPassword(user, dto.Password);
 
-        _db.Users.Add(user);
-        await _db.SaveChangesAsync();
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
     }
 
     public async Task<LoginResponse> LoginAsync(LoginRequest dto)
     {
-        var user = await _db.Users
+        var user = await _context.Users
             .Include(u => u.Role)
             .FirstOrDefaultAsync(u => u.Email == dto.Email);
 
@@ -88,4 +91,23 @@ public class UserService : IUserService
             Expires = expires
         };
     }
+    public async Task<bool> IsUserBlocked(int userId)
+    {
+        var points = await _penaltyService.GetPointsAsync(userId);
+        return points >= 3;
+    }
+    public async Task BlockIfExceededPenaltyThreshold(int userId)
+    {
+        var count = await _context.Penalties.CountAsync(p => p.UserId == userId);
+        if (count >= 3)
+        {
+            var user = await _context.Users.FindAsync(userId);
+            if (user != null && !user.IsBlocked)
+            {
+                user.IsBlocked = true;
+                await _context.SaveChangesAsync();
+            }
+        }
+    }
+
 }

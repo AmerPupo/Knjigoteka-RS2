@@ -15,12 +15,11 @@ namespace Knjigoteka.Model.Entities
         public int BranchId { get; set; }
         [Required]
         public DateTime ReservedAt { get; set; }
-        [Required]
-        public DateTime? ConfirmedAt { get; set; }
-        [Required]
+        public DateTime? ClaimedAt { get; set; }
+        public DateTime? ReturnedAt { get; set; }
         public DateTime? ExpiredAt { get; set; }
         [Required]
-        public string Status { get; set; } = "Pending"; // Pending, Confirmed, Expired
+        public ReservationStatus Status { get; set; } = ReservationStatus.Pending;
 
         [ForeignKey(nameof(BookId))]
         public Book Book { get; set; } = null!;
@@ -28,5 +27,12 @@ namespace Knjigoteka.Model.Entities
         public User User { get; set; } = null!;
         [ForeignKey(nameof(BranchId))]
         public Branch Branch { get; set; } = null!;
+    }
+    public enum ReservationStatus
+    {
+        Pending,
+        Claimed,
+        Returned,
+        Expired
     }
 }

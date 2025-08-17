@@ -12,6 +12,8 @@ namespace Knjigoteka.Services.Interfaces
     {
         Task RegisterAsync(RegisterRequest dto);
         Task<LoginResponse> LoginAsync(LoginRequest dto);
+        Task<bool> IsUserBlocked (int  userId);
+        Task BlockIfExceededPenaltyThreshold(int userId);
     }
 
 }

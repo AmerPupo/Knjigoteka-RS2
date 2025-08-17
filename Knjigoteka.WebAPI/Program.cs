@@ -27,6 +27,10 @@ builder.Services.AddScoped<IUserContext,UserContext>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IReservationService, ReservationService>();
+builder.Services.AddScoped<IPenaltyService, PenaltyService>();
+
+builder.Services.AddHostedService<ReservationExpirationBackgroundService>();
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]!);

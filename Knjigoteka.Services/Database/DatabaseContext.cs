@@ -27,6 +27,7 @@ namespace Knjigoteka.Services.Database
         public DbSet<Role> Roles { get; set; } = null!;
         public DbSet<User> Users { get; set; } = null!;
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<RestockRequest>(entity =>
@@ -69,7 +70,13 @@ namespace Knjigoteka.Services.Database
                 entity.Property(bb => bb.QuantityForBorrow).HasDefaultValue(0);
                 entity.Property(bb => bb.QuantityForSale).HasDefaultValue(0);
             });
-
+            modelBuilder.Entity<Reservation>()
+            .HasIndex(r => new {
+                r.BookId,
+                r.BranchId,
+                r.UserId,
+                r.Status
+            });
             base.OnModelCreating(modelBuilder);
         }
     }
