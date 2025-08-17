@@ -8,7 +8,7 @@ namespace Knjigoteka.Services.Interfaces
 {
     public interface IBranchInventoryService
     {
-        Task<PagedResult<BranchInventoryResponse>> GetAsync(int branchId, BranchInventorySearchObject? search);
+        Task<PagedResult<BranchInventoryResponse>> GetAsync(BranchInventorySearchObject search);
         Task<BranchInventoryResponse> UpsertAsync(int branchId, BranchInventoryUpsert request);
         Task<bool> DeleteAsync(int branchId, int bookId);
     }

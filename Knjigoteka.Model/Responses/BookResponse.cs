@@ -17,7 +17,8 @@ namespace Knjigoteka.Model.Responses
         public string LanguageName { get; set; } = null!;
         public string ISBN { get; set; } = null!;
         public int Year { get; set; }
-        public int TotalQuantity { get; set; }
+        public int CentralStock { get; set; }
+        public int CalculatedTotalQuantity { get; set; }
         public string ShortDescription { get; set; } = null!;
         public decimal Price { get; set; }
         public bool HasImage { get; set; }

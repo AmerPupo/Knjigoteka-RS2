@@ -41,6 +41,7 @@ namespace Knjigoteka.Services.Services
             var entity = await _context.Books
                 .Include(b => b.Genre)
                 .Include(b => b.Language)
+                .Include(b => b.BookBranches)
                 .FirstOrDefaultAsync(b => b.Id == id)
                 ?? throw new KeyNotFoundException("Book not found.");
 
@@ -50,7 +51,8 @@ namespace Knjigoteka.Services.Services
         {
             return query
                 .Include(b => b.Genre)
-                .Include(b => b.Language);
+                .Include(b => b.Language)
+                .Include(b => b.BookBranches);
         }
         public override async Task<BookResponse> Update(int id, BookUpdate request)
         {
@@ -93,7 +95,8 @@ namespace Knjigoteka.Services.Services
                 LanguageName = e.Language.Name,
                 ISBN = e.ISBN,
                 Year = e.Year,
-                TotalQuantity = e.TotalQuantity,
+                CentralStock = e.CentralStock,
+                CalculatedTotalQuantity = (e.BookBranches?.Sum(bb => bb.QuantityForBorrow + bb.QuantityForSale) ?? 0) + e.CentralStock,
                 ShortDescription = e.ShortDescription,
                 Price = e.Price,
                 HasImage = e.BookImage != null && e.BookImage.Length > 0,
@@ -111,7 +114,7 @@ namespace Knjigoteka.Services.Services
                 LanguageId = request.LanguageId,
                 ISBN = request.ISBN,
                 Year = request.Year,
-                TotalQuantity = request.TotalQuantity,
+                CentralStock = request.CentralStock,
                 ShortDescription = request.ShortDescription,
                 Price = request.Price,
                 BookImage = request.BookImage
@@ -125,7 +128,7 @@ namespace Knjigoteka.Services.Services
             entity.LanguageId = request.LanguageId;
             entity.ISBN = request.ISBN;
             entity.Year = request.Year;
-            entity.TotalQuantity = request.TotalQuantity;
+            entity.CentralStock = request.CentralStock;
             entity.ShortDescription = request.ShortDescription;
             entity.Price = request.Price;
             if (request.BookImage != null && request.BookImage.Length > 0)

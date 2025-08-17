@@ -535,21 +535,12 @@
         }
       }
     },
-    "/api/branches/{branchId}/inventory": {
+    "/api/branches/inventory": {
       "get": {
         "tags": [
           "BranchInventory"
         ],
         "parameters": [
-          {
-            "name": "branchId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
           {
             "name": "FTS",
             "in": "query",
@@ -558,7 +549,7 @@
             }
           },
           {
-            "name": "GenreId",
+            "name": "BranchId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -566,7 +557,7 @@
             }
           },
           {
-            "name": "LanguageId",
+            "name": "BookId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -627,7 +618,7 @@
         "parameters": [
           {
             "name": "branchId",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "integer",
@@ -678,7 +669,7 @@
         }
       }
     },
-    "/api/branches/{branchId}/inventory/{bookId}": {
+    "/api/branches/inventory/{bookId}": {
       "delete": {
         "tags": [
           "BranchInventory"
@@ -686,8 +677,7 @@
         "parameters": [
           {
             "name": "branchId",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1501,7 +1491,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "totalQuantity": {
+          "centralStock": {
             "type": "integer",
             "format": "int32"
           },
@@ -1560,7 +1550,11 @@
             "type": "integer",
             "format": "int32"
           },
-          "totalQuantity": {
+          "centralStock": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "calculatedTotalQuantity": {
             "type": "integer",
             "format": "int32"
           },
@@ -1626,7 +1620,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "totalQuantity": {
+          "centralStock": {
             "type": "integer",
             "format": "int32"
           },

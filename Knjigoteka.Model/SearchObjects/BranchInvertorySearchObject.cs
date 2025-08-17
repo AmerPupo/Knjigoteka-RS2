@@ -12,7 +12,7 @@ namespace Knjigoteka.Model.SearchObjects
         public string? FTS { get; set; }
 
         // Facets
-        public int? GenreId { get; set; }
-        public int? LanguageId { get; set; }
+        public int BranchId { get; set; }
+        public int BookId { get; set; }
     }
 }

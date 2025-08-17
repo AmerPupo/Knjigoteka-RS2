@@ -14,7 +14,7 @@ namespace Knjigoteka.Model.Requests
         public int LanguageId { get; set; }
         public string ISBN { get; set; } = null!;
         public int Year { get; set; }
-        public int TotalQuantity { get; set; }
+        public int CentralStock { get; set; }
         public string ShortDescription { get; set; } = null!;
         public decimal Price { get; set; }
         public byte[] BookImage { get; set; } = null!;

@@ -7,6 +7,7 @@ using Knjigoteka.Model.SearchObjects;
 using Knjigoteka.Services.Database;
 using Knjigoteka.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace Knjigoteka.Services.Services
 {
@@ -19,13 +20,20 @@ namespace Knjigoteka.Services.Services
             _context = context;
         }
 
-        public async Task<PagedResult<BranchInventoryResponse>> GetAsync(int branchId, BranchInventorySearchObject? search)
+        public async Task<PagedResult<BranchInventoryResponse>> GetAsync(BranchInventorySearchObject search)
         {
             var q = _context.BookBranches
-                .Where(bb => bb.BranchId == branchId)
                 .Include(bb => bb.Book).ThenInclude(b => b.Genre)
                 .Include(bb => bb.Book).ThenInclude(b => b.Language)
                 .AsQueryable();
+            if (string.IsNullOrWhiteSpace(search.FTS)
+                && search.BranchId <= 0
+                && search.BookId <= 0
+                && string.IsNullOrWhiteSpace(search.FTS))
+            {
+                throw new ArgumentException("At least one search parameter expected.");
+            }
+
 
             if (search != null)
             {
@@ -35,11 +43,11 @@ namespace Knjigoteka.Services.Services
                         bb.Book.Title.Contains(search.FTS) ||
                         bb.Book.Author.Contains(search.FTS));
                 }
-                if (search.GenreId.HasValue)
-                    q = q.Where(bb => bb.Book.GenreId == search.GenreId.Value);
+                if (search.BranchId > 0)
+                    q = q.Where(bb => bb.BranchId == search.BranchId);
 
-                if (search.LanguageId.HasValue)
-                    q = q.Where(bb => bb.Book.LanguageId == search.LanguageId.Value);
+                if (search.BookId > 0)
+                    q = q.Where(bb => bb.BookId == search.BookId);
             }
 
             var page = search?.Page ?? 1;
@@ -77,6 +85,16 @@ namespace Knjigoteka.Services.Services
             if (request.QuantityForBorrow < 0 || request.QuantityForSale < 0)
                 throw new ArgumentException("Quantities must be >= 0.");
 
+            var book = await _context.Books
+                .Include(b => b.BookBranches)
+                .FirstOrDefaultAsync(b => b.Id == request.BookId)
+                ?? throw new KeyNotFoundException("Book not found.");
+
+            int totalRequested = request.QuantityForBorrow + request.QuantityForSale;
+
+            if (totalRequested > book.CentralStock)
+                throw new InvalidOperationException("Not enough books in central stock.");
+
             var bb = await _context.BookBranches
                 .Include(x => x.Book).ThenInclude(b => b.Genre)
                 .Include(x => x.Book).ThenInclude(b => b.Language)
@@ -92,23 +110,20 @@ namespace Knjigoteka.Services.Services
                     QuantityForSale = request.QuantityForSale
                 };
                 _context.BookBranches.Add(bb);
-                await _context.SaveChangesAsync();
-
-                // Reload to include Book, Genre, Language
-                bb = await _context.BookBranches
-                    .Include(x => x.Book).ThenInclude(b => b.Genre)
-                    .Include(x => x.Book).ThenInclude(b => b.Language)
-                    .FirstOrDefaultAsync(x => x.BranchId == branchId && x.BookId == request.BookId);
             }
             else
             {
                 bb.QuantityForBorrow += request.QuantityForBorrow;
                 bb.QuantityForSale += request.QuantityForSale;
-                await _context.SaveChangesAsync();
             }
+
+            book.CentralStock -= totalRequested;
+
+            await _context.SaveChangesAsync();
 
             return MapToDto(bb);
         }
+
 
 
         public async Task<bool> DeleteAsync(int branchId, int bookId)

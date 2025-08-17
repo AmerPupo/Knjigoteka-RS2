@@ -6,12 +6,12 @@ using Knjigoteka.Model.SearchObjects;
 using Knjigoteka.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Knjigoteka.WebAPI.Controllers
 {
-    [Route("api/branches/{branchId:int}/inventory")]
+    [Route("api/branches/inventory")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
     public class BranchInventoryController : ControllerBase
     {
         private readonly IBranchInventoryService _service;
@@ -24,13 +24,12 @@ namespace Knjigoteka.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<PagedResult<BranchInventoryResponse>> Get(
-            int branchId, [FromQuery] BranchInventorySearchObject? search)
-            => await _service.GetAsync(branchId, search);
+        public async Task<PagedResult<BranchInventoryResponse>> Get([FromQuery] BranchInventorySearchObject search)
+            => await _service.GetAsync(search);
 
         [HttpPost]
         public async Task<ActionResult<BranchInventoryResponse>> Upsert(
-            int branchId, [FromBody] BranchInventoryUpsert request)
+            [Required] int branchId, [FromBody] BranchInventoryUpsert request)
         {
             var result = await _service.UpsertAsync(branchId, request);
             return Ok(result);

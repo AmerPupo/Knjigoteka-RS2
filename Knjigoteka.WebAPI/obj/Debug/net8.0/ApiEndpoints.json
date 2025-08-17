@@ -254,114 +254,6 @@
     ]
   },
   {
-    "ContainingType": "Knjigoteka.WebAPI.Controllers.BranchInventoryController",
-    "Method": "Get",
-    "RelativePath": "api/branches/{branchId}/inventory",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "branchId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "FTS",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "GenreId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "LanguageId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "Page",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "PageSize",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "IncludeTotalCount",
-        "Type": "System.Boolean",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Knjigoteka.Model.Helpers.PagedResult\u00601[[Knjigoteka.Model.Responses.BranchInventoryResponse, Knjigoteka.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Knjigoteka.WebAPI.Controllers.BranchInventoryController",
-    "Method": "Upsert",
-    "RelativePath": "api/branches/{branchId}/inventory",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "branchId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "request",
-        "Type": "Knjigoteka.Model.Requests.BranchInventoryUpsert",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Knjigoteka.Model.Responses.BranchInventoryResponse",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Knjigoteka.WebAPI.Controllers.BranchInventoryController",
-    "Method": "Delete",
-    "RelativePath": "api/branches/{branchId}/inventory/{bookId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "branchId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "bookId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Knjigoteka.WebAPI.Controllers.BaseCRUDController\u00604[[Knjigoteka.Model.Responses.BranchResponse, Knjigoteka.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Knjigoteka.Model.SearchObjects.BranchSearchObject, Knjigoteka.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Knjigoteka.Model.Requests.BranchInsert, Knjigoteka.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Knjigoteka.Model.Requests.BranchUpdate, Knjigoteka.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "Update",
     "RelativePath": "api/Branches/{id}",
@@ -433,6 +325,109 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Knjigoteka.WebAPI.Controllers.BranchInventoryController",
+    "Method": "Get",
+    "RelativePath": "api/branches/inventory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "FTS",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BranchId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "BookId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "IncludeTotalCount",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Knjigoteka.Model.Helpers.PagedResult\u00601[[Knjigoteka.Model.Responses.BranchInventoryResponse, Knjigoteka.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Knjigoteka.WebAPI.Controllers.BranchInventoryController",
+    "Method": "Upsert",
+    "RelativePath": "api/branches/inventory",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "branchId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "request",
+        "Type": "Knjigoteka.Model.Requests.BranchInventoryUpsert",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Knjigoteka.Model.Responses.BranchInventoryResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Knjigoteka.WebAPI.Controllers.BranchInventoryController",
+    "Method": "Delete",
+    "RelativePath": "api/branches/inventory/{bookId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "branchId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Knjigoteka.WebAPI.Controllers.CartController",

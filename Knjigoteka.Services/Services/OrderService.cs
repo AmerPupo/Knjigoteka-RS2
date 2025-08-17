@@ -32,7 +32,7 @@ namespace Knjigoteka.Services.Services
             foreach (var ci in cart)
             {
                 if (ci.Quantity <= 0) throw new InvalidOperationException("Invalid quantity in cart.");
-                if (ci.Book.TotalQuantity < ci.Quantity)
+                if (ci.Book.CentralStock < ci.Quantity)
                     throw new InvalidOperationException($"Not enough stock for '{ci.Book.Title}'.");
             }
 
@@ -61,7 +61,7 @@ namespace Knjigoteka.Services.Services
                     UnitPrice = ci.Book.Price // snapshot price
                 });
 
-                ci.Book.TotalQuantity -= ci.Quantity;
+                ci.Book.CentralStock -= ci.Quantity;
             }
 
             _db.CartItems.RemoveRange(cart);

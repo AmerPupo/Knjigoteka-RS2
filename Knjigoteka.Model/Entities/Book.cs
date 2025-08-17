@@ -25,7 +25,10 @@ namespace Knjigoteka.Model.Entities
         [CurrentYearRangeAttribute(0)]
         public int Year { get; set; }
         [Range(0, int.MaxValue)]
-        public int TotalQuantity { get; set; }
+        public int CentralStock { get; set; }
+        [NotMapped]
+        public int CalculatedTotalQuantity =>
+            (BookBranches?.Sum(bb => bb.QuantityForBorrow + bb.QuantityForSale) ?? 0) + CentralStock;
         [Required]
         [MaxLength(1000)]
         public string ShortDescription { get; set; } = null!;
