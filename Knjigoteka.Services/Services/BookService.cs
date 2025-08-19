@@ -42,6 +42,7 @@ namespace Knjigoteka.Services.Services
                 .Include(b => b.Genre)
                 .Include(b => b.Language)
                 .Include(b => b.BookBranches)
+                .Include(b => b.Reviews)
                 .FirstOrDefaultAsync(b => b.Id == id)
                 ?? throw new KeyNotFoundException("Book not found.");
 
@@ -52,7 +53,8 @@ namespace Knjigoteka.Services.Services
             return query
                 .Include(b => b.Genre)
                 .Include(b => b.Language)
-                .Include(b => b.BookBranches);
+                .Include(b => b.BookBranches)
+                .Include(b => b.Reviews);
         }
         public override async Task<BookResponse> Update(int id, BookUpdate request)
         {
@@ -84,6 +86,9 @@ namespace Knjigoteka.Services.Services
 
         protected override BookResponse MapToDto(Book e)
         {
+            var avg = (e.Reviews != null && e.Reviews.Any())
+            ? (double?)Math.Round(e.Reviews.Average(r => r.Rating), 2)
+            : null;
             return new BookResponse
             {
                 Id = e.Id,
@@ -100,7 +105,8 @@ namespace Knjigoteka.Services.Services
                 ShortDescription = e.ShortDescription,
                 Price = e.Price,
                 HasImage = e.BookImage != null && e.BookImage.Length > 0,
-                PhotoEndpoint = $"/api/books/{e.Id}/photo"
+                PhotoEndpoint = $"/api/books/{e.Id}/photo",
+                AverageRating = avg
             };
         }
 

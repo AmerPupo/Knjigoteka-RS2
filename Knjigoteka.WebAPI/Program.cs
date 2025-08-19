@@ -33,6 +33,8 @@ builder.Services.AddScoped<IRestockRequestService, RestockRequestService>();
 builder.Services.AddScoped<INotificationRequestService, NotificationRequestService>();
 builder.Services.AddScoped<IBorrowingService, BorrowingService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<ICityService, CityService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 
 
 builder.Services.AddHostedService<ReservationExpirationBackgroundService>();

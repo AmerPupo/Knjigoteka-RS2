@@ -19,8 +19,7 @@ namespace Knjigoteka.Services.Services
             if (search == null) return query;
 
             if (!string.IsNullOrWhiteSpace(search.Name))
-                query = query.Where(g =>
-                    EF.Functions.Like(g.Name, $"%{search.Name}%"));
+                query = query.Where(g => g.Name.Contains(search.Name));
 
             return query;
         }

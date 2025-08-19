@@ -23,5 +23,6 @@ namespace Knjigoteka.Model.Responses
         public decimal Price { get; set; }
         public bool HasImage { get; set; }
         public string PhotoEndpoint { get; set; } = null!;
+        public double? AverageRating { get; set; }
     }
 }

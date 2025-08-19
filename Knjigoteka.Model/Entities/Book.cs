@@ -42,5 +42,7 @@ namespace Knjigoteka.Model.Entities
         [ForeignKey(nameof(LanguageId))]
         public Language Language { get; set; } = null!;
         public ICollection<BookBranch> BookBranches { get; set; } = new List<BookBranch>();
+        public ICollection<Review> Reviews { get; set; } = new List<Review>();
+
     }
 }

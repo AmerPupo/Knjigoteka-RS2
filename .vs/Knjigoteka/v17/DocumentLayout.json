@@ -3,6 +3,158 @@
   "WorkspaceRootPath": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\responses\\bookresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\bookresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\interfaces\\iborrowingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\interfaces\\iborrowingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\restockrequestcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\restockrequestcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\reservationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\reservationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\searchobjects\\citysearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\searchobjects\\citysearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\interfaces\\ireviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\searchobjects\\reviewsearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\searchobjects\\reviewsearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\responses\\reviewresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\reviewresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\reviewupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\reviewupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\reviewinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\reviewinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\notificationrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\notificationrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\responses\\cityresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\cityresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\responses\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\responses\\cartitemresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\cartitemresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\cityupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\cityupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\cityinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\cityinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\cartitemupsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\cartitemupsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\restockrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\restockrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\genreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\genreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\interfaces\\icityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\interfaces\\icityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\searchobjects\\basesearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\searchobjects\\basesearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\bookupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\bookupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\restockrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\restockrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,24 +171,12 @@
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\searchobjects\\reservationsearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\restockrequestcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\restockrequestcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\reservationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\reservationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\restockrequestupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\restockrequestupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\interfaces\\irestockrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\interfaces\\irestockrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\restockrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\restockrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\basecrudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,10 +199,6 @@
       "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\basecrudcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\interfaces\\iborrowingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\interfaces\\iborrowingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\utilities\\iusercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\utilities\\iusercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -75,32 +211,12 @@
       "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\utilities\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\utilities\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\notificationrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\notificationrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\notificationrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\notificationrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -117,14 +233,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\employeeinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\employeeinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\borrowingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -147,10 +255,6 @@
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\employeeupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\searchobjects\\employeesearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\searchobjects\\employeesearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -159,16 +263,8 @@
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\genreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\genreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\ordercreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\ordercreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\responses\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\cartresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -255,10 +351,6 @@
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\searchobjects\\booksearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\responses\\bookresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\bookresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -283,10 +375,6 @@
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\reservationresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\utilities\\reservationexpirationbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\utilities\\reservationexpirationbackgroundservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -307,10 +395,6 @@
       "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\database\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\searchobjects\\basesearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\searchobjects\\basesearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\languageinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\languageinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -325,10 +409,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\bookinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\bookinsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\bookupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\bookupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\migrations\\20250817153619_bookstockchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -363,24 +443,12 @@
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\branchresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\branchupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\branchupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\searchobjects\\genresearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\searchobjects\\genresearchobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\requests\\cartitemupsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\requests\\cartitemupsert.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.services\\interfaces\\igenreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -399,16 +467,8 @@
       "RelativeMoniker": "D:0:0:{2B6D8079-1F02-4DF5-BE96-009A66D1F540}|Knjigoteka.Services\\Knjigoteka.Services.csproj|solutionrelative:knjigoteka.services\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\responses\\cartitemresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\responses\\cartitemresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.webapi\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBC03E44-ECAE-4F89-B1B6-FC5F6E065513}|Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj|solutionrelative:knjigoteka.webapi\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\language.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -421,10 +481,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|solutionrelative:knjigoteka.model\\entities\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{538FAB06-1C77-4AFF-9299-C46B6A52C1F2}|Knjigoteka.Model\\Knjigoteka.Model.csproj|c:\\users\\jasar\\desktop\\knjigoteka\\knjigoteka.model\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -536,8 +592,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 194,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 204,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -553,59 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RestockRequestSearchObject.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\RestockRequestSearchObject.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\RestockRequestSearchObject.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\RestockRequestSearchObject.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\SearchObjects\\RestockRequestSearchObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T14:57:32.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RestockRequestService.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\RestockRequestService.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\RestockRequestService.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\RestockRequestService.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Services\\RestockRequestService.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAmwEUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T14:58:22.267Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RestockRequestResponse.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\RestockRequestResponse.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\RestockRequestResponse.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\RestockRequestResponse.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Responses\\RestockRequestResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T14:56:31.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReservationSearchObject.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\ReservationSearchObject.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\ReservationSearchObject.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\ReservationSearchObject.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\SearchObjects\\ReservationSearchObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T18:37:15.732Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "RestockRequestCreate.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\RestockRequestCreate.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\RestockRequestCreate.cs",
@@ -618,124 +622,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReservationRequest.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\ReservationRequest.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\ReservationRequest.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\ReservationRequest.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Requests\\ReservationRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "BookResponse.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\BookResponse.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\BookResponse.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\BookResponse.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Responses\\BookResponse.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-17T18:35:55.12Z",
+              "WhenOpened": "2025-08-02T03:37:16.951Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RestockRequestUpdate.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\RestockRequestUpdate.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\RestockRequestUpdate.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\RestockRequestUpdate.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Requests\\RestockRequestUpdate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T14:57:15.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "RestockRequestController.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\RestockRequestController.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\RestockRequestController.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\RestockRequestController.cs",
-              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\RestockRequestController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAowDYAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T14:58:57.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IRestockRequestService.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IRestockRequestService.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IRestockRequestService.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IRestockRequestService.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Interfaces\\IRestockRequestService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T14:57:56.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BaseCRUDService.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BaseCRUDService.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\BaseCRUDService.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BaseCRUDService.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Services\\BaseCRUDService.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAwwDwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T19:56:40.608Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BaseService.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BaseService.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\BaseService.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BaseService.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Services\\BaseService.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwEMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T19:38:51.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ICRUDService.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\ICRUDService.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\ICRUDService.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\ICRUDService.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Interfaces\\ICRUDService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T19:34:55.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\BaseController.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\BaseController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAcwCEAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T19:32:39.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "BaseCRUDController.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BaseCRUDController.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\BaseCRUDController.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BaseCRUDController.cs",
-              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\BaseCRUDController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T19:33:12.376Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 4,
               "Title": "IBorrowingService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IBorrowingService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IBorrowingService.cs",
@@ -748,59 +648,267 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IUserContext.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Utilities\\IUserContext.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Utilities\\IUserContext.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Utilities\\IUserContext.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Utilities\\IUserContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T17:26:34.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\EmployeeController.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T16:02:15.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 2,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Book.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Book.cs",
               "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Book.cs",
               "RelativeToolTip": "Knjigoteka.Model\\Entities\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCwAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-27T15:09:51.087Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "UserContext.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Utilities\\UserContext.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Utilities\\UserContext.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Utilities\\UserContext.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Utilities\\UserContext.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAcwCMAAAA7AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\BookController.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\BookController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T17:26:49.459Z",
+              "WhenOpened": "2025-08-02T03:55:28.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReservationRequest.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\ReservationRequest.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\ReservationRequest.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\ReservationRequest.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Requests\\ReservationRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T18:35:55.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CitySearchObject.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\CitySearchObject.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\CitySearchObject.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\CitySearchObject.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\SearchObjects\\CitySearchObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T13:44:47.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IReviewService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IReviewService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IReviewService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Interfaces\\IReviewService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T16:49:48.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Interfaces\\IService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:34:22.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\ReviewController.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\ReviewController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAuwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T16:52:07.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\ReviewService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\ReviewService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\ReviewService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Services\\ReviewService.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAwC8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T16:50:09.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ReviewSearchObject.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\ReviewSearchObject.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\ReviewSearchObject.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\ReviewSearchObject.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\SearchObjects\\ReviewSearchObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T17:02:47.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Program.cs",
+              "RelativeToolTip": "Knjigoteka.WebAPI\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T12:54:22.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ReviewResponse.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\ReviewResponse.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\ReviewResponse.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\ReviewResponse.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Responses\\ReviewResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T16:49:20.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ReviewUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\ReviewUpdate.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\ReviewUpdate.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\ReviewUpdate.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Requests\\ReviewUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T16:49:01.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ReviewInsert.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\ReviewInsert.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\ReviewInsert.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\ReviewInsert.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Requests\\ReviewInsert.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T16:48:36.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CartItemResponse.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CartItemResponse.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\CartItemResponse.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CartItemResponse.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Responses\\CartItemResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T10:50:11.949Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
+              "Title": "CartResponse.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CartResponse.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\CartResponse.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CartResponse.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Responses\\CartResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T10:50:30.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GenreController.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\GenreController.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\GenreController.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\GenreController.cs",
+              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\GenreController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T15:39:42.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Review.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Review.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Review.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Entities\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T15:23:29.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CartItemUpsert.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\CartItemUpsert.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\CartItemUpsert.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\CartItemUpsert.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Requests\\CartItemUpsert.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T10:49:12.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\CartItem.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\CartItem.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\CartItem.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Entities\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:20:39.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "RestockRequestController.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\RestockRequestController.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\RestockRequestController.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\RestockRequestController.cs",
+              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\RestockRequestController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAowDYAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T14:58:57.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\UserController.cs",
@@ -813,7 +921,228 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 33,
+              "Title": "GenreService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\GenreService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\GenreService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\GenreService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Services\\GenreService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T14:24:08.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "BookUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\BookUpdate.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\BookUpdate.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\BookUpdate.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Requests\\BookUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-02T03:54:13.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Employee.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Employee.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T15:18:28.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "RestockRequestService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\RestockRequestService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\RestockRequestService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\RestockRequestService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Services\\RestockRequestService.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAmwEUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T14:58:22.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "BaseSearchObject.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\BaseSearchObject.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\BaseSearchObject.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\BaseSearchObject.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\SearchObjects\\BaseSearchObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-28T12:46:46.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "RestockRequestResponse.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\RestockRequestResponse.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\RestockRequestResponse.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\RestockRequestResponse.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Responses\\RestockRequestResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T14:56:31.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "RestockRequestSearchObject.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\RestockRequestSearchObject.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\RestockRequestSearchObject.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\RestockRequestSearchObject.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\SearchObjects\\RestockRequestSearchObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T14:57:32.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ReservationSearchObject.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\ReservationSearchObject.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\ReservationSearchObject.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\ReservationSearchObject.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\SearchObjects\\ReservationSearchObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T18:37:15.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "RestockRequestUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\RestockRequestUpdate.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\RestockRequestUpdate.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\RestockRequestUpdate.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Requests\\RestockRequestUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T14:57:15.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "IRestockRequestService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IRestockRequestService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IRestockRequestService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IRestockRequestService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Interfaces\\IRestockRequestService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T14:57:56.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "BaseCRUDService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BaseCRUDService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\BaseCRUDService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BaseCRUDService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Services\\BaseCRUDService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:56:40.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BaseService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\BaseService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BaseService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Services\\BaseService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:38:51.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "ICRUDService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\ICRUDService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\ICRUDService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\ICRUDService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Interfaces\\ICRUDService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:34:55.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAcwCEAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:32:39.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "BaseCRUDController.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BaseCRUDController.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\BaseCRUDController.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BaseCRUDController.cs",
+              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\BaseCRUDController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T19:33:12.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IUserContext.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Utilities\\IUserContext.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Utilities\\IUserContext.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Utilities\\IUserContext.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Utilities\\IUserContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T17:26:34.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T16:02:15.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "UserContext.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Utilities\\UserContext.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Utilities\\UserContext.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Utilities\\UserContext.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Utilities\\UserContext.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAcwCMAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T17:26:49.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\appsettings.json",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\appsettings.json",
@@ -821,12 +1150,11 @@
               "RelativeToolTip": "Knjigoteka.WebAPI\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-03T16:45:47.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-03T16:45:47.584Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 55,
               "Title": "RestockRequest.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\RestockRequest.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\RestockRequest.cs",
@@ -834,12 +1162,11 @@
               "RelativeToolTip": "Knjigoteka.Model\\Entities\\RestockRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T15:23:10.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-27T15:23:10.064Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 57,
               "Title": "EmployeeInsert.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\EmployeeInsert.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\EmployeeInsert.cs",
@@ -851,7 +1178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 56,
               "Title": "EmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\EmployeeService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\EmployeeService.cs",
@@ -863,7 +1190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 143,
               "Title": "20250818190330_employeesIsActive.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250818190330_employeesIsActive.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250818190330_employeesIsActive.cs",
@@ -875,31 +1202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Employee.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Employee.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Employee.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Entities\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T15:18:28.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "BookController.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BookController.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\BookController.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BookController.cs",
-              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\BookController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T03:55:28.108Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 58,
               "Title": "BorrowingController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BorrowingController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\BorrowingController.cs",
@@ -911,7 +1214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 59,
               "Title": "BorrowingService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BorrowingService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\BorrowingService.cs",
@@ -923,7 +1226,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 60,
               "Title": "IEmployeeService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IEmployeeService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IEmployeeService.cs",
@@ -935,7 +1238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 61,
               "Title": "EmployeeResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\EmployeeResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\EmployeeResponse.cs",
@@ -947,7 +1250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 62,
               "Title": "EmployeeUpdate.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\EmployeeUpdate.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\EmployeeUpdate.cs",
@@ -959,19 +1262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Program.cs",
-              "RelativeToolTip": "Knjigoteka.WebAPI\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:54:22.854Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 63,
               "Title": "EmployeeSearchObject.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\EmployeeSearchObject.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\EmployeeSearchObject.cs",
@@ -983,7 +1274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 66,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\User.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\User.cs",
@@ -995,19 +1286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "CartResponse.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CartResponse.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\CartResponse.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CartResponse.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Responses\\CartResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T10:50:30.874Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 65,
               "Title": "OrderCreate.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\OrderCreate.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\OrderCreate.cs",
@@ -1019,19 +1298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "GenreService.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\GenreService.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\GenreService.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\GenreService.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Services\\GenreService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T14:24:08.219Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 64,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Order.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Order.cs",
@@ -1043,7 +1310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 67,
               "Title": "BranchService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BranchService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\BranchService.cs",
@@ -1055,7 +1322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 69,
               "Title": "PenaltyService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\PenaltyService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\PenaltyService.cs",
@@ -1067,7 +1334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 68,
               "Title": "BranchInvertoryService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BranchInvertoryService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\BranchInvertoryService.cs",
@@ -1079,7 +1346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 70,
               "Title": "BorrowingResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\BorrowingResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\BorrowingResponse.cs",
@@ -1091,7 +1358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 71,
               "Title": "BorrowingCreate.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\BorrowingCreate.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\BorrowingCreate.cs",
@@ -1103,7 +1370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 72,
               "Title": "Borrowing.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Borrowing.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Borrowing.cs",
@@ -1115,7 +1382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 75,
               "Title": "BookBranch.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\BookBranch.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\BookBranch.cs",
@@ -1127,7 +1394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 73,
               "Title": "Reservation.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Reservation.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Reservation.cs",
@@ -1139,7 +1406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 74,
               "Title": "Penalty.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Penalty.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Penalty.cs",
@@ -1151,7 +1418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 78,
               "Title": "NotificationRequestResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\NotificationRequestResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\NotificationRequestResponse.cs",
@@ -1163,7 +1430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 79,
               "Title": "NotificationRequestCreate.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\NotificationRequestCreate.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\NotificationRequestCreate.cs",
@@ -1175,7 +1442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 144,
               "Title": "20250818151608_inventoryChange.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250818151608_inventoryChange.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250818151608_inventoryChange.cs",
@@ -1187,7 +1454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 82,
               "Title": "BranchSearchObject.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\BranchSearchObject.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\BranchSearchObject.cs",
@@ -1199,7 +1466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 81,
               "Title": "BranchInvertorySearchObject.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\BranchInvertorySearchObject.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\BranchInvertorySearchObject.cs",
@@ -1211,7 +1478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 80,
               "Title": "IBranchInvertoryService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IBranchInvertoryService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IBranchInvertoryService.cs",
@@ -1223,7 +1490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 83,
               "Title": "BranchInvertoryResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\BranchInvertoryResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\BranchInvertoryResponse.cs",
@@ -1235,7 +1502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 84,
               "Title": "BranchInvertoryUpsert.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\BranchInvertoryUpsert.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\BranchInvertoryUpsert.cs",
@@ -1247,7 +1514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 85,
               "Title": "NotificationRequest.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\NotificationRequest.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\NotificationRequest.cs",
@@ -1259,7 +1526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 145,
               "Title": "20250818145946_restockRequests.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250818145946_restockRequests.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250818145946_restockRequests.cs",
@@ -1271,19 +1538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "BookResponse.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\BookResponse.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\BookResponse.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\BookResponse.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Responses\\BookResponse.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T03:37:16.951Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 86,
               "Title": "BookSearchObject.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\BookSearchObject.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\BookSearchObject.cs",
@@ -1295,7 +1550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 87,
               "Title": "OrderService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\OrderService.cs",
@@ -1307,7 +1562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 88,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\OrderController.cs",
@@ -1319,7 +1574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 90,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IOrderService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IOrderService.cs",
@@ -1331,7 +1586,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 89,
               "Title": "ReservationController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\ReservationController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\ReservationController.cs",
@@ -1343,7 +1598,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 91,
               "Title": "OrderSearchObject.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\OrderSearchObject.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\OrderSearchObject.cs",
@@ -1355,19 +1610,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
-              "Title": "IService.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IService.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IService.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IService.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Interfaces\\IService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T19:34:22.829Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 92,
               "Title": "ReservationResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\ReservationResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\ReservationResponse.cs",
@@ -1379,7 +1622,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 93,
               "Title": "ReservationExpirationBackgroundService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Utilities\\ReservationExpirationBackgroundService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Utilities\\ReservationExpirationBackgroundService.cs",
@@ -1391,7 +1634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 95,
               "Title": "PenaltyController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\PenaltyController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\PenaltyController.cs",
@@ -1403,7 +1646,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 96,
               "Title": "IPenaltyService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IPenaltyService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IPenaltyService.cs",
@@ -1415,7 +1658,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 97,
               "Title": "DatabaseContext.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Database\\DatabaseContext.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Database\\DatabaseContext.cs",
@@ -1427,19 +1670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
-              "Title": "BaseSearchObject.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\BaseSearchObject.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\BaseSearchObject.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\BaseSearchObject.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\SearchObjects\\BaseSearchObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T12:46:46.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 99,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\CartController.cs",
@@ -1451,7 +1682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 100,
               "Title": "BranchInventoryController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BranchInventoryController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\BranchInventoryController.cs",
@@ -1463,7 +1694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 98,
               "Title": "LanguageInsert.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\LanguageInsert.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\LanguageInsert.cs",
@@ -1475,7 +1706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 102,
               "Title": "20250817153619_bookStockChange.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250817153619_bookStockChange.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250817153619_bookStockChange.cs",
@@ -1487,19 +1718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
-              "Title": "BookUpdate.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\BookUpdate.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\BookUpdate.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\BookUpdate.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Requests\\BookUpdate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T03:54:13.225Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 101,
               "Title": "BookInsert.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\BookInsert.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\BookInsert.cs",
@@ -1511,7 +1730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 104,
               "Title": "GenreInsert.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\GenreInsert.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\GenreInsert.cs",
@@ -1523,7 +1742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 106,
               "Title": "IBranchService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IBranchService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IBranchService.cs",
@@ -1535,7 +1754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 105,
               "Title": "ICartService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\ICartService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\ICartService.cs",
@@ -1547,7 +1766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 141,
               "Title": "20250815152921_cities.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250815152921_cities.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250815152921_cities.cs",
@@ -1559,7 +1778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 108,
               "Title": "20250815152236_cities.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250815152236_cities.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250815152236_cities.cs",
@@ -1571,7 +1790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 109,
               "Title": "BranchResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\BranchResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\BranchResponse.cs",
@@ -1583,7 +1802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 110,
               "Title": "BranchUpdate.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\BranchUpdate.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\BranchUpdate.cs",
@@ -1595,7 +1814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 111,
               "Title": "GenreSearchObject.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\GenreSearchObject.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\GenreSearchObject.cs",
@@ -1607,31 +1826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
-              "Title": "CartItemUpsert.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\CartItemUpsert.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\CartItemUpsert.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\CartItemUpsert.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Requests\\CartItemUpsert.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T10:49:12.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 94,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\CartItem.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\CartItem.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\CartItem.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Entities\\CartItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T19:20:39.814Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 112,
               "Title": "IGenreService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IGenreService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IGenreService.cs",
@@ -1643,7 +1838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 113,
               "Title": "BranchController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\BranchController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\BranchController.cs",
@@ -1655,7 +1850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 114,
               "Title": "PagedResult.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Helpers\\PagedResult.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Helpers\\PagedResult.cs",
@@ -1667,7 +1862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 116,
               "Title": "Genre.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Genre.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Genre.cs",
@@ -1679,7 +1874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 139,
               "Title": "20250814123926_BookImageOptional.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250814123926_BookImageOptional.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250814123926_BookImageOptional.cs",
@@ -1691,7 +1886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 115,
               "Title": "CartService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\CartService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\CartService.cs",
@@ -1703,7 +1898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 140,
               "Title": "20250814123726_AddedValidation.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250814123726_AddedValidation.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250814123726_AddedValidation.cs",
@@ -1715,31 +1910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
-              "Title": "CartItemResponse.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CartItemResponse.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\CartItemResponse.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CartItemResponse.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Responses\\CartItemResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T10:50:11.949Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 101,
-              "Title": "GenreController.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\GenreController.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\GenreController.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\GenreController.cs",
-              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\GenreController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-03T15:39:42.309Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 117,
               "Title": "Language.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Language.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Language.cs",
@@ -1751,7 +1922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 118,
               "Title": "CurrentYearRangeAttribute.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Helpers\\CurrentYearRangeAttribute.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Helpers\\CurrentYearRangeAttribute.cs",
@@ -1763,7 +1934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 119,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Role.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Role.cs",
@@ -1775,19 +1946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Review.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Review.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Review.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Entities\\Review.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T15:23:29.809Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 120,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Payment.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Payment.cs",
@@ -1799,7 +1958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 121,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\OrderItem.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\OrderItem.cs",
@@ -1811,7 +1970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 122,
               "Title": "Knjigoteka.Model.csproj",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Knjigoteka.Model.csproj",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Knjigoteka.Model.csproj",
@@ -1823,7 +1982,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 123,
               "Title": "ILanguageService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\ILanguageService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\ILanguageService.cs",
@@ -1835,7 +1994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 124,
               "Title": "LanguagesController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\LanguagesController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\LanguagesController.cs",
@@ -1847,7 +2006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 125,
               "Title": "LanguageService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\LanguageService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\LanguageService.cs",
@@ -1859,7 +2018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 126,
               "Title": "LanguageSearchObject.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\SearchObjects\\LanguageSearchObject.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\SearchObjects\\LanguageSearchObject.cs",
@@ -1871,7 +2030,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 127,
               "Title": "LanguageResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\LanguageResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\LanguageResponse.cs",
@@ -1883,7 +2042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 128,
               "Title": "LanguageUpdate.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\LanguageUpdate.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\LanguageUpdate.cs",
@@ -1895,7 +2054,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 129,
               "Title": "DatabaseContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\DatabaseContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\DatabaseContextModelSnapshot.cs",
@@ -1907,7 +2066,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 130,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Properties\\launchSettings.json",
@@ -1919,7 +2078,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 131,
               "Title": "20250801183626_InitialCreate.Designer.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250801183626_InitialCreate.Designer.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250801183626_InitialCreate.Designer.cs",
@@ -1931,7 +2090,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 132,
               "Title": "20250801183626_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250801183626_InitialCreate.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250801183626_InitialCreate.cs",
@@ -1943,7 +2102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 133,
               "Title": "OrderResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\OrderResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\OrderResponse.cs",
@@ -1955,7 +2114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 135,
               "Title": "OrderItemResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\OrderItemResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\OrderItemResponse.cs",
@@ -1967,7 +2126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 134,
               "Title": "Knjigoteka.WebAPI.csproj",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Knjigoteka.WebAPI.csproj",
@@ -1979,7 +2138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 136,
               "Title": "GenreResponse.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\GenreResponse.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\GenreResponse.cs",
@@ -1991,7 +2150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 137,
               "Title": "Knjigoteka.Services.csproj",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Knjigoteka.Services.csproj",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Knjigoteka.Services.csproj",
@@ -2003,7 +2162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 138,
               "Title": "Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.102\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
@@ -2016,51 +2175,142 @@
           ]
         },
         {
-          "DockedWidth": 206,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 196,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BookService.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BookService.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\BookService.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BookService.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Services\\BookService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAA9wEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:53:45.336Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\UserService.cs",
-              "RelativeToolTip": "Knjigoteka.Services\\Services\\UserService.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAEwC8AAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T11:47:34.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 23,
+              "Title": "CityResponse.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CityResponse.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Responses\\CityResponse.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Responses\\CityResponse.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Responses\\CityResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T13:44:03.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CityUpdate.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\CityUpdate.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\CityUpdate.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\CityUpdate.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Requests\\CityUpdate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T13:43:37.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "NotificationRequestService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\NotificationRequestService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\NotificationRequestService.cs",
               "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\NotificationRequestService.cs",
               "RelativeToolTip": "Knjigoteka.Services\\Services\\NotificationRequestService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCIAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-18T15:19:15.827Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 13,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\UserService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Services\\UserService.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAawC8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T11:47:34.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\BookService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\BookService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Services\\BookService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T11:53:45.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ICityService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\ICityService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\ICityService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\ICityService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Interfaces\\ICityService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T13:45:16.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CityController.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\CityController.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\CityController.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\CityController.cs",
+              "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\CityController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T13:54:44.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CityService.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\CityService.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\CityService.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\CityService.cs",
+              "RelativeToolTip": "Knjigoteka.Services\\Services\\CityService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T13:46:23.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CityInsert.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\CityInsert.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\CityInsert.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\CityInsert.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Requests\\CityInsert.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T13:43:01.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "City.cs",
+              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\City.cs",
+              "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\City.cs",
+              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\City.cs",
+              "RelativeToolTip": "Knjigoteka.Model\\Entities\\City.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T15:07:02.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
               "Title": "ReservationService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Services\\ReservationService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Services\\ReservationService.cs",
@@ -2073,7 +2323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 53,
               "Title": "NotificationRequestController.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.WebAPI\\Controllers\\NotificationRequestController.cs",
               "RelativeDocumentMoniker": "Knjigoteka.WebAPI\\Controllers\\NotificationRequestController.cs",
@@ -2081,12 +2331,11 @@
               "RelativeToolTip": "Knjigoteka.WebAPI\\Controllers\\NotificationRequestController.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAYwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T15:19:55.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T15:19:55.205Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 76,
               "Title": "INotificationRequestService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\INotificationRequestService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\INotificationRequestService.cs",
@@ -2098,19 +2347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
-              "Title": "City.cs",
-              "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\City.cs",
-              "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\City.cs",
-              "ToolTip": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\City.cs",
-              "RelativeToolTip": "Knjigoteka.Model\\Entities\\City.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T15:07:02.163Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 107,
               "Title": "Branch.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Entities\\Branch.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Entities\\Branch.cs",
@@ -2122,7 +2359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 77,
               "Title": "IReservationService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IReservationService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IReservationService.cs",
@@ -2134,7 +2371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 142,
               "Title": "20250817193022_reservationFix.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Migrations\\20250817193022_reservationFix.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Migrations\\20250817193022_reservationFix.cs",
@@ -2146,7 +2383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 94,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Services\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Services\\Interfaces\\IUserService.cs",
@@ -2158,7 +2395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 103,
               "Title": "BranchInsert.cs",
               "DocumentMoniker": "C:\\Users\\jasar\\Desktop\\Knjigoteka\\Knjigoteka.Model\\Requests\\BranchInsert.cs",
               "RelativeDocumentMoniker": "Knjigoteka.Model\\Requests\\BranchInsert.cs",

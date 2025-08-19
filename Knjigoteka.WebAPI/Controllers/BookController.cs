@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Knjigoteka.WebAPI.Controllers
 {
-    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     public class BooksController
         : BaseCRUDController<BookResponse, BookSearchObject, BookInsert, BookUpdate>
