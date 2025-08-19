@@ -9,6 +9,7 @@ namespace Knjigoteka.Model.Requests
     public class BranchInventoryUpsert
     {
         public int BookId { get; set; }
+        public bool SupportsBorrowing { get; set; }
         public int QuantityForBorrow { get; set; }
         public int QuantityForSale { get; set; }
     }

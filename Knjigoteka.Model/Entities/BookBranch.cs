@@ -10,6 +10,8 @@ namespace Knjigoteka.Model.Entities
         [Required]
 
         public int BranchId { get; set; }
+        public bool SupportsBorrowing { get; set; }
+
         [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Quantity for borrowing must be zero or more.")]
         public int QuantityForBorrow { get; set; }

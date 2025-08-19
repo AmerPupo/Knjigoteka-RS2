@@ -28,8 +28,7 @@ namespace Knjigoteka.Services.Services
                 .AsQueryable();
             if (string.IsNullOrWhiteSpace(search.FTS)
                 && search.BranchId <= 0
-                && search.BookId <= 0
-                && string.IsNullOrWhiteSpace(search.FTS))
+                && search.BookId <= 0)
             {
                 throw new ArgumentException("At least one search parameter expected.");
             }
@@ -48,6 +47,8 @@ namespace Knjigoteka.Services.Services
 
                 if (search.BookId > 0)
                     q = q.Where(bb => bb.BookId == search.BookId);
+                if (search.SupportsBorrowing.HasValue)
+                    q = q.Where(bb => bb.SupportsBorrowing == search.SupportsBorrowing);
             }
 
             var page = search?.Page ?? 1;
@@ -68,6 +69,7 @@ namespace Knjigoteka.Services.Services
                     Author = bb.Book.Author,
                     GenreName = bb.Book.Genre.Name,
                     LanguageName = bb.Book.Language.Name,
+                    SupportsBorrowing = bb.SupportsBorrowing,
                     QuantityForBorrow = bb.QuantityForBorrow,
                     QuantityForSale = bb.QuantityForSale
                 })
@@ -106,6 +108,7 @@ namespace Knjigoteka.Services.Services
                 {
                     BranchId = branchId,
                     BookId = request.BookId,
+                    SupportsBorrowing = request.SupportsBorrowing,
                     QuantityForBorrow = request.QuantityForBorrow,
                     QuantityForSale = request.QuantityForSale
                 };
@@ -146,6 +149,7 @@ namespace Knjigoteka.Services.Services
                 Author = bb.Book?.Author ?? "Nepoznat autor",
                 GenreName = bb.Book?.Genre?.Name ?? "Nepoznat žanr",
                 LanguageName = bb.Book?.Language?.Name ?? "Nepoznat jezik",
+                SupportsBorrowing = bb.SupportsBorrowing,
                 QuantityForBorrow = bb.QuantityForBorrow,
                 QuantityForSale = bb.QuantityForSale
             };

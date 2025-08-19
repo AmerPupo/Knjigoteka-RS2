@@ -98,6 +98,9 @@ namespace Knjigoteka.Services.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(0);
 
+                    b.Property<bool>("SupportsBorrowing")
+                        .HasColumnType("bit");
+
                     b.HasKey("BookId", "BranchId");
 
                     b.HasIndex("BranchId");
@@ -125,6 +128,9 @@ namespace Knjigoteka.Services.Migrations
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("ReservationId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("ReturnedAt")
                         .HasColumnType("datetime2");
 
@@ -136,6 +142,8 @@ namespace Knjigoteka.Services.Migrations
                     b.HasIndex("BookId");
 
                     b.HasIndex("BranchId");
+
+                    b.HasIndex("ReservationId");
 
                     b.HasIndex("UserId");
 
@@ -238,6 +246,9 @@ namespace Knjigoteka.Services.Migrations
 
                     b.Property<DateTime>("EmploymentDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -507,9 +518,8 @@ namespace Knjigoteka.Services.Migrations
                     b.Property<int>("QuantityRequested")
                         .HasColumnType("int");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -663,6 +673,10 @@ namespace Knjigoteka.Services.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Knjigoteka.Model.Entities.Reservation", "Reservation")
+                        .WithMany()
+                        .HasForeignKey("ReservationId");
+
                     b.HasOne("Knjigoteka.Model.Entities.User", "User")
                         .WithMany("Borrowings")
                         .HasForeignKey("UserId")
@@ -672,6 +686,8 @@ namespace Knjigoteka.Services.Migrations
                     b.Navigation("Book");
 
                     b.Navigation("Branch");
+
+                    b.Navigation("Reservation");
 
                     b.Navigation("User");
                 });

@@ -1,5 +1,6 @@
 ﻿using Knjigoteka.Model.Requests;
 using Knjigoteka.Model.Responses;
+using Knjigoteka.Model.SearchObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

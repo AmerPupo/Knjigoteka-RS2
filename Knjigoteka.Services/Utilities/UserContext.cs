@@ -32,5 +32,8 @@ namespace Knjigoteka.Services.Utilities
         public string? Role => Principal?.FindFirstValue(ClaimTypes.Role);
         public string? Email => Principal?.FindFirstValue(ClaimTypes.Email);
         public string? FullName => Principal?.FindFirstValue(ClaimTypes.Name);
+        public int? BranchId =>
+            int.TryParse(Principal?.FindFirstValue("branchId"), out var id) ? id : (int?)null;
+
     }
 }

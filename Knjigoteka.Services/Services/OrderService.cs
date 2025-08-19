@@ -5,89 +5,102 @@ using Knjigoteka.Services.Database;
 using Knjigoteka.Services.Interfaces;
 using Knjigoteka.Services.Utilities;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace Knjigoteka.Services.Services
 {
     public class OrderService : IOrderService
     {
-        private readonly DatabaseContext _db;
+        private readonly DatabaseContext _context;
         private readonly IUserContext _user;
 
-        public OrderService(DatabaseContext db, IUserContext user)
+        public OrderService(DatabaseContext context, IUserContext user)
         {
-            _db = db;
+            _context = context;
             _user = user;
         }
 
         public async Task<OrderResponse> CheckoutAsync(OrderCreate dto)
         {
-            var cart = await _db.CartItems
+            var userId = _user.UserId;
+
+            var cart = await _context.CartItems
                 .Include(ci => ci.Book)
-                .Where(ci => ci.UserId == _user.UserId)
+                .Where(ci => ci.UserId == userId)
                 .ToListAsync();
 
             if (cart.Count == 0)
                 throw new InvalidOperationException("Cart is empty.");
 
-            foreach (var ci in cart)
+            if (cart.Any(ci => ci.Quantity <= 0))
+                throw new InvalidOperationException("Invalid quantity in cart.");
+
+            await using var tx = await _context.Database.BeginTransactionAsync(IsolationLevel.Serializable);
+            try
             {
-                if (ci.Quantity <= 0) throw new InvalidOperationException("Invalid quantity in cart.");
-                if (ci.Book.CentralStock < ci.Quantity)
-                    throw new InvalidOperationException($"Not enough stock for '{ci.Book.Title}'.");
-            }
-
-            var total = cart.Sum(i => i.Book.Price * i.Quantity);
-
-            var order = new Order
-            {
-                UserId = _user.UserId,
-                OrderDate = DateTime.UtcNow,
-                Status = "Pending",
-                PaymentMethod = dto.PaymentMethod,
-                DeliveryAddress = dto.DeliveryAddress,
-                TotalAmount = total
-            };
-
-            _db.Orders.Add(order);
-            await _db.SaveChangesAsync();
-
-            foreach (var ci in cart)
-            {
-                _db.OrderItems.Add(new OrderItem
+                foreach (var ci in cart)
                 {
-                    OrderId = order.Id,
-                    BookId = ci.BookId,
-                    Quantity = ci.Quantity,
-                    UnitPrice = ci.Book.Price // snapshot price
-                });
+                    var book = await _context.Books.SingleOrDefaultAsync(b => b.Id == ci.BookId);
+                    if (book == null)
+                        throw new KeyNotFoundException($"Book (Id={ci.BookId}) not found.");
 
-                ci.Book.CentralStock -= ci.Quantity;
-            }
+                    if (book.CentralStock < ci.Quantity)
+                        throw new InvalidOperationException($"Not enough stock for '{book.Title}'. Requested: {ci.Quantity}, available: {book.CentralStock}.");
+                }
 
-            _db.CartItems.RemoveRange(cart);
-            await _db.SaveChangesAsync();
+                var total = cart.Sum(i => i.Book.Price * i.Quantity);
 
-            return new OrderResponse
-            {
-                Id = order.Id,
-                CreatedAt = order.OrderDate,   // <- map from OrderDate
-                Status = order.Status,
-                PaymentMethod = order.PaymentMethod,
-                TotalAmount = order.TotalAmount,
-                Items = cart.Select(ci => new OrderItemResponse
+                var order = new Order
                 {
-                    BookId = ci.BookId,
-                    Title = ci.Book.Title,
-                    Quantity = ci.Quantity,
-                    UnitPrice = ci.Book.Price
-                }).ToList()
-            };
+                    UserId = userId,
+                    OrderDate = DateTime.UtcNow,
+                    Status = "Pending",
+                    PaymentMethod = dto.PaymentMethod,
+                    DeliveryAddress = dto.DeliveryAddress,
+                    TotalAmount = total
+                };
+
+                _context.Orders.Add(order);
+                await _context.SaveChangesAsync();
+
+                var orderItems = new List<OrderItem>();
+                foreach (var ci in cart)
+                {
+                    var book = await _context.Books.SingleAsync(b => b.Id == ci.BookId);
+                    book.CentralStock -= ci.Quantity;
+                    if (book.CentralStock < 0)
+                        throw new InvalidOperationException($"Stock underflow for '{book.Title}'.");
+
+                    orderItems.Add(new OrderItem
+                    {
+                        OrderId = order.Id,
+                        BookId = ci.BookId,
+                        Quantity = ci.Quantity,
+                        UnitPrice = ci.Book.Price
+                    });
+                }
+
+                _context.OrderItems.AddRange(orderItems);
+
+                _context.CartItems.RemoveRange(cart);
+
+                await _context.SaveChangesAsync();
+
+                await tx.CommitAsync();
+
+                return MapOrder(order);
+            }
+            catch
+            {
+                await tx.RollbackAsync();
+                throw;
+            }
         }
 
         private static OrderResponse MapOrder(Order o) => new()
         {
             Id = o.Id,
-            CreatedAt = o.OrderDate,          // <- map from OrderDate
+            CreatedAt = o.OrderDate,
             Status = o.Status,
             PaymentMethod = o.PaymentMethod,
             TotalAmount = o.TotalAmount,
@@ -102,7 +115,7 @@ namespace Knjigoteka.Services.Services
 
         public async Task<List<OrderResponse>> GetMyOrdersAsync()
         {
-            var orders = await _db.Orders
+            var orders = await _context.Orders
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Book)
                 .Where(o => o.UserId == _user.UserId)
                 .OrderByDescending(o => o.OrderDate)
@@ -113,13 +126,12 @@ namespace Knjigoteka.Services.Services
 
         public async Task<List<OrderResponse>> GetAllAsync()
         {
-            var orders = await _db.Orders
+            var orders = await _context.Orders
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Book)
                 .OrderByDescending(o => o.OrderDate)
                 .ToListAsync();
 
             return orders.Select(MapOrder).ToList();
         }
-
     }
 }

@@ -15,14 +15,29 @@ namespace Knjigoteka.WebAPI.Controllers
 
         [Authorize(Roles = "User,Admin,Employee")]
         [HttpPost("checkout")]
-        public Task<OrderResponse> Checkout(OrderCreate dto) => _service.CheckoutAsync(dto);
+        public async Task<ActionResult<OrderResponse>> Checkout([FromBody] OrderCreate dto)
+        {
+            try
+            {
+                var res = await _service.CheckoutAsync(dto);
+                return CreatedAtAction(nameof(GetMyOrders), new { }, res);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException)
+            {
+                return NotFound();
+            }
+        }
 
         [Authorize(Roles = "User,Admin,Employee")]
         [HttpGet("mine")]
-        public Task<List<OrderResponse>> MyOrders() => _service.GetMyOrdersAsync();
+        public Task<List<OrderResponse>> GetMyOrders() => _service.GetMyOrdersAsync();
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public Task<List<OrderResponse>> All() => _service.GetAllAsync();
+        public Task<List<OrderResponse>> GetAll() => _service.GetAllAsync();
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Knjigoteka.Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a431453657dc1eab2acd73a9824330fb0628dba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8fb883892310f27339bf1c87c884081ca1a0a863")]
 [assembly: System.Reflection.AssemblyProductAttribute("Knjigoteka.Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Knjigoteka.Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

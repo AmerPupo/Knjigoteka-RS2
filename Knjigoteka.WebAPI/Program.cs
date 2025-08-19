@@ -29,6 +29,11 @@ builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<IPenaltyService, PenaltyService>();
+builder.Services.AddScoped<IRestockRequestService, RestockRequestService>();
+builder.Services.AddScoped<INotificationRequestService, NotificationRequestService>();
+builder.Services.AddScoped<IBorrowingService, BorrowingService>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
 
 builder.Services.AddHostedService<ReservationExpirationBackgroundService>();
 

@@ -14,6 +14,8 @@ namespace Knjigoteka.Model.Responses
         public string Author { get; set; } = null!;
         public string GenreName { get; set; } = null!;
         public string LanguageName { get; set; } = null!;
+        public bool SupportsBorrowing { get; set; }
+
         public int QuantityForBorrow { get; set; }
         public int QuantityForSale { get; set; }
     }

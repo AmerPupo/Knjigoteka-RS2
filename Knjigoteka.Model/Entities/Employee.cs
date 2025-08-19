@@ -13,7 +13,8 @@ namespace Knjigoteka.Model.Entities
         public int BranchId { get; set; }
         [Required]
         public DateTime EmploymentDate { get; set; } = DateTime.Now;
-
+        [Required]
+        public bool IsActive { get; set; }
         [ForeignKey(nameof(UserId))]
         public User User { get; set; } = null!;
         [ForeignKey(nameof(BranchId))]

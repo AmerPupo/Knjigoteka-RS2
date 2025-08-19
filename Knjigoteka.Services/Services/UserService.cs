@@ -68,6 +68,12 @@ public class UserService : IUserService
       new Claim(ClaimTypes.Role, user.Role.Name),
       new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
     };
+        if(user.RoleId == 2)
+        {
+            var employee = await _context.Employees.FirstOrDefaultAsync(e => e.UserId == user.Id);
+            if (employee != null)
+                claims.Add(new Claim("branchId", employee.BranchId.ToString()));
+        }
 
         // Get settings
         var jwt = _config.GetSection("Jwt");

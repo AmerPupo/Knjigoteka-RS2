@@ -14,10 +14,10 @@ namespace Knjigoteka.Model.Entities
         [Required]
         public int EmployeeId { get; set; }
         [Required]
-        [Range(0, int.MaxValue, ErrorMessage = "Quantity must be greater than 0.")]
+        [Range(1, int.MaxValue, ErrorMessage = "Quantity must be greater than 0.")]
         public int QuantityRequested { get; set; }
         [Required]
-        public string Status { get; set; } = "Pending"; // Pending, Approved, Rejected
+        public RestockRequestStatus Status { get; set; } = RestockRequestStatus.Pending;
 
         [ForeignKey(nameof(BookId))]
         public Book Book { get; set; } = null!;
@@ -26,4 +26,11 @@ namespace Knjigoteka.Model.Entities
         [ForeignKey(nameof(EmployeeId))]
         public Employee Employee { get; set; } = null!;
     }
+    public enum RestockRequestStatus
+    {
+        Pending,
+        Approved,
+        Rejected
+    }
+
 }

@@ -14,5 +14,7 @@ namespace Knjigoteka.Model.SearchObjects
         // Facets
         public int BranchId { get; set; }
         public int BookId { get; set; }
+        public bool? SupportsBorrowing { get; set; }
+
     }
 }
