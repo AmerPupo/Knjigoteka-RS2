@@ -16,6 +16,7 @@ namespace Knjigoteka.Model.Responses
         public string BranchName { get; set; } = null!;
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; } = null!;
+        public DateTime RequestedAt { get; set; }
         public int QuantityRequested { get; set; }
         public RestockRequestStatus Status { get; set; }
     }

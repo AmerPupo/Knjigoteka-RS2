@@ -348,9 +348,8 @@ namespace Knjigoteka.Services.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("TotalAmount")
                         .HasPrecision(18, 2)
@@ -517,6 +516,9 @@ namespace Knjigoteka.Services.Migrations
 
                     b.Property<int>("QuantityRequested")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -877,7 +879,7 @@ namespace Knjigoteka.Services.Migrations
             modelBuilder.Entity("Knjigoteka.Model.Entities.Review", b =>
                 {
                     b.HasOne("Knjigoteka.Model.Entities.Book", "Book")
-                        .WithMany()
+                        .WithMany("Reviews")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -907,6 +909,8 @@ namespace Knjigoteka.Services.Migrations
             modelBuilder.Entity("Knjigoteka.Model.Entities.Book", b =>
                 {
                     b.Navigation("BookBranches");
+
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("Knjigoteka.Model.Entities.Branch", b =>

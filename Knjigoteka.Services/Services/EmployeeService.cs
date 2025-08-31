@@ -55,6 +55,24 @@ public class EmployeeService
 
         return MapToDto(full!);
     }
+    public override async Task<EmployeeResponse> Update(int id, EmployeeUpdate request)
+    {
+        var employee = await _context.Employees
+            .Include(e => e.User)   
+            .Include(e => e.Branch) 
+            .FirstOrDefaultAsync(e => e.Id == id)
+            ?? throw new Exception("Employee not found.");
+
+        MapToEntity(request, employee);
+        await _context.SaveChangesAsync();
+
+        if (employee.User == null)
+            employee.User = await _context.Users.FindAsync(employee.UserId);
+        if (employee.Branch == null)
+            employee.Branch = await _context.Branches.FindAsync(employee.BranchId);
+
+        return MapToDto(employee);
+    }
 
     public override async Task<bool> Delete(int id)
     {

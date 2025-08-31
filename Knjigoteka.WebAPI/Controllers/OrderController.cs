@@ -39,5 +39,35 @@ namespace Knjigoteka.WebAPI.Controllers
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public Task<List<OrderResponse>> GetAll() => _service.GetAllAsync();
+        [Authorize(Roles = "Admin")]
+        [HttpPost("{id:int}/approve")]
+        public async Task<IActionResult> Approve(int id)
+        {
+            try
+            {
+                var ok = await _service.ApproveAsync(id);
+                return ok ? Ok() : NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost("{id:int}/reject")]
+        public async Task<IActionResult> Reject(int id)
+        {
+            try
+            {
+                var ok = await _service.RejectAsync(id);
+                return ok ? Ok() : NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

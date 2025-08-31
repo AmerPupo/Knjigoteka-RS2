@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Knjigoteka.Model.Entities
 {
@@ -19,10 +20,20 @@ namespace Knjigoteka.Model.Entities
         [Required]
         public string DeliveryAddress { get; set; } = null!;
         [Required]
-        public string Status { get; set; } = "Pending";
+        public OrderStatus Status { get; set; } = OrderStatus.Pending;
 
         [ForeignKey(nameof(UserId))]
         public User User { get; set; } = null!;
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
+    public enum OrderStatus
+    {
+        Pending,
+        Approved,
+        Shipped,
+        Canceled,
+        Delivered,
+        Rejected
+    }
+
 }

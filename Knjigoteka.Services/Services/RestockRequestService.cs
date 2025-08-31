@@ -40,6 +40,8 @@ namespace Knjigoteka.Services.Services
 
         protected override IQueryable<RestockRequest> ApplyFilter(IQueryable<RestockRequest> query, RestockRequestSearchObject? search)
         {
+            query = query.OrderBy(o => o.Status);
+
             if (search == null) return query;
             if (search.BookId.HasValue)
                 query = query.Where(r => r.BookId == search.BookId.Value);
@@ -74,6 +76,7 @@ namespace Knjigoteka.Services.Services
                 EmployeeName = e.Employee?.User != null
                 ? $"{e.Employee.User.FirstName} {e.Employee.User.LastName}"
                 : "",
+                RequestedAt = e.RequestDate,
                 QuantityRequested = e.QuantityRequested,
                 Status = e.Status
             };
@@ -90,6 +93,7 @@ namespace Knjigoteka.Services.Services
                 BookId = req.BookId,
                 BranchId = branchId,
                 EmployeeId = employeeId,
+                RequestDate = DateTime.Now,
                 QuantityRequested = req.QuantityRequested,
                 Status = RestockRequestStatus.Pending
             };

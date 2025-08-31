@@ -14,7 +14,7 @@ namespace Knjigoteka.WebAPI.Controllers
     {
         public LanguagesController(
             ILogger<BaseController<LanguageResponse, LanguageSearchObject>> logger,
-            ICRUDService<LanguageResponse, LanguageSearchObject, LanguageInsert, LanguageUpdate> service)
+            ILanguageService service)
             : base(logger, service)
         {
         }

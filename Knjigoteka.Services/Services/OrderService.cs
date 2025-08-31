@@ -54,7 +54,7 @@ namespace Knjigoteka.Services.Services
                 {
                     UserId = userId,
                     OrderDate = DateTime.UtcNow,
-                    Status = "Pending",
+                    Status = OrderStatus.Pending,
                     PaymentMethod = dto.PaymentMethod,
                     DeliveryAddress = dto.DeliveryAddress,
                     TotalAmount = total
@@ -101,6 +101,7 @@ namespace Knjigoteka.Services.Services
         {
             Id = o.Id,
             CreatedAt = o.OrderDate,
+            UserName = o.User != null ? o.User.FirstName + " " + o.User.LastName : "",
             Status = o.Status,
             PaymentMethod = o.PaymentMethod,
             TotalAmount = o.TotalAmount,
@@ -117,6 +118,7 @@ namespace Knjigoteka.Services.Services
         {
             var orders = await _context.Orders
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Book)
+                .Include(u => u.User)
                 .Where(o => o.UserId == _user.UserId)
                 .OrderByDescending(o => o.OrderDate)
                 .ToListAsync();
@@ -128,10 +130,37 @@ namespace Knjigoteka.Services.Services
         {
             var orders = await _context.Orders
                 .Include(o => o.OrderItems).ThenInclude(oi => oi.Book)
+                .Include(u => u.User)
                 .OrderByDescending(o => o.OrderDate)
                 .ToListAsync();
 
             return orders.Select(MapOrder).ToList();
         }
+        public async Task<bool> ApproveAsync(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null)
+                return false;
+            if (order.Status != OrderStatus.Pending)
+                throw new InvalidOperationException("Order već procesiran.");
+
+            order.Status = OrderStatus.Approved;
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> RejectAsync(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
+            if (order == null)
+                return false;
+            if (order.Status != OrderStatus.Pending)
+                throw new InvalidOperationException("Order već procesiran.");
+
+            order.Status = OrderStatus.Rejected;
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
     }
 }

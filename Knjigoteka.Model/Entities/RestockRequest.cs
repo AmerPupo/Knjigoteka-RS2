@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Knjigoteka.Model.Entities
 {
@@ -13,6 +14,9 @@ namespace Knjigoteka.Model.Entities
         public int BranchId { get; set; }
         [Required]
         public int EmployeeId { get; set; }
+        [Required]
+        public DateTime RequestDate { get; set; } = DateTime.Now;
+
         [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Quantity must be greater than 0.")]
         public int QuantityRequested { get; set; }

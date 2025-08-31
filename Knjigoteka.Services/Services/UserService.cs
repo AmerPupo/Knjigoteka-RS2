@@ -4,6 +4,7 @@ using Knjigoteka.Model.Responses;
 using Knjigoteka.Services.Database;
 using Knjigoteka.Services.Interfaces;
 using Knjigoteka.Services.Services;
+using Knjigoteka.Services.Utilities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -17,12 +18,29 @@ public class UserService : IUserService
     private readonly DatabaseContext _context;
     private readonly IConfiguration _config;
     private IPenaltyService _penaltyService;
+    private IUserContext _userContext;
 
-    public UserService(DatabaseContext context, IConfiguration config, IPenaltyService ps)
+    public UserService(DatabaseContext context, IConfiguration config, IPenaltyService ps, IUserContext userContext)
     {
         _context = context;
         _config = config;
         _penaltyService = ps;
+        _userContext = userContext;
+    }
+    public async Task<List<UserResponse>> GetAllAsync()
+    {
+        var users = await _context.Users
+            .Where(u => !u.IsBlocked && u.Role.Name == "User" )
+            .Include(u => u.Role)
+            .ToListAsync();
+
+        return users.Select(u => new UserResponse
+        {
+            Id = u.Id,
+            FullName = $"{u.FirstName} {u.LastName}",
+            Email = u.Email,
+            Role = u.Role.Name,
+        }).ToList();
     }
 
     public async Task RegisterAsync(RegisterRequest dto)
@@ -51,12 +69,12 @@ public class UserService : IUserService
             .FirstOrDefaultAsync(u => u.Email == dto.Email);
 
         if (user == null)
-            throw new Exception("Invalid credentials.");
+            throw new UnauthorizedAccessException("Invalid credentials.");
 
         var hasher = new PasswordHasher<User>();
         var result = hasher.VerifyHashedPassword(user, user.PasswordHash, dto.Password);
         if (result == PasswordVerificationResult.Failed)
-            throw new Exception("Invalid credentials.");
+            throw new UnauthorizedAccessException("Invalid credentials.");
 
         // Create claims
         var claims = new List<Claim>
@@ -115,5 +133,16 @@ public class UserService : IUserService
             }
         }
     }
+    public async Task<UserResponse> GetCurrentUserAsync()
+    {
+        return new UserResponse
+        {
+            Id = _userContext.UserId,
+            FullName = _userContext.FullName,
+            Email = _userContext.Email,
+            Role = _userContext.Role,
+            BranchId = _userContext.BranchId,
+        };
 
+    }
 }

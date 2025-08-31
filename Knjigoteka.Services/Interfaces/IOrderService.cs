@@ -1,6 +1,7 @@
 ﻿using Knjigoteka.Model.Requests;
 using Knjigoteka.Model.Responses;
 using Knjigoteka.Model.SearchObjects;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace Knjigoteka.Services.Interfaces
         Task<OrderResponse> CheckoutAsync(OrderCreate dto);
         Task<List<OrderResponse>> GetMyOrdersAsync();
         Task<List<OrderResponse>> GetAllAsync();
+        Task<bool> ApproveAsync(int id);
+        Task<bool> RejectAsync(int id);
     }
 }

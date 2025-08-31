@@ -1,0 +1,91 @@
+import 'package:flutter/material.dart';
+import 'package:knjigoteka_desktop/screens/admin_dashboard_screen.dart';
+import 'package:provider/provider.dart';
+import '../providers/auth_provider.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  bool _loading = false;
+  String? _error;
+
+  @override
+  Widget build(BuildContext context) {
+    final auth = Provider.of<AuthProvider>(context, listen: false);
+
+    return Scaffold(
+      body: Center(
+        child: SizedBox(
+          width: 350,
+          child: Card(
+            elevation: 4,
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Knjigoteka Login',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  TextField(
+                    controller: _emailController,
+                    decoration: InputDecoration(labelText: 'Email'),
+                  ),
+                  TextField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(labelText: 'Lozinka'),
+                    obscureText: true,
+                  ),
+                  if (_error != null)
+                    Text(_error!, style: TextStyle(color: Colors.red)),
+                  SizedBox(height: 16),
+                  _loading
+                      ? CircularProgressIndicator()
+                      : ElevatedButton(
+                          child: Text('Prijava'),
+                          onPressed: () async {
+                            setState(() {
+                              _loading = true;
+                              _error = null;
+                            });
+                            try {
+                              await auth.login(
+                                _emailController.text,
+                                _passwordController.text,
+                              );
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AdminDashboardScreen(),
+                                ),
+                              );
+                            } catch (e) {
+                              setState(() {
+                                _error = e
+                                    .toString()
+                                    .replaceAll('Exception:', '')
+                                    .trim();
+                              });
+                            }
+                            setState(() {
+                              _loading = false;
+                            });
+                          },
+                        ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

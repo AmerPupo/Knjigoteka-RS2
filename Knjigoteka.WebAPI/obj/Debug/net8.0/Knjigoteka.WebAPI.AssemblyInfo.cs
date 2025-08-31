@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Knjigoteka.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94a5cfee2fecd908a906e83cc15bdee39b615c5e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aeddecc2b7018dc034823f37634c87baece1e617")]
 [assembly: System.Reflection.AssemblyProductAttribute("Knjigoteka.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Knjigoteka.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
