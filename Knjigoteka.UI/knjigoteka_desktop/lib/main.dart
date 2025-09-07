@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:knjigoteka_desktop/providers/book_provider.dart';
+import 'package:knjigoteka_desktop/providers/borrowing_provider.dart';
+import 'package:knjigoteka_desktop/providers/branch_inventory_provider.dart';
 import 'package:knjigoteka_desktop/providers/branch_provider.dart';
 import 'package:knjigoteka_desktop/providers/city_provider.dart';
 import 'package:knjigoteka_desktop/providers/employee_provider.dart';
 import 'package:knjigoteka_desktop/providers/genre_provider.dart';
 import 'package:knjigoteka_desktop/providers/language_provider.dart';
 import 'package:knjigoteka_desktop/providers/order_provider.dart';
+import 'package:knjigoteka_desktop/providers/reservation_provider.dart';
 import 'package:knjigoteka_desktop/providers/restock_request_provider.dart';
+import 'package:knjigoteka_desktop/providers/sale_provider.dart';
 import 'package:knjigoteka_desktop/providers/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'providers/auth_provider.dart';
@@ -27,6 +31,10 @@ void main() {
         ChangeNotifierProvider(create: (_) => BookProvider()),
         ChangeNotifierProvider(create: (_) => GenreProvider()),
         ChangeNotifierProvider(create: (_) => LanguageProvider()),
+        ChangeNotifierProvider(create: (_) => BranchInventoryProvider()),
+        ChangeNotifierProvider(create: (_) => SaleProvider()),
+        ChangeNotifierProvider(create: (_) => BorrowingProvider()),
+        ChangeNotifierProvider(create: (_) => ReservationProvider()),
       ],
       child: MyApp(),
     ),

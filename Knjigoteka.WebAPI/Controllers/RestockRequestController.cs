@@ -52,9 +52,9 @@ namespace Knjigoteka.WebAPI.Controllers
 
         [HttpGet("bybranch")]
         [Authorize(Roles = "Employee")]
-        public async Task<ActionResult<List<RestockRequestResponse>>> GetByBranch()
+        public async Task<ActionResult<List<RestockRequestResponse>>> GetByBranch([FromQuery] int? bookId = null)
         {
-            var result = await _service.GetByBranchAsync();
+            var result = await _service.GetByBranchAsync(bookId);
             return Ok(result);
         }
         [Authorize(Roles = "Employee")]

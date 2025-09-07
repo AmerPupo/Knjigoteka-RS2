@@ -5,7 +5,7 @@ import 'package:knjigoteka_desktop/screens/branches_screen.dart';
 import 'package:knjigoteka_desktop/screens/employees_screen.dart';
 import 'package:knjigoteka_desktop/screens/orders_screen.dart';
 import 'package:knjigoteka_desktop/screens/sifarnici_screen.dart';
-import 'package:knjigoteka_desktop/screens/admin_settings_screen.dart';
+import 'package:knjigoteka_desktop/screens/settings_screen.dart';
 import 'package:provider/provider.dart';
 
 class AdminDashboardScreen extends StatefulWidget {
@@ -33,7 +33,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
     OrdersScreen(),
     BooksScreen(),
     SifarniciScreen(),
-    AdminSettingsScreen(),
+    SettingsScreen(),
   ];
 
   @override

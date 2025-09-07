@@ -99,7 +99,6 @@ class _SifarniciScreenState extends State<SifarniciScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Naslov + Add
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -177,7 +176,6 @@ class _SifarniciScreenState extends State<SifarniciScreen>
                               IconButton(
                                 icon: Icon(Icons.delete, color: Colors.red),
                                 onPressed: () async {
-                                  // --- DODANO: POTVRDA BRIŠANJA ---
                                   final confirmed = await showDialog(
                                     context: context,
                                     builder: (ctx) => AlertDialog(
@@ -228,8 +226,6 @@ class _SifarniciScreenState extends State<SifarniciScreen>
     );
   }
 
-  // --- CRUD WRAPPERS ---
-
   Future<void> _addGenre(String naziv) async =>
       await Provider.of<GenreProvider>(
         context,
@@ -268,16 +264,13 @@ class _SifarniciScreenState extends State<SifarniciScreen>
   Future<void> _deleteCity(City c) async =>
       await Provider.of<CityProvider>(context, listen: false).delete(c.id);
 
-  // --- MAIN ---
-
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Naslov
         Padding(
-          padding: const EdgeInsets.only(left: 40, top: 36, bottom: 4),
+          padding: const EdgeInsets.all(24),
           child: Text(
             "Šifarnici",
             style: TextStyle(
@@ -287,7 +280,6 @@ class _SifarniciScreenState extends State<SifarniciScreen>
             ),
           ),
         ),
-        // Tabovi
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: TabBar(

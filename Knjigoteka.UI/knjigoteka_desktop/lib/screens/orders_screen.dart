@@ -16,61 +16,65 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        backgroundColor: const Color(0xfff7f9fb),
-        appBar: AppBar(
+    return Padding(
+      padding: EdgeInsets.all(24),
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
           backgroundColor: const Color(0xfff7f9fb),
-          elevation: 0,
-          toolbarHeight: 100,
-          titleSpacing: 0,
-          automaticallyImplyLeading: false,
-          title: Padding(
-            padding: EdgeInsets.all(24),
+          appBar: AppBar(
+            backgroundColor: const Color(0xfff7f9fb),
+            elevation: 0,
+            toolbarHeight: 100,
+            titleSpacing: 0,
+            automaticallyImplyLeading: false,
+            title: Padding(
+              padding: EdgeInsets.all(0),
 
-            child: Text(
-              'Narudžbe',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF233348),
-              ),
-            ),
-          ),
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(0),
-            child: Container(
-              color: Color(0xfff7f9fb),
-              child: TabBar(
-                indicatorColor: Color(0xFF233348),
-                labelColor: Color(0xFF233348),
-                unselectedLabelColor: Colors.black45,
-                labelStyle: TextStyle(
-                  fontSize: 16,
+              child: Text(
+                'Narudžbe',
+                style: TextStyle(
+                  fontSize: 32,
                   fontWeight: FontWeight.bold,
+                  color: Color(0xFF233348),
                 ),
-                tabs: [
-                  Tab(text: "Restock zahtjevi"),
-                  Tab(text: "Online narudžbe"),
-                ],
+              ),
+            ),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(0),
+              child: Container(
+                color: Color(0xfff7f9fb),
+                child: TabBar(
+                  indicatorColor: Color(0xFF233348),
+                  labelColor: Color(0xFF233348),
+                  unselectedLabelColor: Colors.black45,
+                  labelStyle: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  tabs: [
+                    Tab(text: "Restock zahtjevi"),
+                    Tab(text: "Online narudžbe"),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        body: Padding(
-          padding: EdgeInsets.all(24),
-          child: TabBarView(
-            children: [
-              RestockRequestsTab(
-                search: _restockSearch,
-                onSearchChanged: (val) => setState(() => _restockSearch = val),
-              ),
-              OnlineOrdersTab(
-                search: _orderSearch,
-                onSearchChanged: (val) => setState(() => _orderSearch = val),
-              ),
-            ],
+          body: Padding(
+            padding: EdgeInsets.only(top: 24),
+            child: TabBarView(
+              children: [
+                RestockRequestsTab(
+                  search: _restockSearch,
+                  onSearchChanged: (val) =>
+                      setState(() => _restockSearch = val),
+                ),
+                OnlineOrdersTab(
+                  search: _orderSearch,
+                  onSearchChanged: (val) => setState(() => _orderSearch = val),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -78,9 +82,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
   }
 }
 
-// --------------------
-// 1. RESTOCK REQUESTS TAB
-// --------------------
 class RestockRequestsTab extends StatefulWidget {
   final String search;
   final ValueChanged<String> onSearchChanged;

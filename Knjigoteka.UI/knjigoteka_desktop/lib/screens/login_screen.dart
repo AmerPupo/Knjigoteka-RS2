@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:knjigoteka_desktop/screens/admin_dashboard_screen.dart';
+import 'package:knjigoteka_desktop/screens/employee_dashboard_screen.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
 
@@ -61,12 +62,27 @@ class _LoginScreenState extends State<LoginScreen> {
                                 _emailController.text,
                                 _passwordController.text,
                               );
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => AdminDashboardScreen(),
-                                ),
-                              );
+                              if (auth.role == "Admin") {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        AdminDashboardScreen(),
+                                  ),
+                                );
+                              } else if (auth.role == "Employee") {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        EmployeeDashboardScreen(),
+                                  ),
+                                );
+                              } else {
+                                setState(() {
+                                  _error = "Nepoznata uloga korisnika.";
+                                });
+                              }
                             } catch (e) {
                               setState(() {
                                 _error = e

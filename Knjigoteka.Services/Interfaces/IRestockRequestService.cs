@@ -14,7 +14,7 @@ namespace Knjigoteka.Services.Interfaces
     {
         Task<bool> ApproveAsync(int id);
         Task<bool> RejectAsync(int id);
-        Task<List<RestockRequestResponse>> GetByBranchAsync();
+        Task<List<RestockRequestResponse>> GetByBranchAsync(int? bookId);
     }
 
 }

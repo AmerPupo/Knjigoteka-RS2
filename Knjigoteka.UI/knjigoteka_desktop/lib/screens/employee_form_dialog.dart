@@ -34,11 +34,10 @@ class _EmployeeFormDialogState extends State<EmployeeFormDialog> {
         (widget.branches.isNotEmpty ? widget.branches.first.id : null);
 
     if (widget.employee != null) {
-      // Kod edit-a nema user biranja, samo prikaz
       _selectedUser = User(
         id: widget.employee!.userId,
         fullName: widget.employee!.fullName,
-        email: '', // po potrebi fetchaj email
+        email: '',
       );
       _userController.text = _selectedUser!.fullName;
     }
@@ -86,7 +85,6 @@ class _EmployeeFormDialogState extends State<EmployeeFormDialog> {
                   ],
                 ),
                 SizedBox(height: 24),
-                // Autocomplete samo za dodavanje
                 if (!isEdit)
                   Column(
                     children: [
@@ -121,7 +119,6 @@ class _EmployeeFormDialogState extends State<EmployeeFormDialog> {
                                     ? 'Odaberi korisnika'
                                     : null,
                                 onChanged: (_) {
-                                  // Ako korisnik obriše, resetiraj odabrano
                                   if (_userController.text.isEmpty)
                                     _selectedUser = null;
                                 },

@@ -1,5 +1,6 @@
 ﻿using Knjigoteka.Model.Requests;
 using Knjigoteka.Model.Responses;
+using Knjigoteka.Model.SearchObjects;
 using Knjigoteka.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -30,11 +31,38 @@ public class UserController : ControllerBase
     {
         return await _auth.GetCurrentUserAsync();
     }
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Employee")]
     [HttpGet]
-    public async Task<ActionResult<List<UserResponse>>> GetAll()
+    public async Task<ActionResult<List<UserResponse>>> GetAll(UserSearchObject? search)
     {
-        var users = await _auth.GetAllAsync();
+        var users = await _auth.GetAllAsync(search);
         return Ok(new { items = users });
     }
+    [HttpPost("change-password")]
+    public async Task<ActionResult<ChangePasswordResponse>> ChangePassword([FromBody] ChangePasswordRequest dto)
+    {
+        try
+        {
+            return Ok(await _auth.ChangePasswordAsync(dto));
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(new { message = ex.Message });
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "Greška na serveru: " + ex.Message });
+        }
+    }
+    [HttpPost("edit-profile")]
+    public async Task<ActionResult<EditProfileResponse>> EditProfile([FromBody] EditProfileRequest dto)
+    {
+        return Ok(await _auth.EditProfileAsync(dto));
+    }
+
+
 }

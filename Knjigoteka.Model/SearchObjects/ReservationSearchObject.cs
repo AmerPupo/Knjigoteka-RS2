@@ -12,6 +12,7 @@ namespace Knjigoteka.Model.SearchObjects
         public int? BranchId { get; set; }
         public string? Status { get; set; }
         public bool ActiveOnly { get; set; } = false;
+        public string? UserName {  get; set; }
     }
 
 }

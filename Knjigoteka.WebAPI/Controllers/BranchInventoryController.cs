@@ -4,6 +4,7 @@ using Knjigoteka.Model.Requests;
 using Knjigoteka.Model.Responses;
 using Knjigoteka.Model.SearchObjects;
 using Knjigoteka.Services.Interfaces;
+using Knjigoteka.Services.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
@@ -27,11 +28,19 @@ namespace Knjigoteka.WebAPI.Controllers
         public async Task<PagedResult<BranchInventoryResponse>> Get([FromQuery] BranchInventorySearchObject search)
             => await _service.GetAsync(search);
 
-        [HttpPost]
+
+        [HttpPut]
+        [Authorize(Roles = "Employee")]
         public async Task<ActionResult<BranchInventoryResponse>> Upsert(
             [Required] int branchId, [FromBody] BranchInventoryUpsert request)
         {
             var result = await _service.UpsertAsync(branchId, request);
+            return Ok(result);
+        }
+        [HttpGet("availability/{bookId}")]
+        public async Task<IActionResult> GetAvailabilityByBookId(int bookId)
+        {
+            var result = await _service.GetAvailabilityByBookIdAsync(bookId);
             return Ok(result);
         }
 

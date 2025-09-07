@@ -48,6 +48,9 @@ namespace Knjigoteka.Services.Services
             if (search.UserId.HasValue)
                 query = query.Where(r => r.UserId == search.UserId.Value);
 
+            if(!string.IsNullOrWhiteSpace(search.UserName))
+                query = query.Where(r => r.User.FirstName.ToLower().StartsWith(search.UserName.ToLower()) || r.User.LastName.ToLower().StartsWith(search.UserName.ToLower()));
+
             if (search.BranchId.HasValue)
                 query = query.Where(r => r.BranchId == search.BranchId.Value);
 
@@ -58,6 +61,9 @@ namespace Knjigoteka.Services.Services
                 query = query.Where(r =>
                     r.Status == ReservationStatus.Pending || r.Status == ReservationStatus.Claimed);
 
+            query = query
+       .OrderBy(r => r.Status == ReservationStatus.Pending ? 0 : 1)
+       .ThenByDescending(r => r.ReservedAt);
             return query;
         }
 
@@ -164,6 +170,7 @@ namespace Knjigoteka.Services.Services
             {
                 Id = entity.Id,
                 UserId = entity.UserId,
+                UserName = entity.User.FirstName + " " + entity.User.LastName,
                 BookId = entity.BookId,
                 BookTitle = entity.Book?.Title ?? "",
                 BranchId = entity.BranchId,

@@ -35,6 +35,7 @@ builder.Services.AddScoped<IBorrowingService, BorrowingService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<ICityService, CityService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
+builder.Services.AddScoped<ISaleService, SaleService>();
 
 
 builder.Services.AddHostedService<ReservationExpirationBackgroundService>();

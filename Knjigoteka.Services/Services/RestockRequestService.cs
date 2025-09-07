@@ -53,12 +53,16 @@ namespace Knjigoteka.Services.Services
                 query = query.Where(r => r.Status == search.Status.Value);
             return query;
         }
-        public async Task<List<RestockRequestResponse>> GetByBranchAsync()
+        public async Task<List<RestockRequestResponse>> GetByBranchAsync(int?  bookId)
         {
             var branchId = _user.BranchId ?? throw new UnauthorizedAccessException("Employee must have a branch.");
+
             var query = AddInclude(_context.RestockRequests)
-                        .Where(r => r.BranchId == branchId && r.Status == RestockRequestStatus.Pending)
-                        .AsQueryable();
+                .Where(r => r.BranchId == branchId && r.Status == RestockRequestStatus.Approved)
+                .AsQueryable();
+
+            if (bookId.HasValue)
+                query = query.Where(r => r.BookId == bookId.Value);
 
             var list = await query.ToListAsync();
             return list.Select(MapToDto).ToList();
@@ -100,6 +104,17 @@ namespace Knjigoteka.Services.Services
         }
         public override async Task<RestockRequestResponse> Insert(RestockRequestCreate request)
         {
+            var centralStock = await _context.Books
+                .Where(b => b.Id == request.BookId)
+                .Select(b => b.CentralStock)
+                .FirstOrDefaultAsync();
+
+            if (centralStock < request.QuantityRequested)
+                throw new Exception($"Nema dovoljno knjiga na centralnom skladištu. Maksimalno dostupno: {centralStock}.");
+
+            if (request.QuantityRequested <= 0)
+                throw new Exception("Broj knjiga mora biti veći od nule.");
+
             var entity = MapToEntity(request);
             _context.RestockRequests.Add(entity);
             await _context.SaveChangesAsync();
@@ -110,6 +125,7 @@ namespace Knjigoteka.Services.Services
 
             return MapToDto(full);
         }
+
         public override async Task<PagedResult<RestockRequestResponse>> Get(RestockRequestSearchObject? search = null)
         {
             if (_user.Role == "Admin")
@@ -135,7 +151,7 @@ namespace Knjigoteka.Services.Services
                 throw new InvalidOperationException("Request already processed.");
 
             entity.Status = RestockRequestStatus.Approved;
-            entity.Book.CentralStock += entity.QuantityRequested;
+            entity.Book.CentralStock -= entity.QuantityRequested;
             await _context.SaveChangesAsync();
             return true;
         }

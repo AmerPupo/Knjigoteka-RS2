@@ -138,6 +138,21 @@ public class BorrowingService : IBorrowingService
             .ToListAsync();
         return items.Select(MapToDto).ToList();
     }
+    public async Task<bool> DeleteAsync(int id)
+    {
+        var branchId = _user.BranchId ?? throw new UnauthorizedAccessException();
+        var borrowing = await _context.Borrowings.FirstOrDefaultAsync(b => b.Id == id && b.BranchId == branchId);
+        if (borrowing == null) return false;
+        if (borrowing.ReturnedAt == null)
+        {
+            var bookBranch = await _context.BookBranches.FirstOrDefaultAsync(bb => bb.BranchId == borrowing.BranchId && bb.BookId == borrowing.BookId);
+            if (bookBranch != null)
+                bookBranch.QuantityForBorrow += 1;
+        }
+        _context.Borrowings.Remove(borrowing);
+        await _context.SaveChangesAsync();
+        return true;
+    }
 
     private static BorrowingResponse MapToDto(Borrowing b) => new()
     {

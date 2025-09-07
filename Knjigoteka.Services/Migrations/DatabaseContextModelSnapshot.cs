@@ -584,6 +584,61 @@ namespace Knjigoteka.Services.Migrations
                     b.ToTable("Roles");
                 });
 
+            modelBuilder.Entity("Knjigoteka.Model.Entities.Sale", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("SaleDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Sales");
+                });
+
+            modelBuilder.Entity("Knjigoteka.Model.Entities.SaleItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SaleId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("UnitPrice")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("SaleId");
+
+                    b.ToTable("SalesItems");
+                });
+
             modelBuilder.Entity("Knjigoteka.Model.Entities.User", b =>
                 {
                     b.Property<int>("Id")
@@ -895,6 +950,36 @@ namespace Knjigoteka.Services.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Knjigoteka.Model.Entities.Sale", b =>
+                {
+                    b.HasOne("Knjigoteka.Model.Entities.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Knjigoteka.Model.Entities.SaleItem", b =>
+                {
+                    b.HasOne("Knjigoteka.Model.Entities.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Knjigoteka.Model.Entities.Sale", "Sale")
+                        .WithMany("Items")
+                        .HasForeignKey("SaleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Sale");
+                });
+
             modelBuilder.Entity("Knjigoteka.Model.Entities.User", b =>
                 {
                     b.HasOne("Knjigoteka.Model.Entities.Role", "Role")
@@ -942,6 +1027,11 @@ namespace Knjigoteka.Services.Migrations
             modelBuilder.Entity("Knjigoteka.Model.Entities.Role", b =>
                 {
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Knjigoteka.Model.Entities.Sale", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("Knjigoteka.Model.Entities.User", b =>

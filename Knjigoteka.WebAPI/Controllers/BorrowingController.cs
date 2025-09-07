@@ -56,4 +56,7 @@ public class BorrowingsController : ControllerBase
     [HttpGet]
     [Authorize(Roles = "Admin")]
     public async Task<List<BorrowingResponse>> All() => await _service.GetAllAsync();
+    [HttpDelete("{id:int}")]
+    [Authorize(Roles = "Employee")]
+    public async Task<bool> Delete(int id) => await _service.DeleteAsync(id);
 }

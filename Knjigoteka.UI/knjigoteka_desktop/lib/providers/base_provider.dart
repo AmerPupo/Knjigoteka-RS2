@@ -24,7 +24,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
       url += '?' + Uri(queryParameters: params).query;
     }
     final res = await http.get(Uri.parse(url), headers: getHeaders());
-    _ensureValidResponseOrThrow(res);
+    ensureValidResponseOrThrow(res);
 
     final data = jsonDecode(res.body);
     final list = (data['items'] ?? []) as List;
@@ -37,7 +37,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
       Uri.parse('$_baseUrl/$_endpoint/$id'),
       headers: getHeaders(),
     );
-    _ensureValidResponseOrThrow(res);
+    ensureValidResponseOrThrow(res);
     return fromJson(jsonDecode(res.body));
   }
 
@@ -48,7 +48,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
       headers: getHeaders(),
       body: jsonEncode(request),
     );
-    _ensureValidResponseOrThrow(res);
+    ensureValidResponseOrThrow(res);
     return fromJson(jsonDecode(res.body));
   }
 
@@ -59,7 +59,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
       headers: getHeaders(),
       body: jsonEncode(request),
     );
-    _ensureValidResponseOrThrow(res);
+    ensureValidResponseOrThrow(res);
     return fromJson(jsonDecode(res.body));
   }
 
@@ -69,13 +69,13 @@ abstract class BaseProvider<T> with ChangeNotifier {
       Uri.parse('$_baseUrl/$_endpoint/$id'),
       headers: getHeaders(),
     );
-    _ensureValidResponseOrThrow(res);
+    ensureValidResponseOrThrow(res);
     return res.body.toLowerCase().contains("true");
   }
 
   T fromJson(dynamic data);
 
-  void _ensureValidResponseOrThrow(http.Response res) {
+  void ensureValidResponseOrThrow(http.Response res) {
     if (res.statusCode >= 200 && res.statusCode < 300) return;
 
     if (res.statusCode == 401) {

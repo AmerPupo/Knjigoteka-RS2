@@ -69,6 +69,8 @@ namespace Knjigoteka.Services.Services
                     Author = bb.Book.Author,
                     GenreName = bb.Book.Genre.Name,
                     LanguageName = bb.Book.Language.Name,
+                    Price = bb.Book.Price,
+                    PhotoEndpoint = $"/api/books/{bb.BookId}/photo",
                     SupportsBorrowing = bb.SupportsBorrowing,
                     QuantityForBorrow = bb.QuantityForBorrow,
                     QuantityForSale = bb.QuantityForSale
@@ -84,23 +86,29 @@ namespace Knjigoteka.Services.Services
 
         public async Task<BranchInventoryResponse> UpsertAsync(int branchId, BranchInventoryUpsert request)
         {
-            if (request.QuantityForBorrow < 0 || request.QuantityForSale < 0)
-                throw new ArgumentException("Quantities must be >= 0.");
-
             var book = await _context.Books
                 .Include(b => b.BookBranches)
                 .FirstOrDefaultAsync(b => b.Id == request.BookId)
                 ?? throw new KeyNotFoundException("Book not found.");
 
-            int totalRequested = request.QuantityForBorrow + request.QuantityForSale;
-
-            if (totalRequested > book.CentralStock)
-                throw new InvalidOperationException("Not enough books in central stock.");
-
             var bb = await _context.BookBranches
-                .Include(x => x.Book).ThenInclude(b => b.Genre)
-                .Include(x => x.Book).ThenInclude(b => b.Language)
                 .FirstOrDefaultAsync(x => x.BranchId == branchId && x.BookId == request.BookId);
+
+            var restockRequest = await _context.RestockRequests
+                .Where(r => r.BranchId == branchId
+                         && r.BookId == request.BookId
+                         && r.Status == RestockRequestStatus.Approved)
+                .OrderBy(r => r.RequestDate)
+                .FirstOrDefaultAsync();
+
+            if (restockRequest == null)
+                throw new InvalidOperationException("Nema odobrenog restock requesta za ovu knjigu.");
+
+            int totalAdd = (request.QuantityForBorrow > 0 ? request.QuantityForBorrow : 0)
+                         + (request.QuantityForSale > 0 ? request.QuantityForSale : 0);
+
+            if (totalAdd != restockRequest.QuantityRequested)
+                throw new InvalidOperationException($"Moraš unijeti tačno {restockRequest.QuantityRequested} knjiga.");
 
             if (bb == null)
             {
@@ -108,7 +116,7 @@ namespace Knjigoteka.Services.Services
                 {
                     BranchId = branchId,
                     BookId = request.BookId,
-                    SupportsBorrowing = request.SupportsBorrowing,
+                    SupportsBorrowing = request.QuantityForBorrow > 0,
                     QuantityForBorrow = request.QuantityForBorrow,
                     QuantityForSale = request.QuantityForSale
                 };
@@ -118,15 +126,49 @@ namespace Knjigoteka.Services.Services
             {
                 bb.QuantityForBorrow += request.QuantityForBorrow;
                 bb.QuantityForSale += request.QuantityForSale;
+                if (request.QuantityForBorrow > 0)
+                    bb.SupportsBorrowing = true;
             }
 
-            book.CentralStock -= totalRequested;
-
+            restockRequest.Status = RestockRequestStatus.Recieved;
             await _context.SaveChangesAsync();
-
             return MapToDto(bb);
         }
 
+
+
+
+
+
+        public async Task<List<BranchInventoryResponse>> GetAvailabilityByBookIdAsync(int bookId)
+        {
+            var query = _context.BookBranches
+                .Include(bb => bb.Book).ThenInclude(b => b.Genre)
+                .Include(bb => bb.Book).ThenInclude(b => b.Language)
+                .Include(bb => bb.Branch)
+                .Where(bb => bb.BookId == bookId && (bb.QuantityForSale > 0 || bb.QuantityForBorrow > 0));
+
+            var result = await query
+                .OrderBy(bb => bb.BranchId)
+                .Select(bb => new BranchInventoryResponse
+                {
+                    BookId = bb.BookId,
+                    BranchId = bb.BranchId,
+                    BranchName = bb.Branch.Name,
+                    Title = bb.Book.Title,
+                    Author = bb.Book.Author,
+                    GenreName = bb.Book.Genre.Name,
+                    LanguageName = bb.Book.Language.Name,
+                    Price = bb.Book.Price,
+                    PhotoEndpoint = $"/api/books/{bb.BookId}/photo",
+                    SupportsBorrowing = bb.SupportsBorrowing,
+                    QuantityForBorrow = bb.QuantityForBorrow,
+                    QuantityForSale = bb.QuantityForSale
+                })
+                .ToListAsync();
+
+            return result;
+        }
 
 
         public async Task<bool> DeleteAsync(int branchId, int bookId)
@@ -149,6 +191,8 @@ namespace Knjigoteka.Services.Services
                 Author = bb.Book?.Author ?? "Nepoznat autor",
                 GenreName = bb.Book?.Genre?.Name ?? "Nepoznat žanr",
                 LanguageName = bb.Book?.Language?.Name ?? "Nepoznat jezik",
+                Price = bb.Book?.Price ?? 0,
+                PhotoEndpoint = $"/api/books/{bb.BookId}/photo",
                 SupportsBorrowing = bb.SupportsBorrowing,
                 QuantityForBorrow = bb.QuantityForBorrow,
                 QuantityForSale = bb.QuantityForSale

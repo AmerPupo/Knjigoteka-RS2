@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Knjigoteka.Model.SearchObjects;
 
 namespace Knjigoteka.Services.Interfaces
 {
@@ -15,8 +16,9 @@ namespace Knjigoteka.Services.Interfaces
         Task<bool> IsUserBlocked (int  userId);
         Task BlockIfExceededPenaltyThreshold(int userId);
         Task<UserResponse> GetCurrentUserAsync ();
-        Task<List<UserResponse>> GetAllAsync();
-
+        Task<List<UserResponse>> GetAllAsync(UserSearchObject? search);
+        Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest dto);
+        Task<EditProfileResponse> EditProfileAsync(EditProfileRequest dto);
 
     }
 

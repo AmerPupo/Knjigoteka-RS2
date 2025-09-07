@@ -34,6 +34,7 @@ namespace Knjigoteka.Model.Entities
     {
         Pending,
         Approved,
+        Recieved,
         Rejected
     }
 

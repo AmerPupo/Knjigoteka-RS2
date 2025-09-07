@@ -16,6 +16,7 @@ namespace Knjigoteka.Services.Interfaces
         Task<List<BorrowingResponse>> GetByUserAsync(int userId);
         Task<List<BorrowingResponse>> GetByBranchAsync(int? branchId);
         Task<List<BorrowingResponse>> GetAllAsync();
+        Task<bool> DeleteAsync(int id);
     }
 
 

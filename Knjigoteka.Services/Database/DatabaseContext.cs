@@ -25,6 +25,8 @@ namespace Knjigoteka.Services.Database
         public DbSet<RestockRequest> RestockRequests { get; set; } = null!;
         public DbSet<Review> Reviews { get; set; } = null!;
         public DbSet<Role> Roles { get; set; } = null!;
+        public DbSet<Sale> Sales { get; set; } = null!;
+        public DbSet<SaleItem> SalesItems { get; set; } = null!;
         public DbSet<User> Users { get; set; } = null!;
 
 
