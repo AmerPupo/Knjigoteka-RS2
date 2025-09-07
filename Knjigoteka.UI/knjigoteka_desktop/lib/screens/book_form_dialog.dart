@@ -175,7 +175,7 @@ class _BookFormDialogState extends State<BookFormDialog> {
                           ? ClipRRect(
                               borderRadius: BorderRadius.circular(7),
                               child: Image.network(
-                                "https://localhost:7295${widget.book!.photoEndpoint}",
+                                "http://localhost:7295${widget.book!.photoEndpoint}",
                                 fit: BoxFit.cover,
                                 width: 130,
                                 height: 180,

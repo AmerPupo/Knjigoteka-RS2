@@ -589,7 +589,7 @@ class _EmployeeBooksScreenState extends State<EmployeeBooksScreen> {
                                                       .photoEndpoint
                                                       .isNotEmpty)
                                                   ? Image.network(
-                                                      "https://localhost:7295${book.photoEndpoint}",
+                                                      "http://localhost:7295${book.photoEndpoint}",
                                                       fit: BoxFit.cover,
                                                       errorBuilder:
                                                           (_, __, ___) => Icon(

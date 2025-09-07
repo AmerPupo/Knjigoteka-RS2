@@ -260,7 +260,7 @@ class _BooksScreenState extends State<BooksScreen> {
                         ? ClipRRect(
                             borderRadius: BorderRadius.circular(16),
                             child: Image.network(
-                              "https://localhost:7295${_books[_hoveredRowIndex!].photoEndpoint}",
+                              "http://localhost:7295${_books[_hoveredRowIndex!].photoEndpoint}",
                               width: 150,
                               height: 200,
                               fit: BoxFit.cover,
