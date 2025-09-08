@@ -65,6 +65,8 @@ namespace Knjigoteka.Services.Services
                 {
                     BookId = bb.BookId,
                     BranchId = bb.BranchId,
+                    BranchName = bb.Branch.Name,
+                    BranchAdress = bb.Branch.Address + ", " + bb.Branch.City.Name,
                     Title = bb.Book.Title,
                     Author = bb.Book.Author,
                     GenreName = bb.Book.Genre.Name,
@@ -188,6 +190,8 @@ namespace Knjigoteka.Services.Services
             {
                 BookId = bb.BookId,
                 BranchId = bb.BranchId,
+                BranchName  = bb.Branch.Name,
+                BranchAdress = bb.Branch.Address + ", " + bb.Branch.City.Name,
                 Title = bb.Book?.Title ?? "Nepoznat naslov",
                 Author = bb.Book?.Author ?? "Nepoznat autor",
                 GenreName = bb.Book?.Genre?.Name ?? "Nepoznat žanr",

@@ -77,7 +77,6 @@ public class ReviewService
             UserId = r.UserId,
             UserFullName = r.User != null ? $"{r.User.FirstName} {r.User.LastName}" : "",
             Rating = r.Rating,
-            Comment = r.Comment,
             CreatedAt = r.CreatedAt
         };
     }
@@ -89,7 +88,6 @@ public class ReviewService
             BookId = req.BookId,
             UserId = _user.UserId,
             Rating = req.Rating,
-            Comment = req.Comment,
             CreatedAt = DateTime.Now
         };
     }
@@ -97,7 +95,6 @@ public class ReviewService
     protected override void MapToEntity(ReviewUpdate req, Review entity)
     {
         entity.Rating = req.Rating;
-        entity.Comment = req.Comment;
     }
 
     public async Task<List<ReviewResponse>> GetByBookAsync(int bookId)

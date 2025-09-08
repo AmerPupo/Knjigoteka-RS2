@@ -46,8 +46,7 @@ class _MainDashboardState extends State<MainDashboard> {
         onTap: (i) {
           setState(() {
             _selectedIndex = i;
-            if (i != 0)
-              _selectedBook = null; // Ako nije home, zatvori detalje knjige
+            if (i != 0) _selectedBook = null;
           });
         },
         type: BottomNavigationBarType.fixed,

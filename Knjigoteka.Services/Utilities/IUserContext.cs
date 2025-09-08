@@ -13,5 +13,6 @@ namespace Knjigoteka.Services.Utilities
         string? Email { get; }
         string? FullName { get; }
         int? BranchId { get; }
+        int? EmployeeId { get; }
     }
 }

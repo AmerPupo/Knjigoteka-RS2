@@ -14,8 +14,7 @@ namespace Knjigoteka.Model.Entities
         [Required]
         [Range(1, 5)]
         public int Rating { get; set; } // 1–5
-        [MaxLength(100)]
-        public string? Comment { get; set; } = null!;
+
         [Required]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 

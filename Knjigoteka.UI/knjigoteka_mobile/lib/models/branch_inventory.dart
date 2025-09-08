@@ -34,7 +34,7 @@ class BranchInventory {
         bookId: json['bookId'],
         branchId: json['branchId'],
         branchName: json['branchName'],
-        branchAddress: json['branchAddress'],
+        branchAddress: json['branchAdress'],
         title: json['title'],
         author: json['author'],
         genreName: json['genreName'],

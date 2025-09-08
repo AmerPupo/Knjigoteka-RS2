@@ -88,8 +88,7 @@ namespace Knjigoteka.Services.Services
 
         protected override RestockRequest MapToEntity(RestockRequestCreate req)
         {
-            int employeeId = _user.UserId;
-
+            int employeeId = _user.EmployeeId ?? throw new UnauthorizedAccessException();
             int branchId = _user.BranchId ?? throw new UnauthorizedAccessException();
 
             return new RestockRequest
@@ -177,7 +176,7 @@ namespace Knjigoteka.Services.Services
 
             if (_user.Role == "Employee")
             {
-                if (entity.EmployeeId != _user.UserId)
+                if (entity.EmployeeId != _user.EmployeeId)
                     throw new UnauthorizedAccessException("You can only cancel your own restock requests.");
                 if (entity.Status != RestockRequestStatus.Pending)
                     throw new InvalidOperationException("Only pending requests can be cancelled.");

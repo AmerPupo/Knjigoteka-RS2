@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:knjigoteka_mobile/providers/notification_request_provider.dart';
+import 'package:knjigoteka_mobile/providers/order_provider.dart';
+import 'package:knjigoteka_mobile/providers/reservation_provider.dart';
 import 'package:knjigoteka_mobile/providers/book_provider.dart';
 import 'package:knjigoteka_mobile/providers/branch_inventory_provider.dart';
+import 'package:knjigoteka_mobile/providers/cart_provider.dart';
 import 'package:knjigoteka_mobile/providers/genre_provider.dart';
 import 'package:knjigoteka_mobile/providers/language_provider.dart';
 import 'package:provider/provider.dart';
@@ -12,11 +16,15 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => CartProvider()),
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => BookProvider()),
         ChangeNotifierProvider(create: (_) => GenreProvider()),
         ChangeNotifierProvider(create: (_) => LanguageProvider()),
         ChangeNotifierProvider(create: (_) => BranchInventoryProvider()),
+        ChangeNotifierProvider(create: (_) => NotificationRequestProvider()),
+        ChangeNotifierProvider(create: (_) => ReservationProvider()),
+        ChangeNotifierProvider(create: (_) => OrderProvider()),
       ],
       child: MyApp(),
     ),

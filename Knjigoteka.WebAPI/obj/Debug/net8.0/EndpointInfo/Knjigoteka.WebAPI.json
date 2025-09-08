@@ -5605,11 +5605,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "comment": {
-            "maxLength": 100,
-            "type": "string",
-            "nullable": true
-          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -5633,10 +5628,6 @@
           "rating": {
             "type": "integer",
             "format": "int32"
-          },
-          "comment": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -5668,10 +5659,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "comment": {
-            "type": "string",
-            "nullable": true
-          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -5702,10 +5689,6 @@
           "rating": {
             "type": "integer",
             "format": "int32"
-          },
-          "comment": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false

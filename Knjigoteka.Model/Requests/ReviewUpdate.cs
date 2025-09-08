@@ -9,6 +9,5 @@ namespace Knjigoteka.Model.Requests
     public class ReviewUpdate
     {
         public int Rating { get; set; }
-        public string? Comment { get; set; }
     }
 }

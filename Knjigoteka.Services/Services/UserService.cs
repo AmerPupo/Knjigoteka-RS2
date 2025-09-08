@@ -109,7 +109,10 @@ public class UserService : IUserService
         {
             var employee = await _context.Employees.FirstOrDefaultAsync(e => e.UserId == user.Id);
             if (employee != null)
+            {
                 claims.Add(new Claim("branchId", employee.BranchId.ToString()));
+                claims.Add(new Claim("employeeId", employee.Id.ToString()));
+            }
         }
 
         // Get settings
@@ -183,7 +186,10 @@ public class UserService : IUserService
         {
             var employee = await _context.Employees.FirstOrDefaultAsync(e => e.UserId == user.Id);
             if (employee != null)
+            {
                 claims.Add(new Claim("branchId", employee.BranchId.ToString()));
+                claims.Add(new Claim("employeeId", employee.Id.ToString()));
+            }
         }
 
         var jwt = _config.GetSection("Jwt");
@@ -242,7 +248,10 @@ public class UserService : IUserService
         {
             var employee = await _context.Employees.FirstOrDefaultAsync(e => e.UserId == user.Id);
             if (employee != null)
+            {
                 claims.Add(new Claim("branchId", employee.BranchId.ToString()));
+                claims.Add(new Claim("employeeId", employee.Id.ToString()));
+            }
         }
 
         var jwt = _config.GetSection("Jwt");

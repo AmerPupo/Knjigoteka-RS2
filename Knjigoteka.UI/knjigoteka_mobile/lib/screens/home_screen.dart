@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:knjigoteka_mobile/providers/cart_provider.dart';
 import 'package:provider/provider.dart';
 import '../models/book.dart';
 import '../models/genre.dart';
@@ -265,26 +266,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           SizedBox(height: 7),
                                           SizedBox(
                                             width: double.infinity,
-                                            child: ElevatedButton(
-                                              onPressed: () {},
-                                              child: Text('Dodaj u korpu'),
-                                              style: ElevatedButton.styleFrom(
-                                                padding: EdgeInsets.symmetric(
-                                                  vertical: 11,
-                                                ),
-                                                backgroundColor: Color(
-                                                  0xFF233348,
-                                                ),
-                                                foregroundColor: Colors.white,
-                                                textStyle: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
-                                                ),
-                                              ),
-                                            ),
+                                            child: CartStepperInline(book: b),
                                           ),
                                         ],
                                       ),
@@ -398,6 +380,169 @@ class _FilterSheetState extends State<_FilterSheet> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CartStepperInline extends StatefulWidget {
+  final Book book;
+  const CartStepperInline({required this.book});
+  @override
+  State<CartStepperInline> createState() => _CartStepperInlineState();
+}
+
+class _CartStepperInlineState extends State<CartStepperInline> {
+  int _qty = 0;
+  bool _loading = true;
+
+  int get _maxQty => widget.book.centralStock;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    try {
+      final qty = await CartProvider().getBookQuantity(widget.book.id);
+      if (!mounted) return;
+      setState(() {
+        _qty = qty;
+        _loading = false;
+      });
+    } catch (_) {
+      setState(() => _loading = false);
+    }
+  }
+
+  Future<void> _update(int n) async {
+    if (n > _maxQty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Na stanju je samo $_maxQty komada ove knjige."),
+        ),
+      );
+      return;
+    }
+    setState(() => _loading = true);
+    try {
+      await CartProvider().upsertCartItem(bookId: widget.book.id, quantity: n);
+      if (!mounted) return;
+      setState(() {
+        _qty = n;
+        _loading = false;
+      });
+    } catch (e) {
+      setState(() => _loading = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.toString().replaceFirst("Exception: ", ""))),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final radius = 13.0;
+    final primary = Color(0xFF233348);
+
+    if (_loading) {
+      return Center(
+        child: SizedBox(
+          height: 30,
+          width: 30,
+          child: CircularProgressIndicator(strokeWidth: 2),
+        ),
+      );
+    }
+    if (_qty == 0) {
+      return SizedBox(
+        width: double.infinity,
+        child: ElevatedButton.icon(
+          icon: Icon(Icons.add_shopping_cart, size: 22),
+          label: Text('Dodaj u korpu', style: TextStyle(fontSize: 16)),
+          onPressed: _maxQty > 0 ? () async => await _update(1) : null,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: primary,
+            foregroundColor: Colors.white,
+            padding: EdgeInsets.symmetric(vertical: 13),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius),
+            ),
+            textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+          ),
+        ),
+      );
+    }
+    return Container(
+      decoration: BoxDecoration(
+        color: primary,
+        borderRadius: BorderRadius.circular(radius),
+        boxShadow: [
+          BoxShadow(
+            color: primary.withOpacity(0.10),
+            blurRadius: 8,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      padding: EdgeInsets.symmetric(vertical: 7, horizontal: 12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          GestureDetector(
+            onTap: _qty == 1
+                ? () async => await _update(0)
+                : () async => await _update(_qty - 1),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(9),
+              ),
+              padding: EdgeInsets.all(5),
+              child: Icon(
+                _qty == 1 ? Icons.delete_outline : Icons.remove,
+                color: primary,
+                size: 24,
+              ),
+            ),
+          ),
+          Text(
+            '$_qty kom.',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 19,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.5,
+            ),
+          ),
+          GestureDetector(
+            onTap: _qty < _maxQty
+                ? () async => await _update(_qty + 1)
+                : () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          "Ne može više od $_maxQty komada. Toliko ih je trenutno na stanju.",
+                        ),
+                      ),
+                    );
+                  },
+            child: Container(
+              decoration: BoxDecoration(
+                color: _qty < _maxQty ? Colors.white : Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(9),
+              ),
+              padding: EdgeInsets.all(5),
+              child: Icon(
+                Icons.add,
+                color: _qty < _maxQty ? primary : Colors.grey,
+                size: 24,
               ),
             ),
           ),

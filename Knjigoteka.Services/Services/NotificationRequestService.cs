@@ -30,7 +30,7 @@ namespace Knjigoteka.Services.Services
             bool exists = await _context.NotificationRequests.AnyAsync(
                 n => n.UserId == _user.UserId && n.BookId == dto.BookId && n.BranchId == dto.BranchId);
             if (exists)
-                throw new InvalidOperationException("Notification request already exists.");
+                throw new InvalidOperationException("Već imate kreiran zahtjev za ovu knjigu.");
 
             var bookBranch = await _context.BookBranches
                 .FirstOrDefaultAsync(bb => bb.BookId == dto.BookId && bb.BranchId == dto.BranchId);
