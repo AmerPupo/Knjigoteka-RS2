@@ -79,7 +79,7 @@ Odabir države: bilo koja :D
 
 Aplikacija koristi RabbitMQ mikroservis za automatsko slanje email obavještenja u sljedećim slučajevima:
 
-Kada knjigap ostane dostupna ya posudbu tj. user zatraži da u dođe obavijest na email kada knjiga postane dostupna.
+Kada knjiga ostane dostupna za posudbu tj. user zatraži da mu dođe obavijest na email kada knjiga postane dostupna.
 
 ## 🛠️ Tehnologije
 
