@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:knjigoteka_desktop/providers/city_provider.dart';
 import 'package:knjigoteka_desktop/screens/branch_form_dialog.dart';
+import 'package:knjigoteka_desktop/screens/branch_report_dialog.dart';
 import 'package:provider/provider.dart';
 import '../providers/branch_provider.dart';
 import '../models/branch.dart';
@@ -272,7 +273,11 @@ class _BranchesScreenState extends State<BranchesScreen> {
                               width: 110,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  // TODO: Show branch report
+                                  showDialog(
+                                    context: context,
+                                    builder: (ctx) =>
+                                        BranchReportDialog(branch: b),
+                                  );
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.blueGrey,

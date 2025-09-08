@@ -1,11 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:knjigoteka_mobile/main.dart';
 import 'package:knjigoteka_mobile/providers/auth_provider.dart';
 
 class ReservationProvider with ChangeNotifier {
-  static const String _baseUrl = "http://10.0.2.2:7295/api/Reservations";
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: "http://10.0.2.2:7295/api",
+  );
 
   Future<void> createReservation({
     required int bookId,
@@ -14,7 +16,7 @@ class ReservationProvider with ChangeNotifier {
   }) async {
     final _token = token ?? AuthProvider.token;
     final response = await http.post(
-      Uri.parse(_baseUrl),
+      Uri.parse("$_baseUrl/Reservations"),
       headers: {
         "Content-Type": "application/json",
         if (_token != null) "Authorization": "Bearer $_token",

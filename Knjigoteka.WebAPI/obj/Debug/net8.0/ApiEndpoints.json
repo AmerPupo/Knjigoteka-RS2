@@ -187,6 +187,37 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Knjigoteka.WebAPI.Controllers.BooksController",
+    "Method": "Recommend",
+    "RelativePath": "api/Books/{id}/recommend",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Knjigoteka.Model.Responses.BookResponse, Knjigoteka.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "BorrowingsController",
     "Method": "Create",
     "RelativePath": "api/Borrowings",
@@ -487,6 +518,37 @@
     ]
   },
   {
+    "ContainingType": "Knjigoteka.WebAPI.Controllers.BranchesController",
+    "Method": "GetReport",
+    "RelativePath": "api/Branches/{id}/report",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "req",
+        "Type": "Knjigoteka.Model.Requests.BranchReportRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Knjigoteka.Model.Responses.BranchReportResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Knjigoteka.WebAPI.Controllers.BranchInventoryController",
     "Method": "Get",
     "RelativePath": "api/branches/inventory",
@@ -561,17 +623,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Knjigoteka.Model.Responses.BranchInventoryResponse",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "Knjigoteka.WebAPI.Controllers.BranchInventoryController",
@@ -2138,6 +2190,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Knjigoteka.WebAPI.Controllers.StripeController",
+    "Method": "CreateCheckoutSession",
+    "RelativePath": "api/Stripe/create-checkout-session",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Knjigoteka.WebAPI.Controllers.CreateCheckoutSessionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Knjigoteka.WebAPI.Controllers.StripeController",
+    "Method": "CreatePaymentIntent",
+    "RelativePath": "api/Stripe/create-payment-intent",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Knjigoteka.WebAPI.Controllers.StripeController\u002BCreatePaymentIntentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "UserController",
     "Method": "GetAll",
     "RelativePath": "api/User",
@@ -2275,6 +2359,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Knjigoteka.WebAPI.Controllers.SeedController",
+    "Method": "Init",
+    "RelativePath": "Seed/init",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

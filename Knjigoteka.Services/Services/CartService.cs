@@ -36,7 +36,7 @@ namespace Knjigoteka.Services.Services
                     Author = ci.Book.Author,
                     UnitPrice = ci.Book.Price,
                     Quantity = ci.Quantity,
-                    BookImage = ci.Book.BookImage
+                    PhotoEndpoint = $"/books/{ci.BookId}/photo",
                 }).ToList()
             };
         }

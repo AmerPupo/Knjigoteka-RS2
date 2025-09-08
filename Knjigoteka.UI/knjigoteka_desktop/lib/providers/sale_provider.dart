@@ -4,7 +4,10 @@ import 'package:http/http.dart' as http;
 import '../providers/auth_provider.dart';
 
 class SaleProvider with ChangeNotifier {
-  static String _baseUrl = "http://localhost:7295/api";
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: 'http://localhost:7295/api',
+  );
   Future<void> createSale(Map<String, dynamic> data) async {
     final token = AuthProvider.token;
     final res = await http.post(

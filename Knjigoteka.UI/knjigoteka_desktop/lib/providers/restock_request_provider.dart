@@ -4,7 +4,10 @@ import 'base_provider.dart';
 import 'package:http/http.dart' as http;
 
 class RestockRequestProvider extends BaseProvider<RestockRequest> {
-  static const String baseUrl = "http://localhost:7295/api/RestockRequests";
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: 'http://localhost:7295/api',
+  );
   RestockRequestProvider() : super('RestockRequests');
 
   @override
@@ -14,7 +17,7 @@ class RestockRequestProvider extends BaseProvider<RestockRequest> {
 
   Future<bool> approve(int id) async {
     final res = await http.post(
-      Uri.parse('$baseUrl/$id/approve'),
+      Uri.parse('$_baseUrl/RestockRequests/$id/approve'),
       headers: getHeaders(),
     );
     return res.statusCode >= 200 && res.statusCode < 300;
@@ -22,7 +25,7 @@ class RestockRequestProvider extends BaseProvider<RestockRequest> {
 
   Future<bool> reject(int id) async {
     final res = await http.post(
-      Uri.parse('$baseUrl/$id/reject'),
+      Uri.parse('$_baseUrl/RestockRequests/$id/reject'),
       headers: getHeaders(),
     );
     return res.statusCode >= 200 && res.statusCode < 300;
@@ -30,7 +33,7 @@ class RestockRequestProvider extends BaseProvider<RestockRequest> {
 
   Future<List<RestockRequest>> getApprovedForBranchBook(int bookId) async {
     final res = await http.get(
-      Uri.parse('$baseUrl/bybranch?bookId=$bookId'),
+      Uri.parse('$_baseUrl/RestockRequests/bybranch?bookId=$bookId'),
       headers: getHeaders(),
     );
     print('Response body: ${res.body}');
@@ -47,7 +50,7 @@ class RestockRequestProvider extends BaseProvider<RestockRequest> {
       "quantityRequested": quantityRequested,
     });
     final res = await http.post(
-      Uri.parse(baseUrl),
+      Uri.parse('$_baseUrl/RestockRequests'),
       headers: getHeaders(),
       body: body,
     );

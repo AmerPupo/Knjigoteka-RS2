@@ -32,13 +32,15 @@ android {
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
+            isMinifyEnabled = false
+            isShrinkResources = false
             signingConfig = signingConfigs.getByName("debug")
         }
     }
 }
-
+dependencies {
+    implementation("com.google.android.material:material:1.9.0")
+}
 flutter {
     source = "../.."
 }

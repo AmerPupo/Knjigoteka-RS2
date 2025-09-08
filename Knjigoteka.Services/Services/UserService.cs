@@ -66,14 +66,13 @@ public class UserService : IUserService
             throw new Exception("Email already in use.");
         if (!ValidationUtils.IsValidPassword(dto.Password))
             throw new Exception("Šifra mora imati najmanje 8 znakova, veliko i malo slovo, broj i specijalni karakter.");
-
         var hasher = new PasswordHasher<User>();
         var user = new User
         {
             FirstName = dto.FirstName,
             LastName = dto.LastName,
             Email = dto.Email,
-            RoleId = 3 
+            RoleId = 3
         };
         user.PasswordHash = hasher.HashPassword(user, dto.Password);
 

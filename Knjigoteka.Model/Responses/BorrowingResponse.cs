@@ -11,6 +11,8 @@ namespace Knjigoteka.Model.Responses
         public int Id { get; set; }
         public int BookId { get; set; }
         public string BookTitle { get; set; } = null!;
+        public string? Author { get; set; }
+        public string? PhotoEndpoint { get; set; }
         public int UserId { get; set; }
         public string UserFullName { get; set; } = null!;
         public int BranchId { get; set; }

@@ -12,5 +12,6 @@ namespace Knjigoteka.Services.Interfaces
     public interface IBookService
         : ICRUDService<BookResponse, BookSearchObject, BookInsert, BookUpdate>
     {
+        Task<List<BookResponse>> RecommendAsync(int bookId, int take = 3);
     }
 }

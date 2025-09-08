@@ -5,7 +5,11 @@ import 'package:knjigoteka_mobile/main.dart';
 import '../providers/auth_provider.dart';
 
 abstract class BaseProvider<T> with ChangeNotifier {
-  static String _baseUrl = "http://10.0.2.2:7295/api";
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: "http://10.0.2.2:7295/api",
+  );
+
   final String _endpoint;
   BaseProvider(this._endpoint);
 

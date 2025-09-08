@@ -20,7 +20,10 @@ class _EmployeeBooksScreenState extends State<EmployeeBooksScreen> {
   bool _loading = false;
   String _search = '';
   final TextEditingController _searchController = TextEditingController();
-
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: 'http://localhost:7295/api',
+  );
   @override
   void initState() {
     super.initState();
@@ -589,7 +592,7 @@ class _EmployeeBooksScreenState extends State<EmployeeBooksScreen> {
                                                       .photoEndpoint
                                                       .isNotEmpty)
                                                   ? Image.network(
-                                                      "http://localhost:7295${book.photoEndpoint}",
+                                                      "$_baseUrl${book.photoEndpoint}",
                                                       fit: BoxFit.cover,
                                                       errorBuilder:
                                                           (_, __, ___) => Icon(

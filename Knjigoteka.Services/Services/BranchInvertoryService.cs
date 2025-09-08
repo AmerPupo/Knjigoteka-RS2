@@ -7,17 +7,24 @@ using Knjigoteka.Model.SearchObjects;
 using Knjigoteka.Services.Database;
 using Knjigoteka.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using RabbitMQ.Client;
 using System.Net;
+using System.Text;
 
 namespace Knjigoteka.Services.Services
 {
-    public class BranchInventoryService :IBranchInventoryService
+    public class BranchInventoryService : IBranchInventoryService
     {
         private readonly DatabaseContext _context;
+        private readonly IRabbitMQService _rabbitMQConnectionManager;
+        private readonly RabbitMQ.Client.IModel _channel;
+        private readonly string _queueName = Environment.GetEnvironmentVariable("RABBITMQ_QUEUE") ?? "mailqueue";
 
-        public BranchInventoryService(DatabaseContext context)
+        public BranchInventoryService(DatabaseContext context, IRabbitMQService rabbitMQConnectionManager)
         {
             _context = context;
+            _rabbitMQConnectionManager = rabbitMQConnectionManager;
+            _channel = rabbitMQConnectionManager.GetChannel();
         }
 
         public async Task<PagedResult<BranchInventoryResponse>> GetAsync(BranchInventorySearchObject search)
@@ -25,6 +32,7 @@ namespace Knjigoteka.Services.Services
             var q = _context.BookBranches
                 .Include(bb => bb.Book).ThenInclude(b => b.Genre)
                 .Include(bb => bb.Book).ThenInclude(b => b.Language)
+                .Include(bb => bb.Branch).ThenInclude(b => b.City)
                 .AsQueryable();
             if (string.IsNullOrWhiteSpace(search.FTS)
                 && search.BranchId <= 0
@@ -65,14 +73,15 @@ namespace Knjigoteka.Services.Services
                 {
                     BookId = bb.BookId,
                     BranchId = bb.BranchId,
-                    BranchName = bb.Branch.Name,
-                    BranchAdress = bb.Branch.Address + ", " + bb.Branch.City.Name,
-                    Title = bb.Book.Title,
-                    Author = bb.Book.Author,
-                    GenreName = bb.Book.Genre.Name,
-                    LanguageName = bb.Book.Language.Name,
+                    BranchName = bb.Branch.Name ?? "Nepoznata filiala",
+                    BranchAdress = (bb.Branch.Address ?? "Nepoznata adresa")
+                                    + ((bb.Branch.City != null && bb.Branch.City.Name != null) ? ", " + bb.Branch.City.Name : ""),
+                    Title = bb.Book.Title ?? "Nepoznat naslov",
+                    Author = bb.Book.Author ?? "Nepoznat autor",
+                    GenreName = bb.Book.Genre != null ? bb.Book.Genre.Name ?? "Nepoznat žanr" : "Nepoznat žanr",
+                    LanguageName = bb.Book.Language != null ? bb.Book.Language.Name ?? "Nepoznat jezik" : "Nepoznat jezik",
                     Price = bb.Book.Price,
-                    PhotoEndpoint = $"/api/books/{bb.BookId}/photo",
+                    PhotoEndpoint = $"/books/{bb.BookId}/photo",
                     SupportsBorrowing = bb.SupportsBorrowing,
                     QuantityForBorrow = bb.QuantityForBorrow,
                     QuantityForSale = bb.QuantityForSale
@@ -86,7 +95,7 @@ namespace Knjigoteka.Services.Services
             };
         }
 
-        public async Task<BranchInventoryResponse> UpsertAsync(int branchId, BranchInventoryUpsert request)
+        public async Task UpsertAsync(int branchId, BranchInventoryUpsert request)
         {
             var book = await _context.Books
                 .Include(b => b.BookBranches)
@@ -94,7 +103,9 @@ namespace Knjigoteka.Services.Services
                 ?? throw new KeyNotFoundException("Book not found.");
 
             var bb = await _context.BookBranches
-                .FirstOrDefaultAsync(x => x.BranchId == branchId && x.BookId == request.BookId);
+                .Include(b => b.Branch)
+                .FirstOrDefaultAsync(x => x.BranchId == branchId && x.BookId == request.BookId)
+                ;
 
             var restockRequest = await _context.RestockRequests
                 .Where(r => r.BranchId == branchId
@@ -134,20 +145,41 @@ namespace Knjigoteka.Services.Services
 
             restockRequest.Status = RestockRequestStatus.Recieved;
             await _context.SaveChangesAsync();
-            return MapToDto(bb);
+            if (bb.QuantityForBorrow > 0 && bb.QuantityForSale > 0)
+            {
+                var subs = await _context.NotificationRequests
+                    .Where(n => n.BookId == request.BookId && n.BranchId == branchId)
+                    .Include(n => n.User)
+                    .ToListAsync();
+
+                foreach (var sub in subs)
+                {
+                    var payload = sub.User?.Email ?? "";
+                    if (!string.IsNullOrEmpty(payload))
+                    {
+                        var body = Encoding.UTF8.GetBytes(payload);
+
+                        _channel.BasicPublish(
+                            exchange: "",
+                            routingKey: _queueName,
+                            basicProperties: null,
+                            body: body
+                        );
+                        Console.WriteLine($"[RabbitMQ] Published payload='{payload}' to queue='{_queueName}'");
+                    }
+                    _context.NotificationRequests.Remove(sub);
+                }
+
+                await _context.SaveChangesAsync();
+            }
         }
-
-
-
-
-
 
         public async Task<List<BranchInventoryResponse>> GetAvailabilityByBookIdAsync(int bookId)
         {
             var query = _context.BookBranches
                 .Include(bb => bb.Book).ThenInclude(b => b.Genre)
                 .Include(bb => bb.Book).ThenInclude(b => b.Language)
-                .Include(bb => bb.Branch)
+                .Include(bb => bb.Branch).ThenInclude(b => b.City)
                 .Where(bb => bb.BookId == bookId && (bb.QuantityForSale > 0 || bb.QuantityForBorrow > 0));
 
             var result = await query
@@ -156,12 +188,13 @@ namespace Knjigoteka.Services.Services
                 {
                     BookId = bb.BookId,
                     BranchId = bb.BranchId,
-                    BranchName = bb.Branch.Name,
-                    BranchAdress = bb.Branch.Address + ", " + bb.Branch.City.Name,
-                    Title = bb.Book.Title,
-                    Author = bb.Book.Author,
-                    GenreName = bb.Book.Genre.Name,
-                    LanguageName = bb.Book.Language.Name,
+                    BranchName = bb.Branch.Name ?? "Nepoznata filiala",
+                    BranchAdress = (bb.Branch.Address ?? "Nepoznata adresa") +
+                                   ((bb.Branch.City != null && bb.Branch.City.Name != null) ? ", " + bb.Branch.City.Name : ""),
+                    Title = bb.Book.Title ?? "Nepoznat naslov",
+                    Author = bb.Book.Author ?? "Nepoznat autor",
+                    GenreName = bb.Book.Genre != null ? bb.Book.Genre.Name ?? "Nepoznat žanr" : "Nepoznat žanr",
+                    LanguageName = bb.Book.Language != null ? bb.Book.Language.Name ?? "Nepoznat jezik" : "Nepoznat jezik",
                     Price = bb.Book.Price,
                     PhotoEndpoint = $"/api/books/{bb.BookId}/photo",
                     SupportsBorrowing = bb.SupportsBorrowing,
@@ -184,20 +217,25 @@ namespace Knjigoteka.Services.Services
             await _context.SaveChangesAsync();
             return true;
         }
+
         protected BranchInventoryResponse MapToDto(BookBranch bb)
         {
+            if (bb == null)
+                throw new ArgumentNullException(nameof(bb), "BookBranch cannot be null");
+
             return new BranchInventoryResponse
             {
                 BookId = bb.BookId,
                 BranchId = bb.BranchId,
-                BranchName  = bb.Branch.Name,
-                BranchAdress = bb.Branch.Address + ", " + bb.Branch.City.Name,
+                BranchName = bb.Branch?.Name ?? "Nepoznata filiala",
+                BranchAdress = (bb.Branch?.Address ?? "Nepoznata adresa") +
+                              ((bb.Branch?.City?.Name != null) ? ", " + bb.Branch.City.Name : ""),
                 Title = bb.Book?.Title ?? "Nepoznat naslov",
                 Author = bb.Book?.Author ?? "Nepoznat autor",
                 GenreName = bb.Book?.Genre?.Name ?? "Nepoznat žanr",
                 LanguageName = bb.Book?.Language?.Name ?? "Nepoznat jezik",
                 Price = bb.Book?.Price ?? 0,
-                PhotoEndpoint = $"/api/books/{bb.BookId}/photo",
+                PhotoEndpoint = $"/books/{bb.BookId}/photo",
                 SupportsBorrowing = bb.SupportsBorrowing,
                 QuantityForBorrow = bb.QuantityForBorrow,
                 QuantityForSale = bb.QuantityForSale

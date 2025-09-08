@@ -5,13 +5,16 @@ import '../models/branch_inventory.dart';
 import '../providers/auth_provider.dart';
 
 class BranchInventoryProvider with ChangeNotifier {
-  static const String _baseUrl = "http://localhost:7295/api/branches/inventory";
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: 'http://localhost:7295/api',
+  );
 
   Future<List<BranchInventory>> getAvailableForSale(
     int branchId, {
     String fts = "",
   }) async {
-    String url = '$_baseUrl?BranchId=$branchId';
+    String url = '$_baseUrl/branches/inventory?BranchId=$branchId';
     if (fts.isNotEmpty) url += "&FTS=$fts";
     final res = await http.get(
       Uri.parse(url),
@@ -34,7 +37,7 @@ class BranchInventoryProvider with ChangeNotifier {
     int branchId, {
     String fts = "",
   }) async {
-    String url = '$_baseUrl?BranchId=$branchId';
+    String url = '$_baseUrl/branches/inventory?BranchId=$branchId';
     if (fts.isNotEmpty) url += "&FTS=$fts";
     final res = await http.get(
       Uri.parse(url),
@@ -56,14 +59,13 @@ class BranchInventoryProvider with ChangeNotifier {
     int forSale,
     int forBorrow,
   ) async {
-    final url = '$_baseUrl?branchId=$branchId';
+    final url = '$_baseUrl/branches/inventory?branchId=$branchId';
     final body = jsonEncode({
       "bookId": bookId,
       "supportsBorrowing": forBorrow > 0,
       "quantityForBorrow": forBorrow,
       "quantityForSale": forSale,
     });
-    print("Token: ${AuthProvider.token}");
     final res = await http.put(
       Uri.parse(url),
       headers: {
@@ -86,7 +88,7 @@ class BranchInventoryProvider with ChangeNotifier {
   }
 
   Future<void> removeBookFromBranch(int branchId, int bookId) async {
-    final url = '$_baseUrl/$bookId?branchId=$branchId';
+    final url = '$_baseUrl/branches/inventory/$bookId?branchId=$branchId';
     final res = await http.delete(
       Uri.parse(url),
       headers: {
@@ -101,7 +103,7 @@ class BranchInventoryProvider with ChangeNotifier {
   }
 
   Future<List<BranchInventory>> getAvailabilityByBookId(int bookId) async {
-    String url = '$_baseUrl/availability/$bookId';
+    String url = '$_baseUrl/branches/inventory/availability/$bookId';
     final res = await http.get(
       Uri.parse(url),
       headers: {
@@ -120,8 +122,8 @@ class BranchInventoryProvider with ChangeNotifier {
     int branchId, {
     String fts = "",
   }) async {
-    print("uslo u getAvailableForBorrow");
-    String url = '$_baseUrl?BranchId=$branchId&SupportsBorrowing=true';
+    String url =
+        '$_baseUrl/branches/inventory?BranchId=$branchId&SupportsBorrowing=true';
     if (fts.isNotEmpty) url += "&FTS=$fts";
     final res = await http.get(
       Uri.parse(url),

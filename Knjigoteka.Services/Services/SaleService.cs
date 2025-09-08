@@ -21,17 +21,18 @@ public class SaleService : ISaleService
 
         var employee = await _db.Employees
             .Include(e => e.User)
-            .FirstOrDefaultAsync(e => e.Id == request.EmployeeId)
+            .FirstOrDefaultAsync(e => e.UserId == request.EmployeeId)
             ?? throw new Exception("Employee not found.");
 
         var branchId = employee.BranchId;
 
         var sale = new Sale
         {
-            EmployeeId = request.EmployeeId,
+            EmployeeId = employee.Id,
             SaleDate = DateTime.Now,
             TotalAmount = 0
         };
+        await _db.SaveChangesAsync();
 
         foreach (var item in request.Items)
         {
@@ -56,6 +57,7 @@ public class SaleService : ISaleService
                 Quantity = item.Quantity,
                 UnitPrice = unitPrice
             });
+            await _db.SaveChangesAsync();
 
             sale.TotalAmount += unitPrice * item.Quantity;
         }

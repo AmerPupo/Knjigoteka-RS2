@@ -4,7 +4,7 @@ class CartItem {
   final String author;
   final double unitPrice;
   final int quantity;
-  final String? bookImage;
+  final String? photoEndpoint;
 
   CartItem({
     required this.bookId,
@@ -12,7 +12,7 @@ class CartItem {
     required this.author,
     required this.unitPrice,
     required this.quantity,
-    this.bookImage,
+    this.photoEndpoint,
   });
 
   factory CartItem.fromJson(Map<String, dynamic> json) => CartItem(
@@ -21,6 +21,6 @@ class CartItem {
     author: json['author'],
     unitPrice: (json['unitPrice'] as num).toDouble(),
     quantity: json['quantity'],
-    bookImage: json['bookImage'],
+    photoEndpoint: json['photoEndpoint'],
   );
 }

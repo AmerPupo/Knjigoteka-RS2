@@ -6,12 +6,15 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class BorrowingProvider with ChangeNotifier {
-  final String baseUrl = 'http://localhost:7295/api/Borrowings';
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: 'http://localhost:7295/api',
+  );
 
   Future<List<Borrowing>> getAllBorrowings(int branchId) async {
     final token = AuthProvider.token;
     final res = await http.get(
-      Uri.parse('$baseUrl/branch/$branchId'),
+      Uri.parse('$_baseUrl/Borrowings/branch/$branchId'),
       headers: {'Authorization': 'Bearer $token'},
     );
     _ensureValidResponseOrThrow(res);
@@ -23,7 +26,7 @@ class BorrowingProvider with ChangeNotifier {
     if (!returned) return;
     final token = AuthProvider.token;
     final res = await http.post(
-      Uri.parse('$baseUrl/$borrowingId/return'),
+      Uri.parse('$_baseUrl/Borrowings/$borrowingId/return'),
       headers: {'Authorization': 'Bearer $token'},
     );
     _ensureValidResponseOrThrow(res);
@@ -33,7 +36,7 @@ class BorrowingProvider with ChangeNotifier {
   Future<void> deleteBorrowing(int borrowingId) async {
     final token = AuthProvider.token;
     final res = await http.delete(
-      Uri.parse('$baseUrl/$borrowingId'),
+      Uri.parse('$_baseUrl/Borrowings/$borrowingId'),
       headers: {'Authorization': 'Bearer $token'},
     );
     _ensureValidResponseOrThrow(res);
@@ -43,7 +46,7 @@ class BorrowingProvider with ChangeNotifier {
   Future<Borrowing> insert(Map<String, dynamic> data) async {
     final token = AuthProvider.token;
     final res = await http.post(
-      Uri.parse(baseUrl),
+      Uri.parse('$_baseUrl/Borrowings'),
       headers: {
         'Authorization': 'Bearer $token',
         'Content-Type': 'application/json',

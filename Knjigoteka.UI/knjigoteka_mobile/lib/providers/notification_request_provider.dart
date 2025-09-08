@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class NotificationRequestProvider with ChangeNotifier {
-  static const String _baseUrl = "http://10.0.2.2:7295/api/NotificationRequest";
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: "http://10.0.2.2:7295/api",
+  );
 
   Future<void> createNotificationRequest({
     required int bookId,
@@ -11,7 +14,7 @@ class NotificationRequestProvider with ChangeNotifier {
     required String token,
   }) async {
     final res = await http.post(
-      Uri.parse(_baseUrl),
+      Uri.parse("$_baseUrl/NotificationRequest"),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',

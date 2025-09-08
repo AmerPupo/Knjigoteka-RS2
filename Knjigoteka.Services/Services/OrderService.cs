@@ -109,8 +109,10 @@ namespace Knjigoteka.Services.Services
             {
                 BookId = oi.BookId,
                 Title = oi.Book.Title,
+                Author = oi.Book.Author,
                 Quantity = oi.Quantity,
-                UnitPrice = oi.UnitPrice
+                UnitPrice = oi.UnitPrice,
+                PhotoEndpoint = $"/api/books/{oi.BookId}/photo",
             }).ToList()
         };
 

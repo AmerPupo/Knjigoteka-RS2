@@ -22,6 +22,7 @@ class _AuthScreenState extends State<AuthScreen> {
   String? _passwordError;
   String? _formError;
   bool loading = false;
+  bool _showPassword = false;
 
   @override
   void dispose() {
@@ -104,6 +105,15 @@ class _AuthScreenState extends State<AuthScreen> {
           _emailController.text.trim(),
           _passwordController.text,
         );
+        if (auth.role != "User") {
+          setState(() {
+            _formError =
+                "Samo korisnici sa ulogom 'User' se mogu prijaviti na mobilnu aplikaciju.";
+            loading = false;
+          });
+          await auth.logout();
+          return;
+        }
       } else {
         await auth.register(
           _firstNameController.text.trim(),
@@ -111,6 +121,16 @@ class _AuthScreenState extends State<AuthScreen> {
           _emailController.text.trim(),
           _passwordController.text,
         );
+        // Ako odmah dobije token nakon registracije, provjeri i ovdje
+        if (auth.role != "User") {
+          setState(() {
+            _formError =
+                "Samo korisnici sa ulogom 'User' se mogu prijaviti na mobilnu aplikaciju.";
+            loading = false;
+          });
+          await auth.logout();
+          return;
+        }
       }
       Navigator.pushReplacement(
         context,
@@ -187,11 +207,24 @@ class _AuthScreenState extends State<AuthScreen> {
                       SizedBox(height: 12),
                       TextField(
                         controller: _passwordController,
-                        obscureText: true,
+                        obscureText: !_showPassword,
                         decoration: InputDecoration(
                           labelText: "Šifra",
                           border: OutlineInputBorder(),
                           errorText: _passwordError,
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _showPassword
+                                  ? Icons.visibility_off
+                                  : Icons.visibility,
+                              color: Colors.grey[700],
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _showPassword = !_showPassword;
+                              });
+                            },
+                          ),
                         ),
                       ),
                       if (_formError != null)
@@ -239,6 +272,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           _emailError = null;
                           _passwordError = null;
                           _formError = null;
+                          _showPassword = false;
                         }),
                   child: Text(
                     isLogin

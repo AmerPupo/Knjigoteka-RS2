@@ -1,4 +1,6 @@
-﻿namespace Knjigoteka.Services.Interfaces
+﻿using Knjigoteka.Model.Responses;
+
+namespace Knjigoteka.Services.Interfaces
 {
     public interface ICRUDService<T, TSearch, TInsert, TUpdate> : IService<T, TSearch>
         where T : class

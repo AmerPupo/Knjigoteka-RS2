@@ -4,7 +4,10 @@ import 'package:http/http.dart' as http;
 import 'package:knjigoteka_mobile/providers/auth_provider.dart';
 
 class OrderProvider with ChangeNotifier {
-  static const String _baseUrl = "http://10.0.2.2:7295/api/Order";
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: "http://10.0.2.2:7295/api",
+  );
 
   Future<void> checkoutOrder({
     required String adresa,
@@ -14,7 +17,7 @@ class OrderProvider with ChangeNotifier {
   }) async {
     final token = AuthProvider.token;
     final response = await http.post(
-      Uri.parse("$_baseUrl/checkout"),
+      Uri.parse("$_baseUrl/Order/checkout"),
       headers: {
         "Content-Type": "application/json",
         if (token != null) "Authorization": "Bearer $token",

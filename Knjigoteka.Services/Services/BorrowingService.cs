@@ -3,21 +3,28 @@ using Knjigoteka.Model.Requests;
 using Knjigoteka.Model.Responses;
 using Knjigoteka.Services.Database;
 using Knjigoteka.Services.Interfaces;
+using Knjigoteka.Services.Services;
 using Knjigoteka.Services.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RabbitMQ.Client;
+using System.Text;
 
 public class BorrowingService : IBorrowingService
 {
     private readonly DatabaseContext _context;
     private readonly IUserContext _user;
     private readonly IPenaltyService _penalty;
-
-    public BorrowingService(DatabaseContext context, IUserContext user, IPenaltyService penalty)
+    private readonly IRabbitMQService _rabbitMQConnectionManager;
+    private readonly RabbitMQ.Client.IModel _channel;
+    private readonly string _queueName = Environment.GetEnvironmentVariable("RABBITMQ_QUEUE") ?? "mailqueue";
+    public BorrowingService(DatabaseContext context, IUserContext user, IPenaltyService penalty, IRabbitMQService rabbitMQConnectionManager)
     {
         _context = context;
         _user = user;
         _penalty = penalty;
+        _rabbitMQConnectionManager = rabbitMQConnectionManager;
+        _channel = rabbitMQConnectionManager.GetChannel();
     }
     public async Task<BorrowingResponse> CreateAsync(BorrowingCreate req)
     {
@@ -94,6 +101,27 @@ public class BorrowingService : IBorrowingService
             await _penalty.AddAsync(borrowing.UserId, "Late return");
 
         await _context.SaveChangesAsync();
+        var subs = await _context.NotificationRequests
+           .Where(n => n.BookId == borrowing.BookId && n.BranchId == branchId)
+           .Include(n => n.User)
+           .ToListAsync();
+
+        foreach (var sub in subs)
+        {
+            var payload = sub.User.Email;
+            var body = Encoding.UTF8.GetBytes(payload);
+
+            _channel.BasicPublish(
+                exchange: "",
+                routingKey: _queueName,
+                basicProperties: null,
+                body: body
+            );
+            Console.WriteLine($"[RabbitMQ] Published payload='{payload}' to queue='{_queueName}'");
+            _context.NotificationRequests.Remove(sub);
+        }
+
+        await _context.SaveChangesAsync();
         return true;
     }
 
@@ -162,6 +190,7 @@ public class BorrowingService : IBorrowingService
         Id = b.Id,
         BookId = b.BookId,
         BookTitle = b.Book?.Title ?? "",
+        Author = b.Book?.Author ?? "",
         UserId = b.UserId,
         UserFullName = b.User != null ? $"{b.User.FirstName} {b.User.LastName}" : "",
         BranchId = b.BranchId,
@@ -170,6 +199,7 @@ public class BorrowingService : IBorrowingService
         BorrowedAt = b.BorrowedAt,
         DueDate = b.DueDate,
         ReturnedAt = b.ReturnedAt,
-        IsLate = b.ReturnedAt.HasValue && b.ReturnedAt > b.DueDate
+        IsLate = b.ReturnedAt.HasValue && b.ReturnedAt > b.DueDate,
+        PhotoEndpoint = $"/api/books/{b.BookId}/photo",
     };
 }

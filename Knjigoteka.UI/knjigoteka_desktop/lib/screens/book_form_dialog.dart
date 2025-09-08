@@ -38,7 +38,10 @@ class _BookFormDialogState extends State<BookFormDialog> {
   late TextEditingController _year;
   int? _genreId;
   int? _langId;
-
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: 'http://localhost:7295/api',
+  );
   @override
   void initState() {
     super.initState();
@@ -113,7 +116,6 @@ class _BookFormDialogState extends State<BookFormDialog> {
     final media = MediaQuery.of(context);
     final maxDialogWidth = media.size.width * 0.40;
     final maxDialogHeight = media.size.height * 0.85;
-
     return Dialog(
       insetPadding: EdgeInsets.symmetric(
         horizontal: media.size.width * 0.18,
@@ -175,7 +177,7 @@ class _BookFormDialogState extends State<BookFormDialog> {
                           ? ClipRRect(
                               borderRadius: BorderRadius.circular(7),
                               child: Image.network(
-                                "http://localhost:7295${widget.book!.photoEndpoint}",
+                                "$_baseUrl${widget.book!.photoEndpoint}",
                                 fit: BoxFit.cover,
                                 width: 130,
                                 height: 180,

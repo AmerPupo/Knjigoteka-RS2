@@ -25,7 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Genre> _genres = [];
   List<Language> _languages = [];
   Timer? _debounce;
-
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: "http://10.0.2.2:7295/api",
+  );
   @override
   void initState() {
     super.initState();
@@ -208,7 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               8,
                                             ),
                                             child: Image.network(
-                                              "http://10.0.2.2:7295${b.photoEndpoint}",
+                                              "$_baseUrl${b.photoEndpoint}",
                                               fit: BoxFit.cover,
                                               errorBuilder: (_, __, ___) =>
                                                   Icon(

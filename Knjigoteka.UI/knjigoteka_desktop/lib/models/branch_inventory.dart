@@ -2,6 +2,7 @@ class BranchInventory {
   final int bookId;
   final int branchId;
   final String? branchName;
+  final String? branchAddress;
   final String title;
   final String author;
   final String genreName;
@@ -16,6 +17,7 @@ class BranchInventory {
     required this.bookId,
     required this.branchId,
     this.branchName,
+    this.branchAddress,
     required this.title,
     required this.author,
     required this.genreName,
@@ -32,6 +34,7 @@ class BranchInventory {
         bookId: json['bookId'],
         branchId: json['branchId'],
         branchName: json['branchName'],
+        branchAddress: json['branchAdress'],
         title: json['title'],
         author: json['author'],
         genreName: json['genreName'],

@@ -6,13 +6,24 @@ using Knjigoteka.Model.SearchObjects;
 using Knjigoteka.Services.Database;
 using Knjigoteka.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.ML;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.ML.Data;
 namespace Knjigoteka.Services.Services
 {
     public class BookService
         : BaseCRUDService<BookResponse, BookSearchObject, BookInsert, BookUpdate, Book>, IBookService
     {
         protected readonly DatabaseContext _context;
+        private static readonly object _lock = new();
+        private static MLContext? _ml;
+        private static ITransformer? _model;
+        private static DataViewSchema? _modelSchema;
+        private static DateTime _modelBuiltAt = DateTime.MinValue;
         public BookService(DatabaseContext context) : base(context) { _context = context; }
 
         protected override IQueryable<Book> ApplyFilter(IQueryable<Book> query, BookSearchObject? search)
@@ -105,7 +116,7 @@ namespace Knjigoteka.Services.Services
                 ShortDescription = e.ShortDescription,
                 Price = e.Price,
                 HasImage = e.BookImage != null && e.BookImage.Length > 0,
-                PhotoEndpoint = $"/api/books/{e.Id}/photo",
+                PhotoEndpoint = $"/books/{e.Id}/photo",
                 AverageRating = avg,
                 ReviewsCount = e.Reviews.Count(),
             };
@@ -141,5 +152,127 @@ namespace Knjigoteka.Services.Services
             if (request.BookImage != null && request.BookImage.Length > 0)
                 entity.BookImage = request.BookImage;
         }
+        public async Task<List<BookResponse>> RecommendAsync(int bookId, int take = 3)
+        {
+
+            var orders = await _context.Orders
+                .Include(o => o.OrderItems)
+                .ToListAsync();
+
+            var pairs = new List<CoPurchaseInput>();
+            foreach (var o in orders)
+            {
+                var items = o.OrderItems
+                              .Select(oi => oi.BookId)
+                              .Distinct()
+                              .ToList();
+
+                if (items.Count <= 1) continue;
+
+                foreach (var a in items)
+                {
+                    foreach (var b in items)
+                    {
+                        if (a == b) continue;
+                        pairs.Add(new CoPurchaseInput
+                        {
+                            ProductId = (uint)a,
+                            CoProductId = (uint)b,
+                            Label = 1f
+                        });
+                    }
+                }
+            }
+
+            if (pairs.Count == 0)
+                return new List<BookResponse>();
+
+            EnsureModel(pairs);
+
+            if (_model is null || _ml is null)
+                return new List<BookResponse>();
+            var candidateArticles = await _context.Books
+                .Where(b => b.Id != bookId)
+                .Include(b => b.Genre)
+                .Include(b => b.Language)
+                .Include(b => b.BookBranches)
+                .Include(b => b.Reviews)
+                .ToListAsync();
+
+
+            if (candidateArticles.Count == 0)
+                return new List<BookResponse>();
+
+
+            var inputs = candidateArticles.Select(c => new CoPurchaseInput
+            {
+                ProductId = (uint)bookId,
+                CoProductId = (uint)c.Id,
+                Label = 0f 
+            });
+
+            var inputView = _ml.Data.LoadFromEnumerable(inputs);
+            var scored = _model.Transform(inputView);
+
+            var scores = _ml.Data.CreateEnumerable<CoPurchaseScore>(scored, reuseRowObject: false).ToList();
+
+            var ranked = candidateArticles.Zip(scores, (art, sc) => new { art, sc.Score })
+                                          .OrderByDescending(x => x.Score)
+                                          .Take(Math.Max(1, take))
+                                          .Select(x => x.art)
+                                          .ToList();
+
+            return ranked.Select(MapToDto).ToList();
+        }
+
+        private void EnsureModel(List<CoPurchaseInput> pairs)
+        {
+            var needRebuild = (_model == null) || (DateTime.UtcNow - _modelBuiltAt > TimeSpan.FromMinutes(30));
+            if (!needRebuild) return;
+
+            lock (_lock)
+            {
+                if (_model != null && (DateTime.UtcNow - _modelBuiltAt <= TimeSpan.FromMinutes(30)))
+                    return;
+
+                _ml ??= new MLContext(seed: 42);
+                var data = _ml.Data.LoadFromEnumerable(pairs);
+
+                var pipeline =
+                    _ml.Transforms.Conversion.MapValueToKey("ProductIdEncoded", nameof(CoPurchaseInput.ProductId))
+                      .Append(_ml.Transforms.Conversion.MapValueToKey("CoProductIdEncoded", nameof(CoPurchaseInput.CoProductId)))
+                      .Append(_ml.Recommendation().Trainers.MatrixFactorization(new Microsoft.ML.Trainers.MatrixFactorizationTrainer.Options
+                      {
+                          MatrixColumnIndexColumnName = "ProductIdEncoded",
+                          MatrixRowIndexColumnName = "CoProductIdEncoded",
+                          LabelColumnName = nameof(CoPurchaseInput.Label),
+                          LossFunction = Microsoft.ML.Trainers.MatrixFactorizationTrainer.LossFunctionType.SquareLossOneClass,
+                          Alpha = 0.01,
+                          Lambda = 0.025,
+                          NumberOfIterations = 100,
+                          C = 0.00001
+                      }));
+
+                _model = pipeline.Fit(data);
+                _modelSchema = data.Schema;
+                _modelBuiltAt = DateTime.UtcNow;
+            }
+        }
+
+
+
+
+        private sealed class CoPurchaseInput
+        {
+            public uint ProductId { get; set; }
+            public uint CoProductId { get; set; }
+            public float Label { get; set; }
+        }
+
+        private sealed class CoPurchaseScore
+        {
+            public float Score { get; set; }
+        }
+
     }
 }

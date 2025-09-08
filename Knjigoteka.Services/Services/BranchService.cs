@@ -50,6 +50,58 @@ namespace Knjigoteka.Services.Services
             await _context.Entry(entity).Reference(b => b.City).LoadAsync();
             return MapToDto(entity);
         }
+        public async Task<BranchReportResponse> GetBranchReportAsync(BranchReportRequest req)
+        {
+            var branch = await _context.Branches.FindAsync(req.BranchId)
+                ?? throw new Exception("Branch not found!");
+
+            var from = req.From ?? DateTime.MinValue;
+            var to = req.To ?? DateTime.MaxValue;
+
+            var sold = await _context.Sales
+                .Include(s => s.Items)
+                .Include(s => s.Employee) 
+                .Where(x => x.Employee.BranchId == req.BranchId && x.SaleDate >= from && x.SaleDate <= to)
+                .ToListAsync();
+
+            var borrowed = await _context.Borrowings
+                .Where(x => x.BranchId == req.BranchId && x.BorrowedAt >= from && x.BorrowedAt <= to)
+                .ToListAsync();
+
+            var totalSold = sold.Sum(s => s.Items.Sum(si => si.Quantity));
+            var totalBorrowed = borrowed.Count;
+
+            var soldPerDay = sold
+                .GroupBy(s => s.SaleDate.Date)
+                .Select(g => new { Date = g.Key, Count = g.Sum(s => s.Items.Sum(si => si.Quantity)) })
+                .ToDictionary(x => x.Date, x => x.Count);
+
+            var borrowedPerDay = borrowed
+                .GroupBy(b => b.BorrowedAt.Date)
+                .Select(g => new { Date = g.Key, Count = g.Count() })
+                .ToDictionary(x => x.Date, x => x.Count);
+
+            var allDates = soldPerDay.Keys.Union(borrowedPerDay.Keys).Distinct().OrderBy(d => d).ToList();
+
+            var entries = allDates
+                .Select(d => new BranchReportEntry
+                {
+                    Date = d,
+                    Sold = soldPerDay.ContainsKey(d) ? soldPerDay[d] : 0,
+                    Borrowed = borrowedPerDay.ContainsKey(d) ? borrowedPerDay[d] : 0
+                }).ToList();
+
+            return new BranchReportResponse
+            {
+                BranchId = branch.Id,
+                BranchName = branch.Name,
+                TotalSold = totalSold,
+                TotalBorrowed = totalBorrowed,
+                Entries = entries
+            };
+        }
+
+
         public override async Task<BranchResponse> Insert(BranchInsert request)
         {
             var entity = MapToEntity(request);

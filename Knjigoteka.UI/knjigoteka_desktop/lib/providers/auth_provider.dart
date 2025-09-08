@@ -10,11 +10,13 @@ class AuthProvider extends ChangeNotifier {
 
   static bool get isLoggedIn => token != null;
 
-  static String baseUrl = 'http://localhost:7295/api';
-
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: 'http://localhost:7295/api',
+  );
   Future<void> login(String email, String password) async {
     final res = await http.post(
-      Uri.parse('$baseUrl/User/login'),
+      Uri.parse('$_baseUrl/User/login'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'email': email, 'password': password}),
     );
@@ -23,7 +25,7 @@ class AuthProvider extends ChangeNotifier {
       token = data['token'];
 
       final userRes = await http.get(
-        Uri.parse('$baseUrl/User/me'),
+        Uri.parse('$_baseUrl/User/me'),
         headers: {
           'Authorization': 'Bearer $token',
           'Content-Type': 'application/json',
@@ -57,7 +59,7 @@ class AuthProvider extends ChangeNotifier {
     if (token == null) throw Exception("Not authenticated.");
 
     final res = await http.post(
-      Uri.parse('$baseUrl/User/edit-profile'),
+      Uri.parse('$_baseUrl/User/edit-profile'),
       headers: {
         'Authorization': 'Bearer $token',
         'Content-Type': 'application/json',
@@ -75,7 +77,7 @@ class AuthProvider extends ChangeNotifier {
       token = data['token'];
 
       final userRes = await http.get(
-        Uri.parse('$baseUrl/User/me'),
+        Uri.parse('$_baseUrl/User/me'),
         headers: {
           'Authorization': 'Bearer $token',
           'Content-Type': 'application/json',
@@ -101,7 +103,7 @@ class AuthProvider extends ChangeNotifier {
     if (token == null) throw Exception('Niste prijavljeni.');
 
     final res = await http.post(
-      Uri.parse('$baseUrl/User/change-password'),
+      Uri.parse('$_baseUrl/User/change-password'),
       headers: {
         'Authorization': 'Bearer $token',
         'Content-Type': 'application/json',

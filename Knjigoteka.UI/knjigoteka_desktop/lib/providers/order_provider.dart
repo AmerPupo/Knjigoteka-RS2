@@ -4,6 +4,10 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class OrderProvider extends BaseProvider<Order> {
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: 'http://localhost:7295/api',
+  );
   OrderProvider() : super('Order');
 
   @override
@@ -11,7 +15,7 @@ class OrderProvider extends BaseProvider<Order> {
 
   Future<List<Order>> getAllOrders() async {
     final response = await http.get(
-      Uri.parse('http://localhost:7295/api/Order'),
+      Uri.parse('$_baseUrl/Order'),
       headers: getHeaders(),
     );
 
@@ -27,7 +31,7 @@ class OrderProvider extends BaseProvider<Order> {
 
   Future<bool> approveOrder(int id) async {
     final res = await http.post(
-      Uri.parse('http://localhost:7295/api/Order/$id/approve'),
+      Uri.parse('$_baseUrl/Order/$id/approve'),
       headers: getHeaders(),
     );
     return res.statusCode >= 200 && res.statusCode < 300;
@@ -35,7 +39,7 @@ class OrderProvider extends BaseProvider<Order> {
 
   Future<bool> rejectOrder(int id) async {
     final res = await http.post(
-      Uri.parse('http://localhost:7295/api/Order/$id/reject'),
+      Uri.parse('$_baseUrl/Order/$id/reject'),
       headers: getHeaders(),
     );
     return res.statusCode >= 200 && res.statusCode < 300;

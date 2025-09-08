@@ -19,7 +19,10 @@ class _BooksScreenState extends State<BooksScreen> {
   bool _loading = true;
   int? _hoveredRowIndex;
   Offset? _mousePosition;
-
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: 'http://localhost:7295/api',
+  );
   @override
   void initState() {
     super.initState();
@@ -260,7 +263,7 @@ class _BooksScreenState extends State<BooksScreen> {
                         ? ClipRRect(
                             borderRadius: BorderRadius.circular(16),
                             child: Image.network(
-                              "http://localhost:7295${_books[_hoveredRowIndex!].photoEndpoint}",
+                              "$_baseUrl${_books[_hoveredRowIndex!].photoEndpoint}",
                               width: 150,
                               height: 200,
                               fit: BoxFit.cover,

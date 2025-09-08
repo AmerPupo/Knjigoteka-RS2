@@ -69,6 +69,64 @@
         }
       }
     },
+    "/api/Books/{id}/recommend": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 3
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookResponse"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookResponse"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BookResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Books": {
       "post": {
         "tags": [
@@ -593,6 +651,65 @@
         }
       }
     },
+    "/api/Branches/{id}/report": {
+      "post": {
+        "tags": [
+          "Branches"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BranchReportRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BranchReportRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BranchReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BranchReportResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BranchReportResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BranchReportResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Branches": {
       "post": {
         "tags": [
@@ -937,24 +1054,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/BranchInventoryResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BranchInventoryResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BranchInventoryResponse"
-                }
-              }
-            }
+            "description": "OK"
           }
         }
       }
@@ -3489,6 +3589,80 @@
         }
       }
     },
+    "/Seed/init": {
+      "post": {
+        "tags": [
+          "Seed"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Stripe/create-payment-intent": {
+      "post": {
+        "tags": [
+          "Stripe"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePaymentIntentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePaymentIntentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePaymentIntentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Stripe/create-checkout-session": {
+      "post": {
+        "tags": [
+          "Stripe"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCheckoutSessionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCheckoutSessionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCheckoutSessionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/User/register": {
       "post": {
         "tags": [
@@ -4179,6 +4353,14 @@
             "type": "string",
             "nullable": true
           },
+          "author": {
+            "type": "string",
+            "nullable": true
+          },
+          "photoEndpoint": {
+            "type": "string",
+            "nullable": true
+          },
           "userId": {
             "type": "integer",
             "format": "int32"
@@ -4418,6 +4600,73 @@
         },
         "additionalProperties": false
       },
+      "BranchReportEntry": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sold": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "borrowed": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BranchReportRequest": {
+        "type": "object",
+        "properties": {
+          "branchId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "from": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "to": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BranchReportResponse": {
+        "type": "object",
+        "properties": {
+          "branchId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "branchName": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalSold": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalBorrowed": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "entries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BranchReportEntry"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "BranchResponse": {
         "type": "object",
         "properties": {
@@ -4531,9 +4780,8 @@
             "format": "double",
             "readOnly": true
           },
-          "bookImage": {
+          "photoEndpoint": {
             "type": "string",
-            "format": "byte",
             "nullable": true
           }
         },
@@ -4665,6 +4913,30 @@
           "name": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateCheckoutSessionRequest": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePaymentIntentRequest": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "format": "int64"
           }
         },
         "additionalProperties": false
@@ -5155,6 +5427,10 @@
             "type": "string",
             "nullable": true
           },
+          "author": {
+            "type": "string",
+            "nullable": true
+          },
           "quantity": {
             "type": "integer",
             "format": "int32"
@@ -5167,6 +5443,10 @@
             "type": "number",
             "format": "double",
             "readOnly": true
+          },
+          "photoEndpoint": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -5881,7 +6161,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "http",
-        "description": "Enter ‘Bearer’ [space] and then your token.",
+        "description": "Enter your token.",
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }

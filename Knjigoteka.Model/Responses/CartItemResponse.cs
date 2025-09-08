@@ -14,6 +14,6 @@ namespace Knjigoteka.Model.Responses
         public decimal UnitPrice { get; set; }
         public int Quantity { get; set; }
         public decimal LineTotal => UnitPrice * Quantity;
-        public byte[]? BookImage { get; set; }
+        public string? PhotoEndpoint { get; set; }
     }
 }

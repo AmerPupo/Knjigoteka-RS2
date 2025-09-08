@@ -1,9 +1,10 @@
+import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
 import 'package:knjigoteka_mobile/models/cart_response.dart';
 import 'package:knjigoteka_mobile/providers/auth_provider.dart';
 import 'package:knjigoteka_mobile/providers/cart_provider.dart';
 import 'package:knjigoteka_mobile/providers/order_provider.dart';
-import 'package:knjigoteka_mobile/screens/payment_screen.dart';
+import 'package:knjigoteka_mobile/providers/stripe_service.dart';
 import 'package:provider/provider.dart';
 
 class CartScreen extends StatefulWidget {
@@ -17,7 +18,10 @@ class _CartScreenState extends State<CartScreen> {
   CartResponse? _cart;
   bool _loading = true;
   bool _updating = false;
-
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: "http://10.0.2.2:7295/api",
+  );
   @override
   void initState() {
     super.initState();
@@ -54,7 +58,7 @@ class _CartScreenState extends State<CartScreen> {
   double get _total =>
       _cart?.items.fold<double>(
         0,
-        (s, e) => s + ((e.unitPrice ?? 0) * (e.quantity ?? 0)),
+        (s, e) => s + ((e.unitPrice) * (e.quantity)),
       ) ??
       0;
 
@@ -75,12 +79,10 @@ class _CartScreenState extends State<CartScreen> {
                     itemBuilder: (context, idx) {
                       final item = _cart!.items[idx];
                       return ListTile(
-                        leading: item.bookImage != null
+                        leading: item.photoEndpoint != null
                             ? Image.network(
-                                item.bookImage!,
-                                width: 48,
-                                height: 70,
-                                fit: BoxFit.cover,
+                                "$_baseUrl${item.photoEndpoint}",
+                                fit: BoxFit.contain,
                               )
                             : Icon(
                                 Icons.menu_book,
@@ -203,7 +205,7 @@ class _CartScreenState extends State<CartScreen> {
                               final user = await Provider.of<AuthProvider>(
                                 context,
                                 listen: false,
-                              ).fullName; // ili iz Provider.of<AuthProvider>(context)... ako koristiš Provider
+                              ).fullName;
                               await showDialog(
                                 context: context,
                                 builder: (_) => CheckoutDialog(
@@ -252,7 +254,6 @@ class _CartScreenState extends State<CartScreen> {
                                           }
                                         }
                                       },
-
                                   onKartica:
                                       ({
                                         required adresa,
@@ -260,22 +261,77 @@ class _CartScreenState extends State<CartScreen> {
                                         required postanskiBroj,
                                         required nacinPlacanja,
                                       }) async {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => PaymentScreen(
-                                              // adresa: adresa,
-                                              // grad: grad,
-                                              // postanskiBroj: postanskiBroj,
-                                              // ...drugi parametri
-                                            ),
-                                          ),
+                                        dev.log(
+                                          'Calling StripeService.processPayment...',
+                                          name: 'PAY',
                                         );
+                                        bool _isProcessing = true;
+                                        try {
+                                          final success =
+                                              await StripeService.processPayment(
+                                                amount: _total,
+                                                currency: 'usd',
+                                              ).timeout(
+                                                const Duration(seconds: 60),
+                                              );
+                                          dev.log(
+                                            'Stripe returned: $success',
+                                            name: 'PAY',
+                                          );
+                                          if (!success) {
+                                            ScaffoldMessenger.of(
+                                              context,
+                                            ).showSnackBar(
+                                              const SnackBar(
+                                                content: Text(
+                                                  'Plaćanje otkazano.',
+                                                ),
+                                              ),
+                                            );
+                                            if (mounted)
+                                              setState(
+                                                () => _isProcessing = false,
+                                              );
+                                            return;
+                                          }
+                                          await OrderProvider().checkoutOrder(
+                                            adresa: adresa,
+                                            grad: grad,
+                                            postanskiBroj: postanskiBroj,
+                                            nacinPlacanja: nacinPlacanja,
+                                          );
+                                          if (mounted) {
+                                            ScaffoldMessenger.of(
+                                              context,
+                                            ).showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  "Narudžba zaprimljena!",
+                                                ),
+                                              ),
+                                            );
+                                            await _loadCart();
+                                          }
+                                        } catch (e) {
+                                          ScaffoldMessenger.of(
+                                            context,
+                                          ).showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                e.toString().replaceFirst(
+                                                  "Exception: ",
+                                                  "",
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        } finally {
+                                          if (mounted) setState(() {});
+                                        }
                                       },
                                 ),
                               );
                             },
-
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(vertical: 15),
                         backgroundColor: Color(0xFF233348),

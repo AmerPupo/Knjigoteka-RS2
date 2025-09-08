@@ -13,11 +13,14 @@ namespace Knjigoteka.WebAPI.Controllers
     public class BooksController
         : BaseCRUDController<BookResponse, BookSearchObject, BookInsert, BookUpdate>
     {
+        public readonly IBookService _service;
         public BooksController(
             ILogger<BaseController<BookResponse, BookSearchObject>> logger,
             IBookService service)
             : base(logger, service)
-        { }
+        {
+            _service = service;
+        }
         [HttpGet("{id:int}/photo")]
         [AllowAnonymous]
         public async Task<IActionResult> GetPhoto(int id, [FromServices] DatabaseContext db)
@@ -53,5 +56,9 @@ namespace Knjigoteka.WebAPI.Controllers
             await db.SaveChangesAsync();
             return Ok();
         }
+        [Authorize]
+        [HttpGet("{id}/recommend")]
+        public async Task<List<BookResponse>> Recommend(int id, [FromQuery] int take = 3)
+       => await _service.RecommendAsync(id, take);
     }
 }

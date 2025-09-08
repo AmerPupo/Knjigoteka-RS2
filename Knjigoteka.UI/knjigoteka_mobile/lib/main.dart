@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:knjigoteka_mobile/providers/history_provider.dart';
 import 'package:knjigoteka_mobile/providers/notification_request_provider.dart';
 import 'package:knjigoteka_mobile/providers/order_provider.dart';
 import 'package:knjigoteka_mobile/providers/reservation_provider.dart';
@@ -7,12 +9,17 @@ import 'package:knjigoteka_mobile/providers/branch_inventory_provider.dart';
 import 'package:knjigoteka_mobile/providers/cart_provider.dart';
 import 'package:knjigoteka_mobile/providers/genre_provider.dart';
 import 'package:knjigoteka_mobile/providers/language_provider.dart';
+import 'package:knjigoteka_mobile/providers/review_provider.dart';
+import 'package:knjigoteka_mobile/providers/stripe_service.dart';
 import 'package:provider/provider.dart';
 import 'providers/auth_provider.dart';
 import 'screens/auth_screen.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+  await StripeService.init();
   runApp(
     MultiProvider(
       providers: [
@@ -25,6 +32,8 @@ void main() {
         ChangeNotifierProvider(create: (_) => NotificationRequestProvider()),
         ChangeNotifierProvider(create: (_) => ReservationProvider()),
         ChangeNotifierProvider(create: (_) => OrderProvider()),
+        ChangeNotifierProvider(create: (_) => HistoryProvider()),
+        ChangeNotifierProvider(create: (_) => ReviewProvider()),
       ],
       child: MyApp(),
     ),
@@ -39,7 +48,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: navigatorKey,
-      title: 'Knjigoteka Desktop',
+      title: 'Knjigoteka Mobile',
       initialRoute: '/',
       routes: {'/': (ctx) => AuthScreen()},
       theme: ThemeData(

@@ -31,11 +31,35 @@ namespace Knjigoteka.WebAPI.Controllers
 
         [HttpPut]
         [Authorize(Roles = "Employee")]
-        public async Task<ActionResult<BranchInventoryResponse>> Upsert(
-            [Required] int branchId, [FromBody] BranchInventoryUpsert request)
+        public async Task<IActionResult> Upsert(
+                   [Required] int branchId,
+                   [FromBody] BranchInventoryUpsert request)
         {
-            var result = await _service.UpsertAsync(branchId, request);
-            return Ok(result);
+            try
+            {
+                if (request == null)
+                {
+                    return BadRequest("Request body cannot be null");
+                }
+
+                await _service.UpsertAsync(branchId, request);
+                return Ok("Inventory updated successfully");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                _logger.LogWarning(ex, "Book not found for branch {BranchId}, book {BookId}", branchId, request?.BookId);
+                return NotFound(ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                _logger.LogWarning(ex, "Invalid operation for branch {BranchId}, book {BookId}", branchId, request?.BookId);
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while upserting inventory for branch {BranchId}", branchId);
+                return StatusCode(500, "An error occurred while processing your request");
+            }
         }
         [HttpGet("availability/{bookId}")]
         public async Task<IActionResult> GetAvailabilityByBookId(int bookId)

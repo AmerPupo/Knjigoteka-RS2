@@ -6,19 +6,22 @@ import 'package:knjigoteka_mobile/models/cart_response.dart';
 import 'package:knjigoteka_mobile/providers/auth_provider.dart';
 
 class CartProvider with ChangeNotifier {
-  static const String _baseUrl = "http://10.0.2.2:7295/api/Cart";
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: "http://10.0.2.2:7295/api",
+  );
+
   CartResponse? _cart;
 
   CartResponse? get cart => _cart;
 
   int get totalQuantity =>
-      _cart?.items.fold<int>(0, (prev, item) => prev + (item.quantity ?? 0)) ??
-      0;
+      _cart?.items.fold<int>(0, (prev, item) => prev + (item.quantity)) ?? 0;
 
   Future<void> loadCart() async {
     final token = AuthProvider.token;
     final response = await http.get(
-      Uri.parse(_baseUrl),
+      Uri.parse("$_baseUrl/Cart"),
       headers: {
         "Content-Type": "application/json",
         if (token != null) "Authorization": "Bearer $token",
@@ -36,7 +39,7 @@ class CartProvider with ChangeNotifier {
   Future<CartResponse> getCart() async {
     final token = AuthProvider.token;
     final response = await http.get(
-      Uri.parse(_baseUrl),
+      Uri.parse("$_baseUrl/Cart"),
       headers: {
         "Content-Type": "application/json",
         if (token != null) "Authorization": "Bearer $token",
@@ -55,7 +58,7 @@ class CartProvider with ChangeNotifier {
   }) async {
     final token = AuthProvider.token;
     final response = await http.post(
-      Uri.parse(_baseUrl),
+      Uri.parse("$_baseUrl/Cart"),
       headers: {
         "Content-Type": "application/json",
         if (token != null) "Authorization": "Bearer $token",

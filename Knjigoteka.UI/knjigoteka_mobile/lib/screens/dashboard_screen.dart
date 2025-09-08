@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:knjigoteka_mobile/screens/settings_screen.dart';
 import '../models/book.dart';
 import 'home_screen.dart'; // tvoj HomeScreen koji prikazuje listu knjiga
 import 'cart_screen.dart'; // placeholder za korpu
 import 'history_screen.dart'; // placeholder za historiju
-import 'profile_screen.dart'; // placeholder za profil
 import 'book_details_screen.dart'; // detalji o knjizi
 
 class MainDashboard extends StatefulWidget {
@@ -36,7 +36,7 @@ class _MainDashboardState extends State<MainDashboard> {
           : BookDetailsScreen(book: _selectedBook!, onClose: _closeBookDetails),
       CartScreen(),
       HistoryScreen(),
-      ProfileScreen(),
+      SettingsScreen(),
     ];
 
     return Scaffold(

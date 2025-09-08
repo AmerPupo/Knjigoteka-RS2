@@ -5,10 +5,13 @@ import '../models/branch_inventory.dart';
 import '../providers/auth_provider.dart';
 
 class BranchInventoryProvider with ChangeNotifier {
-  static const String _baseUrl = "http://10.0.2.2:7295/api/branches/inventory";
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: "http://10.0.2.2:7295/api",
+  );
 
   Future<List<BranchInventory>> getAvailabilityByBookId(int bookId) async {
-    String url = '$_baseUrl/availability/$bookId';
+    String url = '$_baseUrl/branches/inventory/availability/$bookId';
     final res = await http.get(
       Uri.parse(url),
       headers: {

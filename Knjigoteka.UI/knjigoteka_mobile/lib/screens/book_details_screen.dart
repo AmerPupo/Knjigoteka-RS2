@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:knjigoteka_mobile/models/branch_inventory.dart';
+import 'package:knjigoteka_mobile/providers/book_provider.dart';
 import 'package:knjigoteka_mobile/providers/reservation_provider.dart';
 import 'package:knjigoteka_mobile/providers/branch_inventory_provider.dart';
 import 'package:knjigoteka_mobile/providers/cart_provider.dart';
@@ -24,11 +25,40 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
   bool _showAvailability = false;
   List<BranchInventory> _availability = [];
   bool _loadingAvailability = false;
+  List<Book> _recommendedBooks = [];
+  bool _loadingRecommended = false;
+  static String _baseUrl = const String.fromEnvironment(
+    "baseUrl",
+    defaultValue: "http://10.0.2.2:7295/api",
+  );
 
   @override
   void initState() {
     super.initState();
     _loadCartQuantity();
+    _fetchRecommendedBooks();
+  }
+
+  Future<void> _fetchRecommendedBooks() async {
+    setState(() => _loadingRecommended = true);
+    try {
+      final books = await Provider.of<BookProvider>(
+        context,
+        listen: false,
+      ).getRecommendedBooks(widget.book.id, take: 3);
+      if (!mounted) return;
+      setState(() {
+        _recommendedBooks = books;
+        _loadingRecommended = false;
+      });
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _loadingRecommended = false);
+      print(e.toString());
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Greška prilikom preuzimanja preporuka.')),
+      );
+    }
   }
 
   Future<void> _loadCartQuantity() async {
@@ -237,7 +267,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                   ),
                   child: b.hasImage
                       ? Image.network(
-                          "http://10.0.2.2:7295${b.photoEndpoint}",
+                          "$_baseUrl${b.photoEndpoint}",
                           fit: BoxFit.contain,
                         )
                       : Icon(
@@ -596,6 +626,137 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                     Text(b.languageName),
                   ],
                 ),
+                SizedBox(height: 22),
+                Text(
+                  "Preporučene knjige:",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                ),
+                SizedBox(height: 10),
+                _loadingRecommended
+                    ? Center(child: CircularProgressIndicator())
+                    : _recommendedBooks.isEmpty
+                    ? Text("Nema preporuka za ovu knjigu.")
+                    : SizedBox(
+                        height: 180,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: _recommendedBooks.length,
+                          separatorBuilder: (_, __) => SizedBox(width: 15),
+                          itemBuilder: (_, i) {
+                            final book = _recommendedBooks[i];
+                            return GestureDetector(
+                              onTap: () async {
+                                // Povuci najnovije detalje knjige po ID-u
+                                final fetchedBook =
+                                    await Provider.of<BookProvider>(
+                                      context,
+                                      listen: false,
+                                    ).getBook(book.id);
+
+                                // Otvori novi ekran sa detaljima knjige
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (_) => BookDetailsScreen(
+                                      book: fetchedBook,
+                                      onClose: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width: 145,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(14),
+                                  border: Border.all(
+                                    color: Colors.grey.shade200,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.06),
+                                      blurRadius: 8,
+                                      offset: Offset(0, 4),
+                                    ),
+                                  ],
+                                ),
+                                margin: EdgeInsets.symmetric(vertical: 6),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.vertical(
+                                        top: Radius.circular(14),
+                                      ),
+                                      child: book.hasImage
+                                          ? Image.network(
+                                              "$_baseUrl${book.photoEndpoint}",
+                                              height: 85,
+                                              width: 145,
+                                              fit: BoxFit.cover,
+                                            )
+                                          : Container(
+                                              height: 85,
+                                              width: 145,
+                                              color: Colors.grey[200],
+                                              child: Icon(
+                                                Icons.menu_book,
+                                                size: 36,
+                                                color: Colors.grey[400],
+                                              ),
+                                            ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 8,
+                                        vertical: 6,
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            book.title,
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                              color: Color(0xFF233348),
+                                            ),
+                                          ),
+                                          SizedBox(height: 3),
+                                          Text(
+                                            book.author,
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              color: Colors.grey[700],
+                                            ),
+                                          ),
+                                          SizedBox(height: 6),
+                                          Text(
+                                            book.price.toStringAsFixed(2) +
+                                                " KM",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Color(0xFF398346),
+                                              fontSize: 14,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
               ],
             ),
           ),
