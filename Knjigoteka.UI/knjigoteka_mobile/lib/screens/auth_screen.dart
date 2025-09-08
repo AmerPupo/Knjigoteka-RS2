@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:knjigoteka_mobile/screens/dashboard_screen.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
 
@@ -51,34 +52,44 @@ class _AuthScreenState extends State<AuthScreen> {
         _lastNameError = "Unesi prezime";
         valid = false;
       }
+      if (_emailController.text.trim().isEmpty) {
+        _emailError = "Unesi email";
+        valid = false;
+      } else if (!RegExp(
+        r'^[^@\s]+@[^@\s]+\.[^@\s]+$',
+      ).hasMatch(_emailController.text.trim())) {
+        _emailError = "Email nije ispravan format";
+        valid = false;
+      }
+      if (_passwordController.text.isEmpty) {
+        _passwordError = "Unesi šifru";
+        valid = false;
+      } else if (_passwordController.text.length < 8) {
+        _passwordError = "Šifra mora imati najmanje 8 znakova";
+        valid = false;
+      } else if (!RegExp(r'[A-Z]').hasMatch(_passwordController.text)) {
+        _passwordError = "Šifra mora sadržavati bar jedno veliko slovo";
+        valid = false;
+      } else if (!RegExp(r'[a-z]').hasMatch(_passwordController.text)) {
+        _passwordError = "Šifra mora sadržavati bar jedno malo slovo";
+        valid = false;
+      } else if (!RegExp(r'[0-9]').hasMatch(_passwordController.text)) {
+        _passwordError = "Šifra mora sadržavati bar jedan broj";
+        valid = false;
+      } else if (!RegExp(r'[^a-zA-Z0-9]').hasMatch(_passwordController.text)) {
+        _passwordError = "Šifra mora sadržavati bar jedan specijalni znak";
+        valid = false;
+      }
     }
-    if (_emailController.text.trim().isEmpty) {
-      _emailError = "Unesi email";
-      valid = false;
-    } else if (!RegExp(
-      r'^[^@\s]+@[^@\s]+\.[^@\s]+$',
-    ).hasMatch(_emailController.text.trim())) {
-      _emailError = "Email nije ispravan format";
-      valid = false;
-    }
-    if (_passwordController.text.isEmpty) {
-      _passwordError = "Unesi šifru";
-      valid = false;
-    } else if (_passwordController.text.length < 8) {
-      _passwordError = "Šifra mora imati najmanje 8 znakova";
-      valid = false;
-    } else if (!RegExp(r'[A-Z]').hasMatch(_passwordController.text)) {
-      _passwordError = "Šifra mora sadržavati bar jedno veliko slovo";
-      valid = false;
-    } else if (!RegExp(r'[a-z]').hasMatch(_passwordController.text)) {
-      _passwordError = "Šifra mora sadržavati bar jedno malo slovo";
-      valid = false;
-    } else if (!RegExp(r'[0-9]').hasMatch(_passwordController.text)) {
-      _passwordError = "Šifra mora sadržavati bar jedan broj";
-      valid = false;
-    } else if (!RegExp(r'[^a-zA-Z0-9]').hasMatch(_passwordController.text)) {
-      _passwordError = "Šifra mora sadržavati bar jedan specijalni znak";
-      valid = false;
+    if (isLogin) {
+      if (_emailController.text.trim().isEmpty) {
+        _emailError = "Unesi email";
+        valid = false;
+      }
+      if (_passwordController.text.isEmpty) {
+        _passwordError = "Unesi šifru";
+        valid = false;
+      }
     }
 
     setState(() {});
@@ -103,7 +114,7 @@ class _AuthScreenState extends State<AuthScreen> {
       }
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => HomeScreen()),
+        MaterialPageRoute(builder: (_) => MainDashboard()),
       );
     } catch (e) {
       String errorMsg = e.toString().replaceAll('Exception:', '').trim();
@@ -238,20 +249,6 @@ class _AuthScreenState extends State<AuthScreen> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          'Home screen — prijava/registracija uspjela!',
-          style: TextStyle(fontSize: 22),
         ),
       ),
     );

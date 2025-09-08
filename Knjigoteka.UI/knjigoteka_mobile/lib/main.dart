@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:knjigoteka_mobile/providers/book_provider.dart';
+import 'package:knjigoteka_mobile/providers/branch_inventory_provider.dart';
+import 'package:knjigoteka_mobile/providers/genre_provider.dart';
+import 'package:knjigoteka_mobile/providers/language_provider.dart';
 import 'package:provider/provider.dart';
 import 'providers/auth_provider.dart';
 import 'screens/auth_screen.dart';
@@ -7,7 +11,13 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
   runApp(
     MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => BookProvider()),
+        ChangeNotifierProvider(create: (_) => GenreProvider()),
+        ChangeNotifierProvider(create: (_) => LanguageProvider()),
+        ChangeNotifierProvider(create: (_) => BranchInventoryProvider()),
+      ],
       child: MyApp(),
     ),
   );

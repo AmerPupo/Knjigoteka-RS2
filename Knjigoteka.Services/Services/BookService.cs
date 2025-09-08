@@ -106,7 +106,8 @@ namespace Knjigoteka.Services.Services
                 Price = e.Price,
                 HasImage = e.BookImage != null && e.BookImage.Length > 0,
                 PhotoEndpoint = $"/api/books/{e.Id}/photo",
-                AverageRating = avg
+                AverageRating = avg,
+                ReviewsCount = e.Reviews.Count(),
             };
         }
 

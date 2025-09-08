@@ -11,6 +11,7 @@ namespace Knjigoteka.Model.Responses
         public int BookId { get; set; }
         public int BranchId { get; set; }
         public string? BranchName { get; set; }
+        public string? BranchAdress { get; set; }
         public string Title { get; set; } = null!;
         public string Author { get; set; } = null!;
         public string GenreName { get; set; } = null!;

@@ -6,7 +6,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ReservationProvider with ChangeNotifier {
-  final String baseUrl = 'https://localhost:7295/api/Reservations';
+  final String baseUrl = 'http://localhost:7295/api/Reservations';
 
   Future<List<Reservation>> getAllReservations() async {
     final token = AuthProvider.token;

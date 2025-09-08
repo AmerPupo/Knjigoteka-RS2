@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 
 class TestImagePicker extends StatefulWidget {
+  const TestImagePicker({super.key});
+
   @override
   State<TestImagePicker> createState() => _TestImagePickerState();
 }

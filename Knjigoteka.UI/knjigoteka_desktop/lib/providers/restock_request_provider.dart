@@ -4,7 +4,7 @@ import 'base_provider.dart';
 import 'package:http/http.dart' as http;
 
 class RestockRequestProvider extends BaseProvider<RestockRequest> {
-  static const String baseUrl = "https://localhost:7295/api/RestockRequests";
+  static const String baseUrl = "http://localhost:7295/api/RestockRequests";
   RestockRequestProvider() : super('RestockRequests');
 
   @override

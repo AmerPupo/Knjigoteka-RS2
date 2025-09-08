@@ -47,43 +47,8 @@ namespace Knjigoteka.WebAPI.Controllers
         }
 
 
-        [HttpPost("{id:int}/confirm")]
-        [Authorize(Roles = "Admin,Employee")]
-        public async Task<IActionResult> Confirm(int id)
-        {
-            try
-            {
-                var ok = await _reservationService.Confirm(id);
-                return ok ? Ok() : NotFound();
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
 
-        [HttpPost("{id:int}/return")]
-        [Authorize(Roles = "Admin,Employee")]
-        public async Task<IActionResult> Return(int id)
-        {
-            try
-            {
-                var ok = await _reservationService.Return(id);
-                return ok ? Ok() : NotFound();
-            }
-            catch (KeyNotFoundException)
-            {
-                return NotFound();
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+
 
         [HttpPost("expire")]
         [Authorize(Roles = "Admin,Employee")]

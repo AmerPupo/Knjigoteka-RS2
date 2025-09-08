@@ -27,9 +27,6 @@ public class BorrowingService : IBorrowingService
         if (bookBranch == null || !bookBranch.SupportsBorrowing)
             throw new InvalidOperationException("Book is not borrowable at this branch.");
 
-        if (bookBranch.QuantityForBorrow <= 0)
-            throw new InvalidOperationException("No available copies for borrowing at this branch.");
-
         if (req.ReservationId.HasValue)
         {
             var reservation = await _context.Reservations.FindAsync(req.ReservationId.Value);
@@ -42,6 +39,12 @@ public class BorrowingService : IBorrowingService
             reservation.Status = ReservationStatus.Claimed;
             reservation.ClaimedAt = DateTime.Now;
         }
+        else
+        {
+            if (bookBranch.QuantityForBorrow <= 0)
+                throw new InvalidOperationException("No available copies for borrowing at this branch.");
+            bookBranch.QuantityForBorrow -= 1;
+        }
 
         var borrowing = new Borrowing
         {
@@ -52,7 +55,6 @@ public class BorrowingService : IBorrowingService
             BorrowedAt = DateTime.Now,
             DueDate = DateTime.Now.AddDays(30)
         };
-        bookBranch.QuantityForBorrow -= 1;
 
         _context.Borrowings.Add(borrowing);
         await _context.SaveChangesAsync();
@@ -65,6 +67,7 @@ public class BorrowingService : IBorrowingService
 
         return MapToDto(full);
     }
+
 
     public async Task<bool> ReturnAsync(int borrowingId)
     {

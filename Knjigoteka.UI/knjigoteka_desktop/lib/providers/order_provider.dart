@@ -11,7 +11,7 @@ class OrderProvider extends BaseProvider<Order> {
 
   Future<List<Order>> getAllOrders() async {
     final response = await http.get(
-      Uri.parse('https://localhost:7295/api/Order'),
+      Uri.parse('http://localhost:7295/api/Order'),
       headers: getHeaders(),
     );
 
@@ -27,7 +27,7 @@ class OrderProvider extends BaseProvider<Order> {
 
   Future<bool> approveOrder(int id) async {
     final res = await http.post(
-      Uri.parse('https://localhost:7295/api/Order/$id/approve'),
+      Uri.parse('http://localhost:7295/api/Order/$id/approve'),
       headers: getHeaders(),
     );
     return res.statusCode >= 200 && res.statusCode < 300;
@@ -35,7 +35,7 @@ class OrderProvider extends BaseProvider<Order> {
 
   Future<bool> rejectOrder(int id) async {
     final res = await http.post(
-      Uri.parse('https://localhost:7295/api/Order/$id/reject'),
+      Uri.parse('http://localhost:7295/api/Order/$id/reject'),
       headers: getHeaders(),
     );
     return res.statusCode >= 200 && res.statusCode < 300;

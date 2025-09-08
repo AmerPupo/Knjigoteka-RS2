@@ -7,8 +7,6 @@ namespace Knjigoteka.Services.Interfaces
     public interface IReservationService 
         : ICRUDService<ReservationResponse, ReservationSearchObject, ReservationRequest, ReservationRequest>
     {
-        Task<bool> Confirm(int reservationId);
-        Task<bool> Return(int reservationId);
         Task<int> ExpirePendingReservationsAsync();
     }
 }

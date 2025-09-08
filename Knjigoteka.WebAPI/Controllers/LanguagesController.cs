@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Knjigoteka.WebAPI.Controllers
 {
-    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     public class LanguagesController
         : BaseCRUDController<LanguageResponse, LanguageSearchObject, LanguageInsert, LanguageUpdate>
@@ -18,5 +17,23 @@ namespace Knjigoteka.WebAPI.Controllers
             : base(logger, service)
         {
         }
+        [Authorize]
+        [HttpGet("{id}")]
+        public override Task<LanguageResponse> GetById(int id)
+            => base.GetById(id);
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public override Task<LanguageResponse> Insert([FromBody] LanguageInsert insert)
+            => base.Insert(insert);
+
+        [Authorize(Roles = "Admin")]
+        [HttpPut("{id}")]
+        public override Task<LanguageResponse> Update(int id, [FromBody] LanguageUpdate update)
+            => base.Update(id, update);
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{id}")]
+        public override Task<IActionResult> Delete(int id) => base.Delete(id);
     }
 }

@@ -5,7 +5,7 @@ import 'package:knjigoteka_desktop/main.dart';
 import '../providers/auth_provider.dart';
 
 abstract class BaseProvider<T> with ChangeNotifier {
-  static String _baseUrl = "https://localhost:7295/api";
+  static String _baseUrl = "http://localhost:7295/api";
   final String _endpoint;
   BaseProvider(this._endpoint);
 
@@ -24,7 +24,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
       url += '?' + Uri(queryParameters: params).query;
     }
     final res = await http.get(Uri.parse(url), headers: getHeaders());
-    ensureValidResponseOrThrow(res);
+    _ensureValidResponseOrThrow(res);
 
     final data = jsonDecode(res.body);
     final list = (data['items'] ?? []) as List;
@@ -37,7 +37,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
       Uri.parse('$_baseUrl/$_endpoint/$id'),
       headers: getHeaders(),
     );
-    ensureValidResponseOrThrow(res);
+    _ensureValidResponseOrThrow(res);
     return fromJson(jsonDecode(res.body));
   }
 
@@ -48,7 +48,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
       headers: getHeaders(),
       body: jsonEncode(request),
     );
-    ensureValidResponseOrThrow(res);
+    _ensureValidResponseOrThrow(res);
     return fromJson(jsonDecode(res.body));
   }
 
@@ -59,7 +59,7 @@ abstract class BaseProvider<T> with ChangeNotifier {
       headers: getHeaders(),
       body: jsonEncode(request),
     );
-    ensureValidResponseOrThrow(res);
+    _ensureValidResponseOrThrow(res);
     return fromJson(jsonDecode(res.body));
   }
 
@@ -69,13 +69,13 @@ abstract class BaseProvider<T> with ChangeNotifier {
       Uri.parse('$_baseUrl/$_endpoint/$id'),
       headers: getHeaders(),
     );
-    ensureValidResponseOrThrow(res);
+    _ensureValidResponseOrThrow(res);
     return res.body.toLowerCase().contains("true");
   }
 
   T fromJson(dynamic data);
 
-  void ensureValidResponseOrThrow(http.Response res) {
+  void _ensureValidResponseOrThrow(http.Response res) {
     if (res.statusCode >= 200 && res.statusCode < 300) return;
 
     if (res.statusCode == 401) {

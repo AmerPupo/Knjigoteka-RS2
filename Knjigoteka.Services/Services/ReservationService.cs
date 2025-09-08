@@ -78,7 +78,13 @@ namespace Knjigoteka.Services.Services
 
             if (existing)
                 throw new InvalidOperationException("Već imate aktivnu rezervaciju za ovu knjigu.");
+            var bookBranch = await _context.BookBranches
+            .FirstOrDefaultAsync(bb => bb.BranchId == request.BranchId && bb.BookId == request.BookId);
 
+            if (bookBranch == null || !bookBranch.SupportsBorrowing || bookBranch.QuantityForBorrow <= 0)
+                throw new InvalidOperationException("Knjiga nije dostupna za rezervaciju u ovoj poslovnici.");
+
+            bookBranch.QuantityForBorrow -= 1;
             var entity = new Reservation
             {
                 BookId = request.BookId,
@@ -99,36 +105,6 @@ namespace Knjigoteka.Services.Services
 
             return MapToDto(full);
         }
-
-        public async Task<bool> Confirm(int reservationId)
-        {
-            var entity = await _context.Reservations.FindAsync(reservationId)
-                ?? throw new KeyNotFoundException("Rezervacija nije pronađena.");
-
-            if (entity.Status != ReservationStatus.Pending)
-                throw new InvalidOperationException("Rezervaciju je moguće potvrditi samo ako je status 'Pending'.");
-
-            entity.Status = ReservationStatus.Claimed;
-            entity.ClaimedAt = DateTime.Now;
-
-            await _context.SaveChangesAsync();
-            return true;
-        }
-
-        public async Task<bool> Return(int reservationId)
-        {
-            var entity = await _context.Reservations.FindAsync(reservationId)
-                ?? throw new KeyNotFoundException("Rezervacija nije pronađena.");
-
-            if (entity.Status != ReservationStatus.Claimed)
-                throw new InvalidOperationException("Povrat je moguć samo ako je rezervacija prethodno preuzeta.");
-
-            entity.Status = ReservationStatus.Returned;
-            entity.ReturnedAt = DateTime.Now;
-
-            await _context.SaveChangesAsync();
-            return true;
-        }
         public async Task<int> ExpirePendingReservationsAsync()
         {
             var now = DateTime.UtcNow;
@@ -146,8 +122,13 @@ namespace Knjigoteka.Services.Services
                     r.Status = ReservationStatus.Expired;
                     r.ExpiredAt = r.ExpiredAt ?? now;
 
-                    await _penaltyService.AddAsync(r.UserId, "Unclaimed reservation");
+                    var bookBranch = await _context.BookBranches
+                        .FirstOrDefaultAsync(bb => bb.BookId == r.BookId && bb.BranchId == r.BranchId);
 
+                    if (bookBranch != null)
+                        bookBranch.QuantityForBorrow += 1;
+
+                    await _penaltyService.AddAsync(r.UserId, "Unclaimed reservation");
                     await _userService.BlockIfExceededPenaltyThreshold(r.UserId);
                 }
 
@@ -164,6 +145,7 @@ namespace Knjigoteka.Services.Services
                 throw;
             }
         }
+
         protected override ReservationResponse MapToDto(Reservation entity)
         {
             return new ReservationResponse

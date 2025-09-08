@@ -24,5 +24,6 @@ namespace Knjigoteka.Model.Responses
         public bool HasImage { get; set; }
         public string PhotoEndpoint { get; set; } = null!;
         public double? AverageRating { get; set; }
+        public int? ReviewsCount { get; set; }
     }
 }

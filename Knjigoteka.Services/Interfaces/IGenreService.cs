@@ -12,5 +12,6 @@ namespace Knjigoteka.Services.Interfaces
     public interface IGenreService
         : ICRUDService<GenreResponse, GenreSearchObject, GenreInsert, GenreUpdate>
     {
+
     }
 }

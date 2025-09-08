@@ -1,4 +1,5 @@
 ﻿using Knjigoteka.Model.Entities;
+using Knjigoteka.Model.Helpers;
 using Knjigoteka.Model.Requests;
 using Knjigoteka.Model.Responses;
 using Knjigoteka.Model.SearchObjects;
@@ -23,7 +24,14 @@ namespace Knjigoteka.Services.Services
 
             return query;
         }
-
+        public override Task<PagedResult<GenreResponse>> Get(GenreSearchObject? search = null)
+        {
+            return base.Get(search);
+        }
+        public override Task<GenreResponse> GetById(int id)
+        {
+            return base.GetById(id);
+        }
         protected override GenreResponse MapToDto(Genre entity)
         {
             return new GenreResponse

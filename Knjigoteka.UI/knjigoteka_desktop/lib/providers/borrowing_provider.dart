@@ -6,7 +6,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class BorrowingProvider with ChangeNotifier {
-  final String baseUrl = 'https://localhost:7295/api/Borrowings';
+  final String baseUrl = 'http://localhost:7295/api/Borrowings';
 
   Future<List<Borrowing>> getAllBorrowings(int branchId) async {
     final token = AuthProvider.token;

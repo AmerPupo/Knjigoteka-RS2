@@ -5,8 +5,7 @@ import '../models/branch_inventory.dart';
 import '../providers/auth_provider.dart';
 
 class BranchInventoryProvider with ChangeNotifier {
-  static const String _baseUrl =
-      "https://localhost:7295/api/branches/inventory";
+  static const String _baseUrl = "http://localhost:7295/api/branches/inventory";
 
   Future<List<BranchInventory>> getAvailableForSale(
     int branchId, {

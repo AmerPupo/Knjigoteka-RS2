@@ -10,7 +10,7 @@ class AuthProvider extends ChangeNotifier {
 
   static bool get isLoggedIn => token != null;
 
-  static String baseUrl = 'https://localhost:7295/api';
+  static String baseUrl = 'http://localhost:7295/api';
 
   Future<void> login(String email, String password) async {
     final res = await http.post(
